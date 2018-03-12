@@ -1,0 +1,310 @@
+﻿@using ReComp.Models;
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!--Main Banner Slider / Extended-->
+<section class="main-banner-slider extended">
+    <div class="slider-container">
+        <div class="main-slider">
+            @for (var i = 0; i < ViewBag.Home1Image.Count; i++)
+    {
+        Home1Image Si = ViewBag.Home1Image[i];
+        <div class="slide-item" style="background-image:url(/Public/images/@Si.Image);">
+            <div class="overlay-layer"></div>
+
+            <div class="auto-container">
+                <div class="content-box">
+                    <div class="bordered-layer"></div>
+
+                    <h2>@ViewBag.Home1.Title</h2>
+                    <div class="text-content">@ViewBag.Home1.SubTitle1 <br>@ViewBag.Home1.SubTitle2 </div>
+                    <a href="#" class="theme-btn btn-style-one">Explore more</a>
+                </div>
+
+                <!--Search Style One-->
+                <div class="search-style-one">
+                    <div class="search-outer">
+                        <div class="form-box search-form">
+                            <form method="post" action="http://themexriver.com/shelter/property-grid.html">
+                                <div class="row clearfix">
+                                    <!--Form Group-->
+                                    <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                                        <div class="field-title">Select Your</div>
+                                        <div class="field-inner">
+                                            <select class="custom-select-box">
+                                                <option>Location</option>
+                                                <option>Australia</option>
+                                                <option>United States</option>
+                                                <option>Russia</option>
+                                                <option>France</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!--Form Group-->
+                                    <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                                        <div class="field-title">Select Your</div>
+                                        <div class="field-inner">
+                                            <select class="custom-select-box">
+                                                <option>Min Area</option>
+                                                <option>1000 ft2</option>
+                                                <option>1500 ft2</option>
+                                                <option>2000 ft2</option>
+                                                <option>5000 ft2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!--Form Group-->
+                                    <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                                        <div class="field-title">Select Your</div>
+                                        <div class="field-inner">
+                                            <select class="custom-select-box">
+                                                <option>Budget</option>
+                                                <option>$10000 - $100,000</option>
+                                                <option>$100,000 - $1,000,000</option>
+                                                <option>$1,000,000 - $10,000,0000</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!--Form Group-->
+                                    <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                                        <div class="field-title">&nbsp;</div>
+                                        <div class="field-inner text-right"><button class="theme-btn btn-style-one"><span class="icon fa fa-search"></span>Search</button></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div><!--Search Style One-->
+
+            </div>
+        </div>
+}
+        </div>
+    </div>
+</section>
+
+<!--About Section-->
+<section id="about-section" class="about-section extended" style="width:75%; margin:auto;">
+    <div class="auto-container">
+
+        <div class="row clearfix">
+            <!--Left Column-->
+            <div class="left-column col-md-6 col-sm-12 col-xs-12">
+                <div class="image-box">
+                    <div class="image-outer">
+                        <figure class="image"><img src="~/Public/images/resource/@ViewBag.Home2.Image" alt=""><a class="lightbox-image video-link"></a></figure>
+                    </div>
+                </div>
+                <div class="big-title"><h2>@ViewBag.Home2.BestTitle</h2></div>
+            </div><!--Left Column-->
+            <!--Right Column-->
+            <div class="right-column col-md-6 col-sm-12 col-xs-12">
+                <!--Title Style One-->
+                <div class="title-style-one extended left-aligned">
+                    <div class="title"><h2>@ViewBag.Home2.Title</h2></div>
+                    <div class="sub-title">@ViewBag.Home2.SubTitle </div>
+                </div>
+
+                <div class="content">
+                    <div class="text">@ViewBag.Home2.MainText</div>
+
+                    <div class="row clearfix">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <ul class="list-style-one">
+                                <li>@ViewBag.Home2.sec1</li>
+                                <li>@ViewBag.Home2.sec2</li>
+                                <li>@ViewBag.Home2.sec3</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <ul class="list-style-one">
+                                <li>@ViewBag.Home2.sec4</li>
+                                <li>@ViewBag.Home2.sec5</li>
+                                <li>@ViewBag.Home2.sec6</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="links">
+                        <a href="#" class="theme-btn btn-style-two"><span class="fa fa-paper-plane"></span>&ensp; Appoinment</a>
+                        <a href="#" class="theme-btn btn-style-three"><span class="fa fa-download"></span>&ensp; Download brochure</a>
+                    </div>
+                </div>
+            </div><!--Right Column-->
+        </div>
+
+    </div>
+</section>
+
+<!--Default Section-->
+<section class="default-section" style="width:75%; margin:auto;">
+    <div class="auto-container">
+        <!--Title Style One-->
+        <div class="title-style-one right-aligned">
+            <div class="title"><h2>@ViewBag.Home3Head.Title</h2></div>
+            <div class="sub-title">@ViewBag.Home3Head.SubTitle </div>
+        </div>
+
+        <div class="row clearfix">
+            <!--Left Column-->
+            <div class="right-column col-md-12 col-sm-12 col-xs-12">
+
+                <!--Blog Posts-->
+                <div class="blog-posts">
+                    <!--News Style One-->
+                    @for (var i = 0; i < ViewBag.Home3.Count; i++)
+    {
+                    Home3 h3 = ViewBag.Home3[i];
+                <div class="news-style-one col-md-6">
+                    <div class="inner-box">
+                        <div class="image-box"><figure class="image"><a href="blog-single.html"><img src="~/Public/images/resource/@h3.Image" alt=""></a></figure></div>
+                        <div class="post-content">
+                            <h4 class="post-info">@h3.Title</h4>
+                            <div class="text-content">@h3.SubTitle </div>
+                            <div class="more-btn"><a href="blog-single.html">@h3.MainText</a></div>
+                            <a href="blog-single.html" class="share-btn"><span class="flaticon-multimedia-1"></span></a>
+                        </div>
+                    </div>
+                </div>
+             }
+                </div>
+                    <div class="default-title text-right"><h2>@ViewBag.Home3Head.BestTitle</h2></div>
+                </div>            
+         </div>
+    </div>
+</section>
+
+<!--Properties Section-->
+<section class="properties-section-two" style="width:75%; margin:auto;">
+    <div class="auto-container">
+        <!--Search Style One-->
+        <div class="search-style-one extended">
+            <div class="search-outer">
+                <div class="form-box search-form">
+                    <form method="post" action="http://themexriver.com/shelter/property-grid.html">
+                        <div class="row clearfix">
+                            <!--Form Group-->
+                            <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                                <div class="field-title">Select Your</div>
+                                <div class="field-inner">
+                                    <select class="custom-select-box">
+                                        <option>Location</option>
+                                        <option>Australia</option>
+                                        <option>United States</option>
+                                        <option>Russia</option>
+                                        <option>France</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--Form Group-->
+                            <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                                <div class="field-title">Select Your</div>
+                                <div class="field-inner">
+                                    <select class="custom-select-box">
+                                        <option>Min Area</option>
+                                        <option>1000 ft2</option>
+                                        <option>1500 ft2</option>
+                                        <option>2000 ft2</option>
+                                        <option>5000 ft2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--Form Group-->
+                            <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                                <div class="field-title">Price</div>
+                                <div class="field-inner">
+                                    <select class="custom-select-box">
+                                        <option>$1000 - 10,000</option>
+                                        <option>$10,000 - $100,000</option>
+                                        <option>$100,000 - $1,000,000</option>
+                                        <option>$1,000,000 - $10,000,0000</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--Form Group-->
+                            <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                                <div class="field-title">&nbsp;</div>
+                                <div class="field-inner text-right"><button class="theme-btn btn-style-one"><span class="icon fa fa-search"></span>Search</button></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!--Search Style One-->
+
+        <div class="search-title"><h3>Found 32 Properties for sell & rent</h3></div>
+
+        <!--Gallery Controls-->
+        <div class="gallery-controls clearfix">
+
+            <!--Layout-->
+            <div class="layout">
+                <ul class="clearfix">
+                    <li><a href="property-list.html" title="List View"><span class="flaticon-interface"></span></a></li>
+                    <li><a class="active" href="property-grid.html" title="Grid View"><span class="flaticon-squares"></span></a></li>
+                </ul>
+            </div>
+
+            <!--Filter-->
+            <div class="filters">
+                <ul class="filter-tabs filter-btns clearfix">
+                    <li class="active filter" data-role="button" data-filter="all">All </li>
+                    <li class="filter" data-role="button" data-filter=".rent">Rent </li>
+                    <li class="filter" data-role="button" data-filter=".sell">Sell </li>
+                    <li class="filter" data-role="button" data-filter=".featured">Featured </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="big-title"><h2>Sell & rent</h2></div>
+
+        <div class="filter-list row clearfix">
+            <!--Property Block-->
+            @for (var i = 0; i < ViewBag.Home4.Count; i++)
+            {
+                Home4 h4 = ViewBag.Home4[i];
+        <div class="property-block-grid col-lg-4 col-md-6 col-xs-12 mix mix_all sell">
+            <div class="inner-box">
+                <div class="image-box">
+                    <figure class="image"><a href="property-single.html"><img src="~/Public/images/resource/@h4.Image" alt=""></a></figure>
+                    <div class="ribbon">Sale</div>
+                    <a href="property-single.html" class="read-more-link">Read More</a>
+                </div>
+                <div class="lower-content">
+                    <h3><a href="property-single.html">@h4.Title</a></h3>
+                    <div class="price">@h4.Price</div>
+                    <div class="desc-text">@h4.SubTitle </div>
+                    <!--Specs List-->
+                    <ul class="specs-list clearfix">
+                        <li><div class="outer"><div class="icon"><span class="fa fa-expand"></span></div><div class="info">@h4.Ft</div></div></li>
+                        <li><div class="outer"><div class="icon"><span class="fa fa-bed"></span></div><div class="info">@h4.Bed</div></div></li>
+                        <li><div class="outer"><div class="icon"><span class="flaticon-shape"></span></div><div class="info">@h4.Bath</div></div></li>
+                        <li><div class="outer"><div class="icon"><span class="fa fa-car"></span></div><div class="info">@h4.Garage</div></div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            }
+
+        </div>
+
+        <!-- Styled Pagination -->
+        <div class="styled-pagination text-center">
+            <ul>
+                <li><a class="prev" href="#"><span class="fa fa-angle-double-left"></span></a></li>
+                <li><a href="#" class="active">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a class="next" href="#"><span class="fa fa-angle-double-right"></span></a></li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+
+<!--Subscribe Bar / Style Two-->
+<section class="subscribe-bar style-two" style="width:75%; margin:auto;">
+</section>

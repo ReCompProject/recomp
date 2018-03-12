@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="REModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Home1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubTitle1" Type="nvarchar" MaxLength="100" />
+          <Property Name="SubTitle2" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Home1Image">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Home2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="nvarchar" MaxLength="255" />
+          <Property Name="BestTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="MainText" Type="nvarchar" MaxLength="255" />
+          <Property Name="sec1" Type="nvarchar" MaxLength="50" />
+          <Property Name="sec2" Type="nvarchar" MaxLength="50" />
+          <Property Name="sec3" Type="nvarchar" MaxLength="50" />
+          <Property Name="sec4" Type="nvarchar" MaxLength="50" />
+          <Property Name="sec5" Type="nvarchar" MaxLength="50" />
+          <Property Name="sec6" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Home3">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="nvarchar" MaxLength="255" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubTitle" Type="nvarchar" MaxLength="150" />
+          <Property Name="MainText" Type="text" />
+        </EntityType>
+        <EntityType Name="Home3Head">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BestTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubTitle" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Home4">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="nvarchar" MaxLength="255" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="nvarchar" MaxLength="255" />
+          <Property Name="SubTitle" Type="nvarchar" MaxLength="100" />
+          <Property Name="Ft" Type="nvarchar" MaxLength="20" />
+          <Property Name="Bed" Type="nvarchar" MaxLength="20" />
+          <Property Name="Bath" Type="nvarchar" MaxLength="20" />
+          <Property Name="Garage" Type="nvarchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Home5">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubTitle" Type="nvarchar" MaxLength="255" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mail1" Type="nvarchar" MaxLength="100" />
+          <Property Name="Mail2" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Project1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubTitle" Type="nvarchar" MaxLength="100" />
+          <Property Name="MainText" Type="nvarchar" MaxLength="255" />
+          <Property Name="sec1" Type="nvarchar" MaxLength="50" />
+          <Property Name="sec2" Type="nvarchar" MaxLength="50" />
+          <Property Name="sec3" Type="nvarchar" MaxLength="50" />
+          <Property Name="sec4" Type="nvarchar" MaxLength="50" />
+          <Property Name="sec5" Type="nvarchar" MaxLength="50" />
+          <Property Name="sec6" Type="nvarchar" MaxLength="50" />
+          <Property Name="Details" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Project1Image">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BigImage" Type="nvarchar" MaxLength="255" />
+          <Property Name="SmallImage" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Project2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="nvarchar" MaxLength="255" />
+          <Property Name="Name1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ft" Type="nvarchar" MaxLength="20" />
+          <Property Name="Bed" Type="nvarchar" MaxLength="20" />
+          <Property Name="Bath" Type="nvarchar" MaxLength="20" />
+          <Property Name="Garage" Type="nvarchar" MaxLength="1" />
+          <Property Name="Price" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Project3">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image" Type="nvarchar" MaxLength="255" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubTitle" Type="nvarchar" MaxLength="100" />
+          <Property Name="Ft" Type="nvarchar" MaxLength="20" />
+          <Property Name="Bed" Type="nvarchar" MaxLength="20" />
+          <Property Name="Bath" Type="nvarchar" MaxLength="20" />
+          <Property Name="Garage" Type="nvarchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Project3Head">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubTitle" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="REModelStoreContainer">
+          <EntitySet Name="Home1" EntityType="Self.Home1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home1Image" EntityType="Self.Home1Image" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home2" EntityType="Self.Home2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home3" EntityType="Self.Home3" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home3Head" EntityType="Self.Home3Head" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home4" EntityType="Self.Home4" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Home5" EntityType="Self.Home5" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project1" EntityType="Self.Project1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project1Image" EntityType="Self.Project1Image" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project2" EntityType="Self.Project2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project3" EntityType="Self.Project3" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project3Head" EntityType="Self.Project3Head" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="REModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Home1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitle1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitle2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Home1Image">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Home2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="BestTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MainText" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="sec1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sec2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sec3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sec4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sec5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sec6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Home3">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MainText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Home3Head">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BestTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Home4">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Ft" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Bed" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Bath" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Garage" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Home5">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mail1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Mail2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="REEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Home1" EntityType="Self.Home1" />
+          <EntitySet Name="Home1Image" EntityType="Self.Home1Image" />
+          <EntitySet Name="Home2" EntityType="Self.Home2" />
+          <EntitySet Name="Home3" EntityType="Self.Home3" />
+          <EntitySet Name="Home3Head" EntityType="Self.Home3Head" />
+          <EntitySet Name="Home4" EntityType="Self.Home4" />
+          <EntitySet Name="Home5" EntityType="Self.Home5" />
+          <EntitySet Name="Project1" EntityType="REModel.Project1" />
+          <EntitySet Name="Project1Image" EntityType="REModel.Project1Image" />
+          <EntitySet Name="Project2" EntityType="REModel.Project2" />
+          <EntitySet Name="Project3" EntityType="REModel.Project3" />
+          <EntitySet Name="Project3Head" EntityType="REModel.Project3Head" />
+        </EntityContainer>
+        <EntityType Name="Project1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MainText" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="sec1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sec2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sec3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sec4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sec5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sec6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Details" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Project1Image">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BigImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SmallImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Project2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Name1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ft" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Bed" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Bath" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Garage" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Project3">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Ft" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Bed" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Bath" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Garage" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Project3Head">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="REModelStoreContainer" CdmEntityContainer="REEntities">
+          <EntitySetMapping Name="Home1">
+            <EntityTypeMapping TypeName="REModel.Home1">
+              <MappingFragment StoreEntitySet="Home1">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SubTitle1" ColumnName="SubTitle1" />
+                <ScalarProperty Name="SubTitle2" ColumnName="SubTitle2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home1Image">
+            <EntityTypeMapping TypeName="REModel.Home1Image">
+              <MappingFragment StoreEntitySet="Home1Image">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home2">
+            <EntityTypeMapping TypeName="REModel.Home2">
+              <MappingFragment StoreEntitySet="Home2">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="BestTitle" ColumnName="BestTitle" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+                <ScalarProperty Name="MainText" ColumnName="MainText" />
+                <ScalarProperty Name="sec1" ColumnName="sec1" />
+                <ScalarProperty Name="sec2" ColumnName="sec2" />
+                <ScalarProperty Name="sec3" ColumnName="sec3" />
+                <ScalarProperty Name="sec4" ColumnName="sec4" />
+                <ScalarProperty Name="sec5" ColumnName="sec5" />
+                <ScalarProperty Name="sec6" ColumnName="sec6" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home3">
+            <EntityTypeMapping TypeName="REModel.Home3">
+              <MappingFragment StoreEntitySet="Home3">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+                <ScalarProperty Name="MainText" ColumnName="MainText" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home3Head">
+            <EntityTypeMapping TypeName="REModel.Home3Head">
+              <MappingFragment StoreEntitySet="Home3Head">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BestTitle" ColumnName="BestTitle" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home4">
+            <EntityTypeMapping TypeName="REModel.Home4">
+              <MappingFragment StoreEntitySet="Home4">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+                <ScalarProperty Name="Ft" ColumnName="Ft" />
+                <ScalarProperty Name="Bed" ColumnName="Bed" />
+                <ScalarProperty Name="Bath" ColumnName="Bath" />
+                <ScalarProperty Name="Garage" ColumnName="Garage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Home5">
+            <EntityTypeMapping TypeName="REModel.Home5">
+              <MappingFragment StoreEntitySet="Home5">
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="Mail1" ColumnName="Mail1" />
+                <ScalarProperty Name="Mail2" ColumnName="Mail2" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project1">
+            <EntityTypeMapping TypeName="REModel.Project1">
+              <MappingFragment StoreEntitySet="Project1">
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="sec6" ColumnName="sec6" />
+                <ScalarProperty Name="sec5" ColumnName="sec5" />
+                <ScalarProperty Name="sec4" ColumnName="sec4" />
+                <ScalarProperty Name="sec3" ColumnName="sec3" />
+                <ScalarProperty Name="sec2" ColumnName="sec2" />
+                <ScalarProperty Name="sec1" ColumnName="sec1" />
+                <ScalarProperty Name="MainText" ColumnName="MainText" />
+                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project1Image">
+            <EntityTypeMapping TypeName="REModel.Project1Image">
+              <MappingFragment StoreEntitySet="Project1Image">
+                <ScalarProperty Name="SmallImage" ColumnName="SmallImage" />
+                <ScalarProperty Name="BigImage" ColumnName="BigImage" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project2">
+            <EntityTypeMapping TypeName="REModel.Project2">
+              <MappingFragment StoreEntitySet="Project2">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Garage" ColumnName="Garage" />
+                <ScalarProperty Name="Bath" ColumnName="Bath" />
+                <ScalarProperty Name="Bed" ColumnName="Bed" />
+                <ScalarProperty Name="Ft" ColumnName="Ft" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name3" ColumnName="Name3" />
+                <ScalarProperty Name="Name2" ColumnName="Name2" />
+                <ScalarProperty Name="Name1" ColumnName="Name1" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project3">
+            <EntityTypeMapping TypeName="REModel.Project3">
+              <MappingFragment StoreEntitySet="Project3">
+                <ScalarProperty Name="Garage" ColumnName="Garage" />
+                <ScalarProperty Name="Bath" ColumnName="Bath" />
+                <ScalarProperty Name="Bed" ColumnName="Bed" />
+                <ScalarProperty Name="Ft" ColumnName="Ft" />
+                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project3Head">
+            <EntityTypeMapping TypeName="REModel.Project3Head">
+              <MappingFragment StoreEntitySet="Project3Head">
+                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

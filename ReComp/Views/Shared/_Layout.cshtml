@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from themexriver.com/shelter/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Mar 2018 10:14:38 GMT -->
+<head>
+    <meta charset="utf-8">
+    <title>Shelter - Real Estate and Property HTML Template | Homepage Two</title>
+    <!-- Stylesheets -->
+    <link href="~/Public/css/bootstrap.css" rel="stylesheet">
+    <link href="~/Public/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="~/Public/css/jquery-ui.css" rel="stylesheet">
+    <link href="~/Public/css/revolution-slider.css" rel="stylesheet">
+    <link href="~/Public/css/style.css" rel="stylesheet">
+    <!--Favicon-->
+    <link rel="shortcut icon" href="~/Public/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="~/Public/images/favicon.ico" type="image/x-icon">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="~/Public/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+    <div class="page-wrapper">
+
+        <!-- Preloader -->
+        <div class="preloader"></div>
+
+        <!-- Main Header / Header Style One-->
+        <header class="main-header header-style-one">
+
+
+
+            <!--Header-Upper-->
+            <div class="header-upper">
+                <div class="auto-container">
+                    <div class="clearfix">
+
+                        <div class="logo-outer">
+                            <div class="logo"><a href="index.html"><img src="~/Public/images/logo-3.png" alt="Shelter" title="Shelter"></a></div>
+                        </div>
+
+                        <div class="header-upper-right clearfix">
+
+                            <!--Info Box-->
+                            <div class="info-box">
+                                <div class="icon-box"><span class="fa fa-phone"></span></div>
+                                <ul>
+                                    <li>0125-555-129</li>
+                                    <li><span class="theme_color">Please call us</span></li>
+                                </ul>
+                            </div>
+
+                            <!--Info Box-->
+                            <div class="info-box">
+                                <div class="icon-box"><span class="fa fa-clock-o"></span></div>
+                                <ul>
+                                    <li>Mon-Fri 10.00-18.00</li>
+                                    <li>Sat-Fri   10.00-17.00</li>
+                                </ul>
+                            </div>
+
+                            <!--Info Box-->
+                            <div class="info-box">
+                                <div class="icon-box"><span class="fa fa-map-marker"></span></div>
+                                <ul>
+                                    <li>530 khan a sabur road</li>
+                                    <li>Khulna,9000</li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Header-Lower-->
+            <div class="header-lower">
+
+                <div class="auto-container">
+                    <div class="nav-outer clearfix">
+                        <!-- Main Menu -->
+                        <nav class="main-menu">
+                            <div class="navbar-header">
+                                <!-- Toggle Button -->
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    Menu
+                                </button>
+                            </div>
+
+                            <div class="navbar-collapse collapse clearfix">
+                                <ul class="navigation clearfix">
+                                    <li class="current home dropdown">
+                                        <a href="#">Home</a>
+                                    </li>
+                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li class="dropdown">
+                                        <a href="http://localhost:50153/Project/Project">Projects</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#">Blog</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#">Pages</a>
+                                    </li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </nav><!-- Main Menu End-->
+                        <!--Social Links-->
+                        <div class="search-box">
+                            <form method="post" action="http://themexriver.com/shelter/property-grid.html">
+                                <div class="form-group">
+                                    <input type="search" name="search-field" value="" placeholder="Search" required>
+                                    <button type="submit"><span class="icon fa fa-search"></span></button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </header>
+        <!--End Main Header -->
+        
+
+        @RenderBody()
+
+
+        <!--Main Footer-->
+        <footer class="main-footer" style="background-image:url(/Public/images/background/footer-bg.png);">
+
+            <!--Footer Title-->
+            <div class="footer-title">
+                <figure class="logo"><a href="index.html"><img src="~/Public/images/logo-2.png" alt=""></a></figure>
+                <h2>@ViewBag.Home5.Title</h2>
+                <div class="desc-text">@ViewBag.Home5.SubTitle</div>
+            </div>
+
+            <section class="contact-section-one">
+                <div class="auto-container">
+                    <div class="big-title"><h2>Contact us</h2></div>
+
+                    <div class="row clearfix">
+                        <!--Info Column-->
+                        <div class="info-column col-md-5 col-sm-12 col-xs-12">
+                            <h3><span class="theme_color">More</span> Info:</h3>
+                            <ul class="info-list">
+                                <li><span class="icon fa fa-phone"></span><strong>@ViewBag.Home5.Phone</strong><br><span class="theme_color">@ViewBag.Home5.Phone2</span></li>
+                                <li><span class="icon fa fa-envelope"></span>@ViewBag.Home5.Mail1<br>@ViewBag.Home5.Mail2</li>
+                                <li><span class="icon fa fa-map-marker"></span>@ViewBag.Home5.Address<br>@ViewBag.Home5.Address2</li>
+                            </ul>
+                        </div>
+
+                        <!--Form Column-->
+                        <div class="form-column col-md-7 col-sm-12 col-xs-12">
+                            <h3><span class="theme_color">Contact</span> Form:</h3>
+                            <!--Contact Form-->
+                            <div class="default-form contact-form">
+                                <form method="post" action="http://themexriver.com/shelter/sendemail.php" id="contact-form">
+                                    <div class="row clearfix">
+
+                                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                            <input type="text" name="username" value="" placeholder="Name" required>
+                                        </div>
+
+                                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                            <input type="email" name="email" value="" placeholder="Mail" required>
+                                        </div>
+
+                                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                            <input type="text" name="subject" value="" placeholder="Subject">
+                                        </div>
+
+                                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                            <textarea name="message" placeholder="Details" required></textarea>
+                                        </div>
+
+                                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                            <div class="text-center"><button type="submit" class="theme-btn btn-style-one">Send now!</button></div>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div><!--End Contact Form-->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!--Footer Bottom-->
+            <div class="footer-bottom">
+                <div class="bottom-container">
+                    <div class="clearfix">
+                        <div class="copyright-text">Shelter &copy; 2017. All rights are reserved</div>
+                        <div class="author-info">Made with <span class="fa fa-heart"></span> by themexriver</div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+    <!--End pagewrapper-->
+    <!--Scroll to top-->
+    <div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-long-arrow-up"></span></div>
+
+
+    <script src="~/Public/js/jquery.js"></script>
+    <script src="~/Public/js/bootstrap.min.js"></script>
+    <script src="~/Public/js/jquery-ui.js"></script>
+    <script src="~/Public/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="~/Public/js/bxslider.js"></script>
+    <script src="~/Public/js/isotope.js"></script>
+    <script src="~/Public/js/mixitup.js"></script>
+    <script src="~/Public/js/jquery.fancybox.pack.js"></script>
+    <script src="~/Public/js/jquery.fancybox-media.js"></script>
+    <script src="~/Public/js/validate.js"></script>
+    <script src="~/Public/js/owl.js"></script>
+    <script src="~/Public/js/wow.js"></script>
+    <script src="~/Public/js/script.js"></script>
+</body>
+
+<!-- Mirrored from themexriver.com/shelter/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Mar 2018 10:16:13 GMT -->
+</html>
