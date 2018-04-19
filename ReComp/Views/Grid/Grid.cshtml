@@ -1,0 +1,213 @@
+﻿@using ReComp.Models;
+@{
+    ViewBag.Title = "Grid";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!--Map Section-->
+<section class="map-section">
+    <div class="map-outer">
+        <!--Map Canvas-->
+        <div class="map-canvas"
+             data-zoom="6"
+             data-lat="43.078629"
+             data-lng="12.390042"
+             data-type="roadmap"
+             data-hue="#09a223"
+             data-title="Italy"
+             data-content="<a href='mailto:info@youremail.com'>info@youremail.com</a>"
+             style="height:300px;">
+        </div>
+    </div>
+</section>
+
+<!--Page Info-->
+<section class="page-info">
+    <div class="auto-container">
+        <!--Breadcrumb-->
+        <div class="breadcrumb-outer">
+            <ul class="bread-crumb clearfix">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Properties</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--Properties Section-->
+<section class="properties-section-two" style="width:75%; margin:auto;">
+    <div class="auto-container">
+        <!--Search Style One-->
+        <div class="search-style-one extended">
+            <div class="search-outer">
+                <div class="form-box search-form">
+                    <form method="post" action="http://themexriver.com/shelter/property-grid.html">
+                        <div class="row clearfix">
+                            <!--Form Group-->
+                            <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                                <div class="field-title">Select Your</div>
+                                <div class="field-inner">
+                                    <select class="custom-select-box">
+                                        <option>Location</option>
+                                        <option>Australia</option>
+                                        <option>United States</option>
+                                        <option>Russia</option>
+                                        <option>France</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--Form Group-->
+                            <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                                <div class="field-title">Select Your</div>
+                                <div class="field-inner">
+                                    <select class="custom-select-box">
+                                        <option>Min Area</option>
+                                        <option>1000 ft2</option>
+                                        <option>1500 ft2</option>
+                                        <option>2000 ft2</option>
+                                        <option>5000 ft2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--Form Group-->
+                            <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                                <div class="field-title">Price</div>
+                                <div class="field-inner">
+                                    <select class="custom-select-box">
+                                        <option>$1000 - 10,000</option>
+                                        <option>$10,000 - $100,000</option>
+                                        <option>$100,000 - $1,000,000</option>
+                                        <option>$1,000,000 - $10,000,0000</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!--Form Group-->
+                            <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                                <div class="field-title">&nbsp;</div>
+                                <div class="field-inner text-right"><button class="theme-btn btn-style-one"><span class="icon fa fa-search"></span>Search</button></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!--Search Style One-->
+        <div class="search-title"><h3>Found 32 Properties for sell & rent</h3></div>
+        <!--Gallery Controls-->
+        <div class="gallery-controls clearfix">
+            <!--Layout-->
+            <div class="layout">
+                <ul class="clearfix">
+                    <li><a href="property-list.html" title="List View"><span class="flaticon-interface"></span></a></li>
+                    <li><a class="active" href="property-grid.html" title="Grid View"><span class="flaticon-squares"></span></a></li>
+                </ul>
+            </div>
+            <!--Filter-->
+            <div class="filters">
+                <ul class="filter-tabs filter-btns clearfix">
+                    <li class="active filter" data-role="button" data-filter="all">All </li>
+                    @for (var i = 0; i < ViewBag.StickType.Count; i++)
+                    {
+                        <li class="filter" data-role="button" data-filter=".@ViewBag.StickType[i].Name">@ViewBag.StickType[i].Name </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="big-title"><h2>Sell & rent</h2></div>
+        <div class="filter-list row clearfix">
+            @for (var i = 0; i < ViewBag.Stickers.Count; i++)
+            {
+                Sticker st = ViewBag.Stickers[i];
+                Stick_Photo Sph = null;
+                int count = 0;
+                for (var j = 0; j < ViewBag.SticPhoto.Count; j++)
+                {
+                    Stick_Photo StPh = ViewBag.SticPhoto[j];
+                    if (StPh.Stick_İD == st.İD)
+                    {
+                        Sph = StPh;
+                        break;
+                    }
+                }
+
+                <!--Property Block-->
+                <div class="property-block-grid col-lg-4 col-md-6 col-xs-12 mix mix_all @st.Stick_Type.Name">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><a href="property-single.html"><img src="~/Public/images/resource/@Sph.Name" alt=""></a></figure>
+                            <div class="ribbon">@st.Stick_Type.Name</div>
+                            <a href="property-single.html" class="read-more-link">Read More</a>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href="property-single.html">@st.Name</a></h3>
+                            <div class="price">@st.Price</div>
+                            <div class="desc-text">@st.Short_info</div>
+                            <!--Specs List-->
+                            <ul class="specs-list clearfix">
+                                <li><div class="outer"><div class="icon"><span class="fa fa-expand"></span></div><div class="info">@st.Area</div></div></li>
+                                <li>
+                                    <div class="outer">
+                                        <div class="icon"><span class="fa fa-bed"></span></div><div class="info">
+                                            @for (var j = 0; j < ViewBag.Room.Count; j++)
+                                            {
+                                                Room rm = ViewBag.Room[j];
+                                                if (rm.Stick_İD == st.İD)
+                                                {
+                                                    if (rm.Type_İD == 1)
+                                                    {
+                                                        count++;
+                                                    }
+                                                }
+                                            } @count Bed
+                                        </div>
+                                    </div>
+                                </li>
+                                @if (count != 0) { count = 0; }
+                                <li>
+                                    <div class="outer">
+                                        <div class="icon"><span class="flaticon-shape"></span></div><div class="info">
+                                            @for (var j = 0; j < ViewBag.Room.Count; j++)
+                                            {
+                                                Room rm = ViewBag.Room[j];
+                                                if (rm.Stick_İD == st.İD)
+                                                {
+                                                    if (rm.Type_İD == 2)
+                                                    {
+                                                        count++;
+                                                    }
+                                                }
+                                            } @count
+                                            Bath
+                                        </div>
+                                    </div>
+                                </li>
+                                @if (count != 0) { count = 0; }
+                                @if ((bool)st.GarageStatus)
+                                {
+                                    <li><div class="outer"><div class="icon"><span class="fa fa-car"></span></div><div class="info">Var</div></div></li>}
+                                else
+                                {
+                                    <li><div class="outer"><div class="icon"><span class="fa fa-car"></span></div><div class="info">Yoxdur</div></div></li>}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <!-- Styled Pagination -->
+        <div class="styled-pagination text-center">
+            <ul>
+                <li><a class="prev" href="#"><span class="fa fa-angle-double-left"></span></a></li>
+                <li><a href="#" class="active">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a class="next" href="#"><span class="fa fa-angle-double-right"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--Subscribe Bar / Style Two-->
+<section class="subscribe-bar style-two">
+
+    <div class="auto-container">
+        <div class="clearfix">
+        </div>
+    </div>
+</section>

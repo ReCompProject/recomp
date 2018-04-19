@@ -3686,8 +3686,9 @@ img{
 	margin-right:10px;	
 }
 
-.property-block-grid .image-box{
-	position:relative;
+.property-block-grid .image-box {
+    position: relative;
+    max-height: 197px;
 }
 
 .property-block-grid .image-box img{
@@ -6692,4 +6693,7 @@ img{
 	top: 8px;
 	right: 15px;
 	outline: none;
+}
+.input-group-addon {
+    width: auto !important;
 }

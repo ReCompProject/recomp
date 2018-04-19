@@ -9,16 +9,18 @@ namespace ReComp.Controllers
 {
     public class HomeController : Controller
     {
-        REEntities db = new REEntities();
+        REcompEntities db = new REcompEntities();
         public ActionResult Index()
         {
-            ViewBag.Home1 = db.Home1.First();
-            ViewBag.Home1Image = db.Home1Image.ToList();
-            ViewBag.Home2 = db.Home2.First();
-            ViewBag.Home3Head = db.Home3Head.First();
-            ViewBag.Home3 = db.Home3.ToList();
-            ViewBag.Home4 = db.Home4.ToList();
-            ViewBag.Home5 = db.Home5.First();
+            ViewBag.About = db.AboutUs.First();
+            ViewBag.AboutService = db.AboutServices.ToList();
+            ViewBag.Home3 = db.Projects.ToList();
+            ViewBag.Projects = db.Projects.ToList();
+            ViewBag.ProjectPhoto = db.Project_Photo.ToList();
+            ViewBag.Stickers = db.Stickers.ToList();
+            ViewBag.StickType = db.Stick_Type.ToList();
+            ViewBag.SticPhoto = db.Stick_Photo.ToList();
+            ViewBag.Footer = db.Footors.First();
             return View();
         }
 
@@ -35,5 +37,12 @@ namespace ReComp.Controllers
 
             return View();
         }
+        public ActionResult _Layout()
+        {
+            ViewBag.Footer = db.Footors.First();
+            return View();
+        }
     }
 }
+
+

@@ -1,0 +1,447 @@
+﻿@using ReComp.Models;
+@{
+    ViewBag.Title = "Single";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Property Banner-->
+<section class="property-banner" style="background-image:url(/Public/images/background/@ViewBag.Single1.Image);">
+    <div class="overlay-layer"></div>
+    <div class="auto-container">
+        <div class="content-box">
+            <h4>@ViewBag.Single1.Title</h4>
+            <h3>@ViewBag.Single1.SubTitle<span class="theme_color">@ViewBag.Single1.SpanTitle</span></h3>
+            <a href="index.html" class="theme-btn btn-style-one">Go Home</a>
+        </div>
+    </div>
+</section>
+
+
+<!--Property Info Section-->
+<section class="property-info-section" style="width:75%; margin:auto;">
+    <div class="auto-container">
+
+        <div class="row clearfix">
+            <!--Left Column-->
+            <div class="left-column col-md-6 col-sm-12 col-xs-12">
+                <!--Product Carousel-->
+                <div class="product-carousel-outer">
+                    <!--Product image Carousel-->
+                    <ul class="prod-image-carousel">
+                        @for (var i = 0; i < ViewBag.Stickers.Count; i++)
+    {
+        Sticker st = ViewBag.Stickers[i];
+        Stick_Photo Sph = null;
+        for (var j = 0; j < ViewBag.SticPhoto.Count; j++)
+        {
+            Stick_Photo StPh = ViewBag.SticPhoto[j];
+            if (StPh.Stick_İD == st.İD)
+            {
+                Sph = StPh;
+                break;
+            }
+        }
+    }
+                        <li><figure class="image"><a class="lightbox-image option-btn" data-fancybox-group="example-gallery" href="~/Public/images/resource/products/image-2.jpg" title="Image Title Here"><img src="~/Public/images/resource/products/image-2.jpg" alt=""></a></figure></li>
+
+                    </ul>
+
+                    <!--Product Thumbs Carousel-->
+                    <div class="prod-thumbs-carousel">
+                        @for (var i = 0; i < ViewBag.Project1Image.Count; i++)
+                        {
+                            Project1Image s2 = ViewBag.Project1Image[i];
+                    <div class="thumb-item"><figure class="thumb-box"><img src="~/Public/images/resource/products/@s2.SmallImage" alt=""></figure></div>
+                        }
+                    </div>
+
+                </div><!--End Product Carousel-->
+            </div><!--Left Column-->
+            <!--Right Column-->
+            <div class="right-column col-md-6 col-sm-12 col-xs-12">
+                <!--Title Style One-->
+                <div class="title-style-one extended left-aligned">
+                    <div class="title"><h2>Property Overview</h2></div>
+                    <div class="sub-title">We take a broader, more holistic all </div>
+                </div>
+
+                <div class="content">
+                    <div class="text">But I must explain you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system.</div>
+
+                    <div class="row clearfix">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <ul class="list-style-one">
+                                <li>Right choice</li>
+                                <li>Help to find your dream</li>
+                                <li>24 hours support</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <ul class="list-style-one">
+                                <li>Unlimited consultation</li>
+                                <li>Choice from other cities</li>
+                                <li>World wide business</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="big-title"><h2>Property Details</h2></div>
+
+                    <div class="links">
+                        <a href="#" class="theme-btn btn-style-two"><span class="fa fa-paper-plane"></span>&ensp; Book Now</a>
+                    </div>
+                </div>
+            </div><!--Right Column-->
+        </div>
+
+    </div>
+</section>
+
+<!--Floor Planning-->
+<section class="floor-planning no-padding-top no-border" style="width:75%; margin:auto;">
+    <div class="auto-container">
+
+        <!--Tabs Box-->
+        <div class="tabs-box">
+            <div class="row clearfix">
+                <!--Left Column-->
+                <div class="left-column col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                    <div class="inner">
+                        <!--Tab Buttons-->
+                        <div class="tab-buttons">
+
+                            <div class="tab-btn active-btn" data-tab="#kitchen">
+                                <div class="btn-title"><span>Mətbəxt</span></div>
+                                <ul class="styled-list-two">
+                                    <li>Sahəsi: 30 kv.m</li>
+                                    <li>Balkon: 9,06 kv.m</li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-btn" data-tab="#second-floor">
+                                <div class="btn-title"><span>Yataq Otaqları</span></div>
+                                <ul class="styled-list-two">
+                                    <li>1 - ci otaq: 18 kv.m</li>
+                                    <li>2 - ci otaq: 15,22 kv.m</li>
+                                    <li>3 - cü otaq: 23 kv.m</li>
+                                    <li>4 - cü otaq: 17,14 kv.m</li>
+                                    <li>5 - ci otaq: 27,12 kv.m</li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-btn" data-tab="#ground-floor">
+                                <div class="btn-title"><span>Salon</span></div>
+                                <ul class="styled-list-two">
+                                    <li>Sahəsi: 47 kv.m</li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-btn" data-tab="#exterior-room">
+                                <div class="btn-title"><span>Holl</span></div>
+                                <ul class="styled-list-two">
+                                    <li>Sahəsi: 32,37 kv.m</li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-btn" data-tab="#car-garage">
+                                <div class="btn-title"><span>Dəhliz</span></div>
+                                <ul class="styled-list-two">
+                                    <li>Sahəsi: 14,36 kv.m</li>
+                                </ul>
+                            </div>
+
+                            <!-- <div class="tab-btn" data-tab="#swimming-pool">
+                                <div class="btn-title"><span>Swimming</span> Pool</div>
+                            </div> -->
+
+                        </div>
+
+                        <!--Thumbs-->
+                        <div class="thumbs">
+                            <figure class="thumb"><img src="images/resource/featured-thumb-1.jpg" alt=""></figure>
+                            <figure class="thumb"><img src="images/resource/featured-thumb-2.jpg" alt=""></figure>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Right Column-->
+                <div class="right-column col-lg-9 col-md-8 col-sm-12 col-xs-12">
+                    <div class="tabs-content">
+                        <!--Tab / Active Tab-->
+                        <div class="tab active-tab" id="kitchen">
+                            <h2 class="title">Mətbəx</h2>
+                            <figure class="image-box"><img src="~/Public/images/resource/featured-image-6.jpg" alt=""></figure>
+                            <!--Specs Listing-->
+                            <div class="specs-listing">
+                                <div class="row clearfix">
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3>Ünvan</h3>
+                                        <ul>
+                                            <li>
+                                              530 khan a sabur road, Daulatpur Khulna,9000
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3>Qiymət</h3>
+                                        <ul>
+                                            <li>$52000</li>
+                                        </ul>
+                                    </div>
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3><span class="icon fa fa-car"></span> Garage / Parking</h3>
+                                        <ul>
+                                            <li>Street parking</li>
+                                            <li><strong>Non</strong> Street Parking</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!--End Specs Listing-->
+
+                        </div>
+
+                        <!--Tab -->
+                        <div class="tab" id="second-floor">
+                            <h2 class="title">Yataq otaqları</h2>
+                            <figure class="image-box"><img src="~/Public/images/resource/featured-image-6.jpg" alt=""></figure>
+                            <!--Specs Listing-->
+                            <div class="specs-listing">
+                                <div class="row clearfix">
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3>Ünvan</h3>
+                                        <ul>
+                                            <li>
+                                                530 khan a sabur road, Daulatpur Khulna,9000
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3>Qiymət</h3>
+                                        <ul>
+                                            <li>$52000</li>
+                                        </ul>
+                                    </div>
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3><span class="icon fa fa-car"></span> Garage / Parking</h3>
+                                        <ul>
+                                            <li>Street parking</li>
+                                            <li><strong>Non</strong> Street Parking</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!--End Specs Listing-->
+                        </div>
+
+                        <!--Tab -->
+                        <div class="tab" id="ground-floor">
+                            <h2 class="title">Salon</h2>
+                            <figure class="image-box"><img src="~/Public/images/resource/featured-image-6.jpg" alt=""></figure>
+                            <!--Specs Listing-->
+                            <div class="specs-listing">
+                                <div class="row clearfix">
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3>Ünvan</h3>
+                                        <ul>
+                                            <li>
+                                                530 khan a sabur road, Daulatpur Khulna,9000
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3>Qiymət</h3>
+                                        <ul>
+                                            <li>$52000</li>
+                                        </ul>
+                                    </div>
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3><span class="icon fa fa-car"></span> Garage / Parking</h3>
+                                        <ul>
+                                            <li>Street parking</li>
+                                            <li><strong>Non</strong> Street Parking</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!--End Specs Listing-->
+                        </div>
+
+                        <!--Tab -->
+                        <div class="tab" id="exterior-room">
+                            <h2 class="title">Holl</h2>
+                            <figure class="image-box"><img src="~/Public/images/resource/featured-image-6.jpg" alt=""></figure>
+                            <div class="specs-listing">
+                                <div class="row clearfix">
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3>Ünvan</h3>
+                                        <ul>
+                                            <li>
+                                                530 khan a sabur road, Daulatpur Khulna,9000
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3>Qiymət</h3>
+                                        <ul>
+                                            <li>$52000</li>
+                                        </ul>
+                                    </div>
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3><span class="icon fa fa-car"></span> Garage / Parking</h3>
+                                        <ul>
+                                            <li>Street parking</li>
+                                            <li><strong>Non</strong> Street Parking</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!--End Specs Listing-->
+                        </div>
+
+                        <!--Tab -->
+                        <div class="tab" id="car-garage">
+                            <h2 class="title">Dəhliz</h2>
+                            <figure class="image-box"><img src="~/Public/images/resource/featured-image-6.jpg" alt=""></figure>
+                            <div class="specs-listing">
+                                <div class="row clearfix">
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3>Ünvan</h3>
+                                        <ul>
+                                            <li>
+                                                530 khan a sabur road, Daulatpur Khulna,9000
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3>Qiymət</h3>
+                                        <ul>
+                                            <li>$52000</li>
+                                        </ul>
+                                    </div>
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3><span class="icon fa fa-car"></span> Garage / Parking</h3>
+                                        <ul>
+                                            <li>Street parking</li>
+                                            <li><strong>Non</strong> Street Parking</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!--End Specs Listing-->
+                        </div>
+
+                        <!--Tab -->
+                        <div class="tab" id="swimming-pool">
+                            <h2 class="title">Swimming Pool</h2>
+                            <figure class="image-box"><img src="~/Public/images/resource/featured-image-6.jpg" alt=""></figure>
+                            <div class="specs-listing">
+                                <div class="row clearfix">
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3>Ünvan</h3>
+                                        <ul>
+                                            <li>
+                                                530 khan a sabur road, Daulatpur Khulna,9000
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3>Qiymət</h3>
+                                        <ul>
+                                            <li>$52000</li>
+                                        </ul>
+                                    </div>
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3><span class="icon fa fa-car"></span> Garage / Parking</h3>
+                                        <ul>
+                                            <li>Street parking</li>
+                                            <li><strong>Non</strong> Street Parking</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!--End Specs Listing-->
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!--Properties Section-->
+<section class="properties-section related-properties" style="width:75%; margin:auto;">
+    <div class="auto-container">
+        <!--Title Style One-->
+        <div class="title-style-one extended right-aligned">
+            <div class="title"><h2>Related Properties</h2></div>
+            <div class="sub-title">We take a broader, more holistic all </div>
+        </div>
+
+        <!--Carousel-->
+        <div class="properties-carousel three-items-carousel">
+            <!--Slide Item-->
+            <!--Property Block-->
+            @for (var i = 0; i < ViewBag.Project2.Count; i++)
+    {
+        Project2 p2 = ViewBag.Project2[i];
+            <div class="slide-item">
+                <div class="property-block-grid">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><a href="property-single.html"><img src="~/Public/images/gallery/@p2.Image" alt=""></a></figure>
+                            <div class="ribbon">Sale</div>
+                            <a href="property-single.html" class="read-more-link">Read More</a>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href="property-single.html">Sharif Paradise, Daulatpur Khulna</a></h3>
+                            <div class="price">$52000</div>
+                            <div class="desc-text">But I must explain to you how all this idea view policy. </div>
+                            <!--Specs List-->
+                            <ul class="specs-list clearfix">
+                                <li><div class="outer"><div class="icon"><span class="fa fa-expand"></span></div><div class="info">1600 ft2</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-bed"></span></div><div class="info">3 Bed</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="flaticon-shape"></span></div><div class="info">2 Bath</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-car"></span></div><div class="info">Garage</div></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<!--Subscribe Bar / Style Two-->
+<section class="subscribe-bar style-two" style="width:75%; margin:auto;">
+    <div class="info-box">Open: Sat-Sun 10.00am-8.00pm</div>
+
+    <div class="auto-container">
+        <div class="clearfix">
+            <div class="subscribe-title">Subscribe our Newsletter!</div>
+            <div class="subscribe-link"><a href="contact.html" class="theme-btn subscribe-btn"><span class="fa fa-paper-plane"></span> Subscribe Now</a></div>
+        </div>
+    </div>
+</section>
+

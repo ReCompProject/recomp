@@ -4,483 +4,886 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="REModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Home1">
+    <Schema Namespace="REcompModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AboutService">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="İD" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" MaxLength="50" />
-          <Property Name="SubTitle1" Type="nvarchar" MaxLength="100" />
-          <Property Name="SubTitle2" Type="nvarchar" MaxLength="100" />
+          <Property Name="İD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AboutİD" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="Home1Image">
+        <EntityType Name="AboutUs">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="İD" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Image" Type="nvarchar" MaxLength="255" />
+          <Property Name="İD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tittle" Type="nvarchar" MaxLength="100" />
+          <Property Name="SubTittle" Type="nvarchar(max)" />
         </EntityType>
-        <EntityType Name="Home2">
+        <EntityType Name="Footor">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Image" Type="nvarchar" MaxLength="255" />
-          <Property Name="BestTitle" Type="nvarchar" MaxLength="50" />
-          <Property Name="Title" Type="nvarchar" MaxLength="50" />
-          <Property Name="SubTitle" Type="nvarchar" MaxLength="50" />
-          <Property Name="MainText" Type="nvarchar" MaxLength="255" />
-          <Property Name="sec1" Type="nvarchar" MaxLength="50" />
-          <Property Name="sec2" Type="nvarchar" MaxLength="50" />
-          <Property Name="sec3" Type="nvarchar" MaxLength="50" />
-          <Property Name="sec4" Type="nvarchar" MaxLength="50" />
-          <Property Name="sec5" Type="nvarchar" MaxLength="50" />
-          <Property Name="sec6" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="Home3">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Image" Type="nvarchar" MaxLength="255" />
-          <Property Name="Title" Type="nvarchar" MaxLength="50" />
-          <Property Name="SubTitle" Type="nvarchar" MaxLength="150" />
-          <Property Name="MainText" Type="text" />
-        </EntityType>
-        <EntityType Name="Home3Head">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BestTitle" Type="nvarchar" MaxLength="50" />
-          <Property Name="Title" Type="nvarchar" MaxLength="50" />
-          <Property Name="SubTitle" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="Home4">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Image" Type="nvarchar" MaxLength="255" />
-          <Property Name="Title" Type="nvarchar" MaxLength="50" />
-          <Property Name="Price" Type="nvarchar" MaxLength="255" />
-          <Property Name="SubTitle" Type="nvarchar" MaxLength="100" />
-          <Property Name="Ft" Type="nvarchar" MaxLength="20" />
-          <Property Name="Bed" Type="nvarchar" MaxLength="20" />
-          <Property Name="Bath" Type="nvarchar" MaxLength="20" />
-          <Property Name="Garage" Type="nvarchar" MaxLength="1" />
-        </EntityType>
-        <EntityType Name="Home5">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
           <Property Name="SubTitle" Type="nvarchar" MaxLength="255" />
-          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
-          <Property Name="Phone2" Type="nvarchar" MaxLength="50" />
-          <Property Name="Mail1" Type="nvarchar" MaxLength="100" />
-          <Property Name="Mail2" Type="nvarchar" MaxLength="100" />
-          <Property Name="Address" Type="nvarchar" MaxLength="255" />
-          <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
         </EntityType>
-        <EntityType Name="Project1">
+        <EntityType Name="Project_Photo">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="İD" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" MaxLength="50" />
-          <Property Name="SubTitle" Type="nvarchar" MaxLength="100" />
-          <Property Name="MainText" Type="nvarchar" MaxLength="255" />
-          <Property Name="sec1" Type="nvarchar" MaxLength="50" />
-          <Property Name="sec2" Type="nvarchar" MaxLength="50" />
-          <Property Name="sec3" Type="nvarchar" MaxLength="50" />
-          <Property Name="sec4" Type="nvarchar" MaxLength="50" />
-          <Property Name="sec5" Type="nvarchar" MaxLength="50" />
-          <Property Name="sec6" Type="nvarchar" MaxLength="50" />
-          <Property Name="Details" Type="nvarchar" MaxLength="20" />
+          <Property Name="İD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Link" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Project_İD" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="Project1Image">
+        <EntityType Name="Projects">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="İD" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BigImage" Type="nvarchar" MaxLength="255" />
-          <Property Name="SmallImage" Type="nvarchar" MaxLength="255" />
+          <Property Name="İD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Year" Type="date" Nullable="false" />
+          <Property Name="Short_İnfo" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Long_İnfo" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Status" Type="bit" />
         </EntityType>
-        <EntityType Name="Project2">
+        <EntityType Name="Room_Type">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="İD" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Image" Type="nvarchar" MaxLength="255" />
-          <Property Name="Name1" Type="nvarchar" MaxLength="50" />
-          <Property Name="Name2" Type="nvarchar" MaxLength="50" />
-          <Property Name="Name3" Type="nvarchar" MaxLength="50" />
-          <Property Name="Type" Type="nvarchar" MaxLength="50" />
-          <Property Name="Ft" Type="nvarchar" MaxLength="20" />
-          <Property Name="Bed" Type="nvarchar" MaxLength="20" />
-          <Property Name="Bath" Type="nvarchar" MaxLength="20" />
-          <Property Name="Garage" Type="nvarchar" MaxLength="1" />
-          <Property Name="Price" Type="nvarchar" MaxLength="50" />
+          <Property Name="İD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityType Name="Project3">
+        <EntityType Name="Rooms">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="İD" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Image" Type="nvarchar" MaxLength="255" />
-          <Property Name="Title" Type="nvarchar" MaxLength="50" />
-          <Property Name="Price" Type="nvarchar" MaxLength="50" />
-          <Property Name="SubTitle" Type="nvarchar" MaxLength="100" />
-          <Property Name="Ft" Type="nvarchar" MaxLength="20" />
-          <Property Name="Bed" Type="nvarchar" MaxLength="20" />
-          <Property Name="Bath" Type="nvarchar" MaxLength="20" />
-          <Property Name="Garage" Type="nvarchar" MaxLength="1" />
+          <Property Name="İD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type_İD" Type="int" Nullable="false" />
+          <Property Name="Stick_İD" Type="int" Nullable="false" />
+          <Property Name="Area" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityType Name="Project3Head">
+        <EntityType Name="Sells">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" MaxLength="50" />
-          <Property Name="SubTitle" Type="nvarchar" MaxLength="100" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Stick_ID" Type="int" />
+          <Property Name="Users_Id" Type="int" />
         </EntityType>
-        <EntityContainer Name="REModelStoreContainer">
-          <EntitySet Name="Home1" EntityType="Self.Home1" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Home1Image" EntityType="Self.Home1Image" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Home2" EntityType="Self.Home2" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Home3" EntityType="Self.Home3" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Home3Head" EntityType="Self.Home3Head" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Home4" EntityType="Self.Home4" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Home5" EntityType="Self.Home5" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Project1" EntityType="Self.Project1" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Project1Image" EntityType="Self.Project1Image" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Project2" EntityType="Self.Project2" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Project3" EntityType="Self.Project3" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Project3Head" EntityType="Self.Project3Head" Schema="dbo" store:Type="Tables" />
+        <EntityType Name="Stick_Photo">
+          <Key>
+            <PropertyRef Name="İD" />
+          </Key>
+          <Property Name="İD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Stick_İD" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Stick_Type">
+          <Key>
+            <PropertyRef Name="İD" />
+          </Key>
+          <Property Name="İD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Stickers">
+          <Key>
+            <PropertyRef Name="İD" />
+          </Key>
+          <Property Name="İD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Project_İD" Type="int" Nullable="false" />
+          <Property Name="Price" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Short_info" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Type_İD" Type="int" Nullable="false" />
+          <Property Name="Area" Type="nvarchar" MaxLength="10" />
+          <Property Name="GarageStatus" Type="bit" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="User_Type">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="50" />
+          <Property Name="Number" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type_ID" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="AboutService_fk0">
+          <End Role="AboutUs" Type="Self.AboutUs" Multiplicity="0..1" />
+          <End Role="AboutService" Type="Self.AboutService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AboutUs">
+              <PropertyRef Name="İD" />
+            </Principal>
+            <Dependent Role="AboutService">
+              <PropertyRef Name="AboutİD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sells__Stick_ID__32AB8735">
+          <End Role="Stickers" Type="Self.Stickers" Multiplicity="0..1" />
+          <End Role="Sells" Type="Self.Sells" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stickers">
+              <PropertyRef Name="İD" />
+            </Principal>
+            <Dependent Role="Sells">
+              <PropertyRef Name="Stick_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Project_Photo_fk0">
+          <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+          <End Role="Project_Photo" Type="Self.Project_Photo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="İD" />
+            </Principal>
+            <Dependent Role="Project_Photo">
+              <PropertyRef Name="Project_İD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Rooms_fk0">
+          <End Role="Room_Type" Type="Self.Room_Type" Multiplicity="1" />
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room_Type">
+              <PropertyRef Name="İD" />
+            </Principal>
+            <Dependent Role="Rooms">
+              <PropertyRef Name="Type_İD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Rooms_fk1">
+          <End Role="Stickers" Type="Self.Stickers" Multiplicity="1" />
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stickers">
+              <PropertyRef Name="İD" />
+            </Principal>
+            <Dependent Role="Rooms">
+              <PropertyRef Name="Stick_İD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Sells_fk0">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Sells" Type="Self.Sells" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sells">
+              <PropertyRef Name="Users_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Stick_Photo_fk0">
+          <End Role="Stickers" Type="Self.Stickers" Multiplicity="1" />
+          <End Role="Stick_Photo" Type="Self.Stick_Photo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stickers">
+              <PropertyRef Name="İD" />
+            </Principal>
+            <Dependent Role="Stick_Photo">
+              <PropertyRef Name="Stick_İD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Stickers_fk0">
+          <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+          <End Role="Stickers" Type="Self.Stickers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="İD" />
+            </Principal>
+            <Dependent Role="Stickers">
+              <PropertyRef Name="Project_İD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Stickers_fk2">
+          <End Role="Stick_Type" Type="Self.Stick_Type" Multiplicity="1" />
+          <End Role="Stickers" Type="Self.Stickers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stick_Type">
+              <PropertyRef Name="İD" />
+            </Principal>
+            <Dependent Role="Stickers">
+              <PropertyRef Name="Type_İD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Users_fk0">
+          <End Role="User_Type" Type="Self.User_Type" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Type">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="Type_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="REcompModelStoreContainer">
+          <EntitySet Name="AboutService" EntityType="Self.AboutService" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AboutUs" EntityType="Self.AboutUs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Footor" EntityType="Self.Footor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project_Photo" EntityType="Self.Project_Photo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Room_Type" EntityType="Self.Room_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rooms" EntityType="Self.Rooms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sells" EntityType="Self.Sells" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stick_Photo" EntityType="Self.Stick_Photo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stick_Type" EntityType="Self.Stick_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stickers" EntityType="Self.Stickers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Type" EntityType="Self.User_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="AboutService_fk0" Association="Self.AboutService_fk0">
+            <End Role="AboutUs" EntitySet="AboutUs" />
+            <End Role="AboutService" EntitySet="AboutService" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sells__Stick_ID__32AB8735" Association="Self.FK__Sells__Stick_ID__32AB8735">
+            <End Role="Stickers" EntitySet="Stickers" />
+            <End Role="Sells" EntitySet="Sells" />
+          </AssociationSet>
+          <AssociationSet Name="Project_Photo_fk0" Association="Self.Project_Photo_fk0">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="Project_Photo" EntitySet="Project_Photo" />
+          </AssociationSet>
+          <AssociationSet Name="Rooms_fk0" Association="Self.Rooms_fk0">
+            <End Role="Room_Type" EntitySet="Room_Type" />
+            <End Role="Rooms" EntitySet="Rooms" />
+          </AssociationSet>
+          <AssociationSet Name="Rooms_fk1" Association="Self.Rooms_fk1">
+            <End Role="Stickers" EntitySet="Stickers" />
+            <End Role="Rooms" EntitySet="Rooms" />
+          </AssociationSet>
+          <AssociationSet Name="Sells_fk0" Association="Self.Sells_fk0">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Sells" EntitySet="Sells" />
+          </AssociationSet>
+          <AssociationSet Name="Stick_Photo_fk0" Association="Self.Stick_Photo_fk0">
+            <End Role="Stickers" EntitySet="Stickers" />
+            <End Role="Stick_Photo" EntitySet="Stick_Photo" />
+          </AssociationSet>
+          <AssociationSet Name="Stickers_fk0" Association="Self.Stickers_fk0">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="Stickers" EntitySet="Stickers" />
+          </AssociationSet>
+          <AssociationSet Name="Stickers_fk2" Association="Self.Stickers_fk2">
+            <End Role="Stick_Type" EntitySet="Stick_Type" />
+            <End Role="Stickers" EntitySet="Stickers" />
+          </AssociationSet>
+          <AssociationSet Name="Users_fk0" Association="Self.Users_fk0">
+            <End Role="User_Type" EntitySet="User_Type" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="REModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Home1">
+      <Schema Namespace="REcompModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AboutService">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="İD" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SubTitle1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="SubTitle2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="İD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AboutİD" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AboutU" Relationship="Self.AboutService_fk0" FromRole="AboutService" ToRole="AboutUs" />
         </EntityType>
-        <EntityType Name="Home1Image">
+        <EntityType Name="AboutU">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="İD" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="İD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tittle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SubTittle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AboutServices" Relationship="Self.AboutService_fk0" FromRole="AboutUs" ToRole="AboutService" />
         </EntityType>
-        <EntityType Name="Home2">
+        <EntityType Name="Footor">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="BestTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SubTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MainText" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="sec1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="sec2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="sec3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="sec4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="sec5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="sec6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Home3">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SubTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="MainText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Home3Head">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BestTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SubTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Home4">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="SubTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Ft" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Bed" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Bath" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Garage" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Home5">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="SubTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Mail1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Mail2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="REEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Home1" EntityType="Self.Home1" />
-          <EntitySet Name="Home1Image" EntityType="Self.Home1Image" />
-          <EntitySet Name="Home2" EntityType="Self.Home2" />
-          <EntitySet Name="Home3" EntityType="Self.Home3" />
-          <EntitySet Name="Home3Head" EntityType="Self.Home3Head" />
-          <EntitySet Name="Home4" EntityType="Self.Home4" />
-          <EntitySet Name="Home5" EntityType="Self.Home5" />
-          <EntitySet Name="Project1" EntityType="REModel.Project1" />
-          <EntitySet Name="Project1Image" EntityType="REModel.Project1Image" />
-          <EntitySet Name="Project2" EntityType="REModel.Project2" />
-          <EntitySet Name="Project3" EntityType="REModel.Project3" />
-          <EntitySet Name="Project3Head" EntityType="REModel.Project3Head" />
+        <EntityType Name="Project_Photo">
+          <Key>
+            <PropertyRef Name="İD" />
+          </Key>
+          <Property Name="İD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Link" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Project_İD" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Project" Relationship="Self.Project_Photo_fk0" FromRole="Project_Photo" ToRole="Projects" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="İD" />
+          </Key>
+          <Property Name="İD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Year" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Short_İnfo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Long_İnfo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="Boolean" />
+          <NavigationProperty Name="Project_Photo" Relationship="Self.Project_Photo_fk0" FromRole="Projects" ToRole="Project_Photo" />
+          <NavigationProperty Name="Stickers" Relationship="Self.Stickers_fk0" FromRole="Projects" ToRole="Stickers" />
+        </EntityType>
+        <EntityType Name="Room_Type">
+          <Key>
+            <PropertyRef Name="İD" />
+          </Key>
+          <Property Name="İD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Rooms" Relationship="Self.Rooms_fk0" FromRole="Room_Type" ToRole="Rooms" />
+        </EntityType>
+        <EntityType Name="Room">
+          <Key>
+            <PropertyRef Name="İD" />
+          </Key>
+          <Property Name="İD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type_İD" Type="Int32" Nullable="false" />
+          <Property Name="Stick_İD" Type="Int32" Nullable="false" />
+          <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Room_Type" Relationship="Self.Rooms_fk0" FromRole="Rooms" ToRole="Room_Type" />
+          <NavigationProperty Name="Sticker" Relationship="Self.Rooms_fk1" FromRole="Rooms" ToRole="Stickers" />
+        </EntityType>
+        <EntityType Name="Stick_Photo">
+          <Key>
+            <PropertyRef Name="İD" />
+          </Key>
+          <Property Name="İD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Stick_İD" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sticker" Relationship="Self.Stick_Photo_fk0" FromRole="Stick_Photo" ToRole="Stickers" />
+        </EntityType>
+        <EntityType Name="Stick_Type">
+          <Key>
+            <PropertyRef Name="İD" />
+          </Key>
+          <Property Name="İD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Stickers" Relationship="Self.Stickers_fk2" FromRole="Stick_Type" ToRole="Stickers" />
+        </EntityType>
+        <EntityType Name="Sticker">
+          <Key>
+            <PropertyRef Name="İD" />
+          </Key>
+          <Property Name="İD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Project_İD" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Short_info" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Type_İD" Type="Int32" Nullable="false" />
+          <Property Name="Area" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="GarageStatus" Type="Boolean" />
+          <Property Name="Status" Type="Boolean" />
+          <NavigationProperty Name="Project" Relationship="Self.Stickers_fk0" FromRole="Stickers" ToRole="Projects" />
+          <NavigationProperty Name="Rooms" Relationship="Self.Rooms_fk1" FromRole="Stickers" ToRole="Rooms" />
+          <NavigationProperty Name="Stick_Photo" Relationship="Self.Stick_Photo_fk0" FromRole="Stickers" ToRole="Stick_Photo" />
+          <NavigationProperty Name="Stick_Type" Relationship="Self.Stickers_fk2" FromRole="Stickers" ToRole="Stick_Type" />
+          <NavigationProperty Name="Sells" Relationship="REcompModel.FK__Sells__Stick_ID__32AB8735" FromRole="Sticker" ToRole="Sell" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="AboutService_fk0">
+          <End Role="AboutUs" Type="Self.AboutU" Multiplicity="0..1" />
+          <End Role="AboutService" Type="Self.AboutService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AboutUs">
+              <PropertyRef Name="İD" />
+            </Principal>
+            <Dependent Role="AboutService">
+              <PropertyRef Name="AboutİD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Project_Photo_fk0">
+          <End Role="Projects" Type="Self.Project" Multiplicity="1" />
+          <End Role="Project_Photo" Type="Self.Project_Photo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="İD" />
+            </Principal>
+            <Dependent Role="Project_Photo">
+              <PropertyRef Name="Project_İD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Stickers_fk0">
+          <End Role="Projects" Type="Self.Project" Multiplicity="1" />
+          <End Role="Stickers" Type="Self.Sticker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="İD" />
+            </Principal>
+            <Dependent Role="Stickers">
+              <PropertyRef Name="Project_İD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Rooms_fk0">
+          <End Role="Room_Type" Type="Self.Room_Type" Multiplicity="1" />
+          <End Role="Rooms" Type="Self.Room" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Room_Type">
+              <PropertyRef Name="İD" />
+            </Principal>
+            <Dependent Role="Rooms">
+              <PropertyRef Name="Type_İD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Rooms_fk1">
+          <End Role="Stickers" Type="Self.Sticker" Multiplicity="1" />
+          <End Role="Rooms" Type="Self.Room" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stickers">
+              <PropertyRef Name="İD" />
+            </Principal>
+            <Dependent Role="Rooms">
+              <PropertyRef Name="Stick_İD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Stick_Photo_fk0">
+          <End Role="Stickers" Type="Self.Sticker" Multiplicity="1" />
+          <End Role="Stick_Photo" Type="Self.Stick_Photo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stickers">
+              <PropertyRef Name="İD" />
+            </Principal>
+            <Dependent Role="Stick_Photo">
+              <PropertyRef Name="Stick_İD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Stickers_fk2">
+          <End Role="Stick_Type" Type="Self.Stick_Type" Multiplicity="1" />
+          <End Role="Stickers" Type="Self.Sticker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stick_Type">
+              <PropertyRef Name="İD" />
+            </Principal>
+            <Dependent Role="Stickers">
+              <PropertyRef Name="Type_İD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="REcompEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AboutServices" EntityType="Self.AboutService" />
+          <EntitySet Name="AboutUs" EntityType="Self.AboutU" />
+          <EntitySet Name="Footors" EntityType="Self.Footor" />
+          <EntitySet Name="Project_Photo" EntityType="Self.Project_Photo" />
+          <EntitySet Name="Projects" EntityType="Self.Project" />
+          <EntitySet Name="Room_Type" EntityType="Self.Room_Type" />
+          <EntitySet Name="Rooms" EntityType="Self.Room" />
+          <EntitySet Name="Stick_Photo" EntityType="Self.Stick_Photo" />
+          <EntitySet Name="Stick_Type" EntityType="Self.Stick_Type" />
+          <EntitySet Name="Stickers" EntityType="Self.Sticker" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="AboutService_fk0" Association="Self.AboutService_fk0">
+            <End Role="AboutUs" EntitySet="AboutUs" />
+            <End Role="AboutService" EntitySet="AboutServices" />
+          </AssociationSet>
+          <AssociationSet Name="Project_Photo_fk0" Association="Self.Project_Photo_fk0">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="Project_Photo" EntitySet="Project_Photo" />
+          </AssociationSet>
+          <AssociationSet Name="Stickers_fk0" Association="Self.Stickers_fk0">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="Stickers" EntitySet="Stickers" />
+          </AssociationSet>
+          <AssociationSet Name="Rooms_fk0" Association="Self.Rooms_fk0">
+            <End Role="Room_Type" EntitySet="Room_Type" />
+            <End Role="Rooms" EntitySet="Rooms" />
+          </AssociationSet>
+          <AssociationSet Name="Rooms_fk1" Association="Self.Rooms_fk1">
+            <End Role="Stickers" EntitySet="Stickers" />
+            <End Role="Rooms" EntitySet="Rooms" />
+          </AssociationSet>
+          <AssociationSet Name="Stick_Photo_fk0" Association="Self.Stick_Photo_fk0">
+            <End Role="Stickers" EntitySet="Stickers" />
+            <End Role="Stick_Photo" EntitySet="Stick_Photo" />
+          </AssociationSet>
+          <AssociationSet Name="Stickers_fk2" Association="Self.Stickers_fk2">
+            <End Role="Stick_Type" EntitySet="Stick_Type" />
+            <End Role="Stickers" EntitySet="Stickers" />
+          </AssociationSet>
+          <EntitySet Name="Sells" EntityType="REcompModel.Sell" />
+          <EntitySet Name="User_Type" EntityType="REcompModel.User_Type" />
+          <EntitySet Name="Users" EntityType="REcompModel.User" />
+          <AssociationSet Name="FK__Sells__Stick_ID__32AB8735" Association="REcompModel.FK__Sells__Stick_ID__32AB8735">
+            <End Role="Sticker" EntitySet="Stickers" />
+            <End Role="Sell" EntitySet="Sells" />
+          </AssociationSet>
+          <AssociationSet Name="Sells_fk0" Association="REcompModel.Sells_fk0">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Sell" EntitySet="Sells" />
+          </AssociationSet>
+          <AssociationSet Name="Users_fk0" Association="REcompModel.Users_fk0">
+            <End Role="User_Type" EntitySet="User_Type" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(REcompModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(REcompModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
-        <EntityType Name="Project1">
+        <EntityType Name="Sell">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SubTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="MainText" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="sec1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="sec2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="sec3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="sec4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="sec5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="sec6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Details" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Stick_ID" Type="Int32" />
+          <Property Name="Users_Id" Type="Int32" />
+          <NavigationProperty Name="Sticker" Relationship="REcompModel.FK__Sells__Stick_ID__32AB8735" FromRole="Sell" ToRole="Sticker" />
+          <NavigationProperty Name="User" Relationship="REcompModel.Sells_fk0" FromRole="Sell" ToRole="User" />
         </EntityType>
-        <EntityType Name="Project1Image">
+        <EntityType Name="User_Type">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BigImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="SmallImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="REcompModel.Users_fk0" FromRole="User_Type" ToRole="User" />
         </EntityType>
-        <EntityType Name="Project2">
+        <EntityType Name="User">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Name1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Name2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Name3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Ft" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Bed" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Bath" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Garage" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_Surname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Sells" Relationship="REcompModel.Sells_fk0" FromRole="User" ToRole="Sell" />
+          <NavigationProperty Name="User_Type" Relationship="REcompModel.Users_fk0" FromRole="User" ToRole="User_Type" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Project3">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SubTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Ft" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Bed" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Bath" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Garage" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Project3Head">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SubTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-        </EntityType>
+        <Association Name="FK__Sells__Stick_ID__32AB8735">
+          <End Type="REcompModel.Sticker" Role="Sticker" Multiplicity="0..1" />
+          <End Type="REcompModel.Sell" Role="Sell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sticker">
+              <PropertyRef Name="İD" />
+            </Principal>
+            <Dependent Role="Sell">
+              <PropertyRef Name="Stick_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Sells_fk0">
+          <End Type="REcompModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="REcompModel.Sell" Role="Sell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sell">
+              <PropertyRef Name="Users_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Users_fk0">
+          <End Type="REcompModel.User_Type" Role="User_Type" Multiplicity="1" />
+          <End Type="REcompModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Type">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Type_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="REModelStoreContainer" CdmEntityContainer="REEntities">
-          <EntitySetMapping Name="Home1">
-            <EntityTypeMapping TypeName="REModel.Home1">
-              <MappingFragment StoreEntitySet="Home1">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="SubTitle1" ColumnName="SubTitle1" />
-                <ScalarProperty Name="SubTitle2" ColumnName="SubTitle2" />
+        <EntityContainerMapping StorageEntityContainer="REcompModelStoreContainer" CdmEntityContainer="REcompEntities">
+          <EntitySetMapping Name="AboutServices">
+            <EntityTypeMapping TypeName="REcompModel.AboutService">
+              <MappingFragment StoreEntitySet="AboutService">
+                <ScalarProperty Name="İD" ColumnName="İD" />
+                <ScalarProperty Name="AboutİD" ColumnName="AboutİD" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Home1Image">
-            <EntityTypeMapping TypeName="REModel.Home1Image">
-              <MappingFragment StoreEntitySet="Home1Image">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
+          <EntitySetMapping Name="AboutUs">
+            <EntityTypeMapping TypeName="REcompModel.AboutU">
+              <MappingFragment StoreEntitySet="AboutUs">
+                <ScalarProperty Name="İD" ColumnName="İD" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Tittle" ColumnName="Tittle" />
+                <ScalarProperty Name="SubTittle" ColumnName="SubTittle" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Home2">
-            <EntityTypeMapping TypeName="REModel.Home2">
-              <MappingFragment StoreEntitySet="Home2">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
-                <ScalarProperty Name="BestTitle" ColumnName="BestTitle" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
-                <ScalarProperty Name="MainText" ColumnName="MainText" />
-                <ScalarProperty Name="sec1" ColumnName="sec1" />
-                <ScalarProperty Name="sec2" ColumnName="sec2" />
-                <ScalarProperty Name="sec3" ColumnName="sec3" />
-                <ScalarProperty Name="sec4" ColumnName="sec4" />
-                <ScalarProperty Name="sec5" ColumnName="sec5" />
-                <ScalarProperty Name="sec6" ColumnName="sec6" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Home3">
-            <EntityTypeMapping TypeName="REModel.Home3">
-              <MappingFragment StoreEntitySet="Home3">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
-                <ScalarProperty Name="MainText" ColumnName="MainText" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Home3Head">
-            <EntityTypeMapping TypeName="REModel.Home3Head">
-              <MappingFragment StoreEntitySet="Home3Head">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="BestTitle" ColumnName="BestTitle" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Home4">
-            <EntityTypeMapping TypeName="REModel.Home4">
-              <MappingFragment StoreEntitySet="Home4">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
-                <ScalarProperty Name="Ft" ColumnName="Ft" />
-                <ScalarProperty Name="Bed" ColumnName="Bed" />
-                <ScalarProperty Name="Bath" ColumnName="Bath" />
-                <ScalarProperty Name="Garage" ColumnName="Garage" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Home5">
-            <EntityTypeMapping TypeName="REModel.Home5">
-              <MappingFragment StoreEntitySet="Home5">
-                <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <EntitySetMapping Name="Footors">
+            <EntityTypeMapping TypeName="REcompModel.Footor">
+              <MappingFragment StoreEntitySet="Footor">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
-                <ScalarProperty Name="Mail1" ColumnName="Mail1" />
-                <ScalarProperty Name="Mail2" ColumnName="Mail2" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Project1">
-            <EntityTypeMapping TypeName="REModel.Project1">
-              <MappingFragment StoreEntitySet="Project1">
-                <ScalarProperty Name="Details" ColumnName="Details" />
-                <ScalarProperty Name="sec6" ColumnName="sec6" />
-                <ScalarProperty Name="sec5" ColumnName="sec5" />
-                <ScalarProperty Name="sec4" ColumnName="sec4" />
-                <ScalarProperty Name="sec3" ColumnName="sec3" />
-                <ScalarProperty Name="sec2" ColumnName="sec2" />
-                <ScalarProperty Name="sec1" ColumnName="sec1" />
-                <ScalarProperty Name="MainText" ColumnName="MainText" />
-                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+          <EntitySetMapping Name="Project_Photo">
+            <EntityTypeMapping TypeName="REcompModel.Project_Photo">
+              <MappingFragment StoreEntitySet="Project_Photo">
+                <ScalarProperty Name="İD" ColumnName="İD" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Project_İD" ColumnName="Project_İD" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Project1Image">
-            <EntityTypeMapping TypeName="REModel.Project1Image">
-              <MappingFragment StoreEntitySet="Project1Image">
-                <ScalarProperty Name="SmallImage" ColumnName="SmallImage" />
-                <ScalarProperty Name="BigImage" ColumnName="BigImage" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+          <EntitySetMapping Name="Projects">
+            <EntityTypeMapping TypeName="REcompModel.Project">
+              <MappingFragment StoreEntitySet="Projects">
+                <ScalarProperty Name="İD" ColumnName="İD" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Short_İnfo" ColumnName="Short_İnfo" />
+                <ScalarProperty Name="Long_İnfo" ColumnName="Long_İnfo" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Project2">
-            <EntityTypeMapping TypeName="REModel.Project2">
-              <MappingFragment StoreEntitySet="Project2">
+          <EntitySetMapping Name="Room_Type">
+            <EntityTypeMapping TypeName="REcompModel.Room_Type">
+              <MappingFragment StoreEntitySet="Room_Type">
+                <ScalarProperty Name="İD" ColumnName="İD" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rooms">
+            <EntityTypeMapping TypeName="REcompModel.Room">
+              <MappingFragment StoreEntitySet="Rooms">
+                <ScalarProperty Name="İD" ColumnName="İD" />
+                <ScalarProperty Name="Type_İD" ColumnName="Type_İD" />
+                <ScalarProperty Name="Stick_İD" ColumnName="Stick_İD" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stick_Photo">
+            <EntityTypeMapping TypeName="REcompModel.Stick_Photo">
+              <MappingFragment StoreEntitySet="Stick_Photo">
+                <ScalarProperty Name="İD" ColumnName="İD" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Stick_İD" ColumnName="Stick_İD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stick_Type">
+            <EntityTypeMapping TypeName="REcompModel.Stick_Type">
+              <MappingFragment StoreEntitySet="Stick_Type">
+                <ScalarProperty Name="İD" ColumnName="İD" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stickers">
+            <EntityTypeMapping TypeName="REcompModel.Sticker">
+              <MappingFragment StoreEntitySet="Stickers">
+                <ScalarProperty Name="İD" ColumnName="İD" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Project_İD" ColumnName="Project_İD" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Garage" ColumnName="Garage" />
-                <ScalarProperty Name="Bath" ColumnName="Bath" />
-                <ScalarProperty Name="Bed" ColumnName="Bed" />
-                <ScalarProperty Name="Ft" ColumnName="Ft" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="Name3" ColumnName="Name3" />
-                <ScalarProperty Name="Name2" ColumnName="Name2" />
-                <ScalarProperty Name="Name1" ColumnName="Name1" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Short_info" ColumnName="Short_info" />
+                <ScalarProperty Name="Type_İD" ColumnName="Type_İD" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="GarageStatus" ColumnName="GarageStatus" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Project3">
-            <EntityTypeMapping TypeName="REModel.Project3">
-              <MappingFragment StoreEntitySet="Project3">
-                <ScalarProperty Name="Garage" ColumnName="Garage" />
-                <ScalarProperty Name="Bath" ColumnName="Bath" />
-                <ScalarProperty Name="Bed" ColumnName="Bed" />
-                <ScalarProperty Name="Ft" ColumnName="Ft" />
-                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="REcompModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Project3Head">
-            <EntityTypeMapping TypeName="REModel.Project3Head">
-              <MappingFragment StoreEntitySet="Project3Head">
-                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+          <EntitySetMapping Name="Sells">
+            <EntityTypeMapping TypeName="REcompModel.Sell">
+              <MappingFragment StoreEntitySet="Sells">
+                <ScalarProperty Name="Users_Id" ColumnName="Users_Id" />
+                <ScalarProperty Name="Stick_ID" ColumnName="Stick_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="User_Type">
+            <EntityTypeMapping TypeName="REcompModel.User_Type">
+              <MappingFragment StoreEntitySet="User_Type">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="REcompModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Name_Surname" ColumnName="Name_Surname" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="REcompModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="REcompModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="REcompModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="REcompModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="REcompModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="REcompModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="REcompModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="REcompModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="REcompModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

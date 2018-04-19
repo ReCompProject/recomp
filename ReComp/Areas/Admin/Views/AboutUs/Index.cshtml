@@ -1,0 +1,48 @@
+﻿@using ReComp.Models
+@model ReComp.Areas.Admin.Controllers.ViewModelAbout
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<div class="container">
+    <h1 class="h3 glyphicon-blackboard">
+        @Html.DisplayNameFor(model => model.TheAboutU.Name)
+    </h1>
+    <p>
+        @Html.DisplayFor(model => model.TheAboutU.Name)
+    </p>
+    <h1 class="h3 glyphicon-blackboard">
+        @Html.DisplayNameFor(model => model.TheAboutU.Tittle)
+    </h1>
+    <p>
+        @Html.DisplayFor(model => model.TheAboutU.Tittle)
+    </p>
+    <h1 class="h3 glyphicon-blackboard">
+        @Html.DisplayNameFor(model => model.TheAboutU.SubTittle)
+    </h1>
+    <p>
+        @Html.DisplayFor(model => model.TheAboutU.SubTittle)
+    </p>
+    <p class="container ">
+        @Html.ActionLink("Yeni Xidmət Əlavə Etmək", "CreateAboutServic")
+    </p>
+    <h1 class="h3 glyphicon-blackboard">
+        Xidmətlərimiz
+    </h1>
+    @foreach (var item in Model.AAboutService)
+    {
+
+        <p>
+            @Html.DisplayFor(modelItem => item.Name)
+        </p>
+    }
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.TheAboutU.İD })
+    </td>
+
+
+
+</div>

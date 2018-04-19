@@ -1,0 +1,117 @@
+﻿@model ReComp.Areas.Admin.Controllers.ViewModelProject
+@using ReComp.Models
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Project</h4>
+    <hr />
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.TheProject.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TheProject.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TheProject.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TheProject.Year, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TheProject.Year, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TheProject.Year, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TheProject.Short_İnfo, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TheProject.Short_İnfo, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TheProject.Short_İnfo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TheProject.Long_İnfo, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TheProject.Long_İnfo, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TheProject.Long_İnfo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group photo">
+        @Html.LabelFor(model => model.TheProject_Photo.Link, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div id="showoldupload">Upload</div>
+        </div>
+            <script>
+                $(document).ready(function () {
+
+
+                    $("#showoldupload").uploadFile({
+                        url: "",
+                        dragDrop: true,
+                        fileName: "myfile",
+                        returnType: "json",
+                        showDelete: true,
+                        showDownload: true,
+                        statusBarWidth: 600,
+                        dragdropWidth: 600,
+                        showPreview: true,
+                        previewHeight: "100px",
+                        previewWidth: "100px",
+
+                        onLoad: function (obj) {
+                            $.ajax({
+                                cache: false,
+                                url: "",
+                                dataType: "json",
+                                success: function (data) {
+                                    for (var i = 0; i < data.length; i++) {
+                                        obj.createProgress(data[i]["name"], data[i]["path"], data[i]["size"]);
+                                    }
+                                }
+                            });
+                        },
+
+                        deleteCallback: function (data, pd) {
+                            for (var i = 0; i < data.length; i++) {
+                                $.post("delete.php", { op: "delete", name: data[i] },
+                                    function (resp, textStatus, jqXHR) {
+                                        //Show Message
+                                        alert("File Deleted");
+                                    });
+                            }
+                            pd.statusbar.hide(); //You choice.
+
+                        },
+
+                    });
+                });
+            </script>
+
+        @Html.ValidationMessageFor(model => model.TheProject_Photo.Link, "", new { @class = "text-danger" })
+
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using ReComp.Models;
+
+<!DOCTYPE html>
 <html>
 
 <!-- Mirrored from themexriver.com/shelter/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Mar 2018 10:14:38 GMT -->
@@ -95,19 +97,19 @@
                             <div class="navbar-collapse collapse clearfix">
                                 <ul class="navigation clearfix">
                                     <li class="current home dropdown">
-                                        <a href="#">Home</a>
+                                        <a href="@Url.Action("Index" , "Home")">Ana səhifə</a>
                                     </li>
-                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li><a href="@Url.Action("Index" , "Home")">Haqqımızda</a></li>
                                     <li class="dropdown">
-                                        <a href="http://localhost:50153/Project/Project">Projects</a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#">Blog</a>
+                                        <a href="@Url.Action("Grid" , "Grid")">Grid</a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#">Pages</a>
+                                        <a href="@Url.Action("Single" , "Single")">Single</a>
                                     </li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li class="dropdown">
+                                        <a href="@Url.Action("Project" , "Project")">Project</a>
+                                    </li>
+                                    <li><a href="#">Əlaqə</a></li>
                                 </ul>
                             </div>
                         </nav><!-- Main Menu End-->
@@ -127,7 +129,9 @@
 
         </header>
         <!--End Main Header -->
-        
+
+
+
 
         @RenderBody()
 
@@ -137,23 +141,23 @@
 
             <!--Footer Title-->
             <div class="footer-title">
-                <figure class="logo"><a href="index.html"><img src="~/Public/images/logo-2.png" alt=""></a></figure>
-                <h2>@ViewBag.Home5.Title</h2>
-                <div class="desc-text">@ViewBag.Home5.SubTitle</div>
+                <figure class="logo"><a href="index.html"><img src="images/logo-2.png" alt=""></a></figure>
+                <h2>@ViewBag.Footer.Title</h2>
+                <div class="desc-text">@ViewBag.Footer.SubTitle</div>
             </div>
 
             <section class="contact-section-one">
                 <div class="auto-container">
-                    <div class="big-title"><h2>Contact us</h2></div>
+
 
                     <div class="row clearfix">
                         <!--Info Column-->
                         <div class="info-column col-md-5 col-sm-12 col-xs-12">
                             <h3><span class="theme_color">More</span> Info:</h3>
                             <ul class="info-list">
-                                <li><span class="icon fa fa-phone"></span><strong>@ViewBag.Home5.Phone</strong><br><span class="theme_color">@ViewBag.Home5.Phone2</span></li>
-                                <li><span class="icon fa fa-envelope"></span>@ViewBag.Home5.Mail1<br>@ViewBag.Home5.Mail2</li>
-                                <li><span class="icon fa fa-map-marker"></span>@ViewBag.Home5.Address<br>@ViewBag.Home5.Address2</li>
+                                <li><span class="icon fa fa-phone"></span><strong>@ViewBag.Footer.Number</strong><br><span class="theme_color">Bizə zəng edin!</span></li>
+                                <li><span class="icon fa fa-envelope"></span>@ViewBag.Footer.Mail</li>
+                                <li><span class="icon fa fa-map-marker"></span>@ViewBag.Footer.</li>
                             </ul>
                         </div>
 
@@ -205,7 +209,6 @@
             </div>
 
         </footer>
-
     </div>
     <!--End pagewrapper-->
     <!--Scroll to top-->

@@ -1,0 +1,69 @@
+﻿@using ReComp.Models
+@model ReComp.Areas.Admin.Controllers.ViewModelStick
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 style="padding-left:20px;">Index</h2>
+
+<div class="container margin-huseyin">
+    <p style="padding-left:20px;">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    @foreach (var item in Model.SSticker)
+    {
+
+        <div class="border-agshin">
+            <div>
+                <h1>@Html.DisplayNameFor(model => model.TheSticker.Name)</h1>
+                <p>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </p>
+                <h1>@Html.DisplayNameFor(model => model.TheSticker.Price)</h1>
+                <p>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </p>
+                <h1>@Html.DisplayNameFor(model => model.TheSticker.Project.Name)</h1>
+                <p>
+                    @Html.DisplayFor(modelItem => item.Project.Name)
+                </p>
+                <h1>@Html.DisplayNameFor(model => model.TheSticker.Short_info)</h1>
+                <p>
+                    @Html.DisplayFor(modelIitem => item.Short_info)
+                </p>
+                <h1>@Html.DisplayNameFor(model => model.TheSticker.Area)</h1>
+                <p>
+                    @Html.DisplayFor(modelItem => item.Area)
+                </p>
+                <h1>@Html.DisplayNameFor(model => model.TheSticker.GarageStatus)</h1>
+                <p>
+                    @Html.DisplayFor(modelItem => item.GarageStatus)
+                </p>
+                <h1>@Html.DisplayNameFor(model => model.TheSticker.Stick_Type.Name)</h1>
+                <p>
+                    @Html.DisplayFor(modelItem => item.Stick_Type.Name)
+                </p>
+                <h1>Photos</h1>
+                @foreach (var itemPhoto in Model.SSticker_Photo)
+    {
+
+        if (itemPhoto.Stick_İD == item.İD)
+        {
+            <img style="width:100px;" src="~/Public/images/resource/@itemPhoto.Name" />
+}
+
+}
+            </div>
+            <div>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.İD }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.İD })
+                </td>
+            </div>
+        </div>
+
+    }
+
+</div>

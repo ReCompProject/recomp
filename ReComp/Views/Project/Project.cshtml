@@ -4,272 +4,548 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="page-wrapper">
+<!-- Preloader -->
+<div class="preloader"></div>
 
-    <!-- Preloader -->
-    <div class="preloader"></div>
+<!--Property Info Section-->
+<section class="property-info-section" style="width:75%; margin:auto;">
+    <div class="auto-container">
 
-    <!--Property Info Section-->
-    <section class="property-info-section" style="width:75%; margin:auto;">
-        <div class="auto-container">
+        <div class="row clearfix">
+            <!--Left Column-->
+            <div class="left-column col-md-6 col-sm-12 col-xs-12">
+                <!--Product Carousel-->
+                <div class="product-carousel-outer">
+                    <!--Product image Carousel-->
+                    <ul class="prod-image-carousel">
+                        <li><figure class="image"><a class="lightbox-image option-btn" data-fancybox-group="example-gallery" href="images/resource/products/image-1.jpg" title="Image Title Here"><img src="images/resource/products/image-1.jpg" alt=""></a></figure></li>
+                        <li><figure class="image"><a class="lightbox-image option-btn" data-fancybox-group="example-gallery" href="images/resource/products/image-2.jpg" title="Image Title Here"><img src="images/resource/products/image-2.jpg" alt=""></a></figure></li>
+                        <li><figure class="image"><a class="lightbox-image option-btn" data-fancybox-group="example-gallery" href="images/resource/products/image-3.jpg" title="Image Title Here"><img src="images/resource/products/image-3.jpg" alt=""></a></figure></li>
+                        <li><figure class="image"><a class="lightbox-image option-btn" data-fancybox-group="example-gallery" href="images/resource/products/image-4.jpg" title="Image Title Here"><img src="images/resource/products/image-4.jpg" alt=""></a></figure></li>
+                        <li><figure class="image"><a class="lightbox-image option-btn" data-fancybox-group="example-gallery" href="images/resource/products/image-2.jpg" title="Image Title Here"><img src="images/resource/products/image-2.jpg" alt=""></a></figure></li>
+                        <li><figure class="image"><a class="lightbox-image option-btn" data-fancybox-group="example-gallery" href="images/resource/products/image-3.jpg" title="Image Title Here"><img src="images/resource/products/image-3.jpg" alt=""></a></figure></li>
+                    </ul>
 
+                    <!--Product Thumbs Carousel-->
+                    <div class="prod-thumbs-carousel">
+                        <div class="thumb-item"><figure class="thumb-box"><img src="images/resource/products/prod-thumb-1.png" alt=""></figure></div>
+                        <div class="thumb-item"><figure class="thumb-box"><img src="images/resource/products/prod-thumb-2.jpg" alt=""></figure></div>
+                        <div class="thumb-item"><figure class="thumb-box"><img src="images/resource/products/prod-thumb-3.jpg" alt=""></figure></div>
+                        <div class="thumb-item"><figure class="thumb-box"><img src="images/resource/products/prod-thumb-4.jpg" alt=""></figure></div>
+                        <div class="thumb-item"><figure class="thumb-box"><img src="images/resource/products/prod-thumb-2.jpg" alt=""></figure></div>
+                        <div class="thumb-item"><figure class="thumb-box"><img src="images/resource/products/prod-thumb-3.jpg" alt=""></figure></div>
+                    </div>
+
+                </div><!--End Product Carousel-->
+            </div><!--Left Column-->
+            <!--Right Column-->
+            <div class="right-column col-md-6 col-sm-12 col-xs-12">
+                <!--Title Style One-->
+                <div class="title-style-one extended left-aligned">
+                    <div class="title"><h2>Property Overview</h2></div>
+                    <div class="sub-title">We take a broader, more holistic all </div>
+                </div>
+
+                <div class="content">
+                    <div class="text">But I must explain you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system.</div>
+
+                    <div class="row clearfix">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <ul class="list-style-one">
+                                <li>Right choice</li>
+                                <li>Help to find your dream</li>
+                                <li>24 hours support</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <ul class="list-style-one">
+                                <li>Unlimited consultation</li>
+                                <li>Choice from other cities</li>
+                                <li>World wide business</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="big-title"><h2>Property Details</h2></div>
+
+                    <div class="links">
+                        <a href="#" class="theme-btn btn-style-two"><span class="fa fa-paper-plane"></span>&ensp; Book Now</a>
+                    </div>
+                </div>
+            </div><!--Right Column-->
+        </div>
+
+    </div>
+</section>
+
+<!--Floor Planning-->
+<section class="floor-planning no-padding-top no-border" style="width:75%; margin:auto;">
+    <div class="auto-container">
+
+        <!--Tabs Box-->
+        <div class="tabs-box">
             <div class="row clearfix">
                 <!--Left Column-->
-                <div class="left-column col-md-6 col-sm-12 col-xs-12">
-                    <!--Product Carousel-->
-                    <div class="product-carousel-outer">
-                        <!--Product image Carousel-->
-                        <ul class="prod-image-carousel">
-                            @for (var i = 0; i < ViewBag.Project1Image.Count; i++)
-                            {
-                                Project1Image p1 = ViewBag.Project1Image[i];
-                        <li><figure class="image"><a class="lightbox-image option-btn" data-fancybox-group="example-gallery" href="~/Public/images/resource/products/@p1.BigImage" title="Image Title Here"><img src="~/Public/images/resource/products/@p1.BigImage" alt=""></a></figure></li>
-                        }
-                        </ul>
+                <div class="left-column col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                    <div class="inner">
+                        <!--Tab Buttons-->
+                        <div class="tab-buttons">
 
-                        <!--Product Thumbs Carousel-->
-                        <div class="prod-thumbs-carousel">
-                            @for (var i = 0; i < ViewBag.Project1Image.Count; i++)
-                            {
-                                Project1Image p1 = ViewBag.Project1Image[i];
-                        <div class="thumb-item"><figure class="thumb-box"><img src="~/Public/images/resource/products/@p1.SmallImage" alt=""></figure></div>
-                            }
+                            <div class="tab-btn active-btn" data-tab="#kitchen">
+                                <div class="btn-title"><span>Mətbəxt</span></div>
+                                <ul class="styled-list-two">
+                                    <li>Sahəsi: 30 kv.m</li>
+                                    <li>Balkon: 9,06 kv.m</li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-btn" data-tab="#second-floor">
+                                <div class="btn-title"><span>Yataq Otaqları</span></div>
+                                <ul class="styled-list-two">
+                                    <li>1 - ci otaq: 18 kv.m</li>
+                                    <li>2 - ci otaq: 15,22 kv.m</li>
+                                    <li>3 - cü otaq: 23 kv.m</li>
+                                    <li>4 - cü otaq: 17,14 kv.m</li>
+                                    <li>5 - ci otaq: 27,12 kv.m</li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-btn" data-tab="#ground-floor">
+                                <div class="btn-title"><span>Salon</span></div>
+                                <ul class="styled-list-two">
+                                    <li>Sahəsi: 47 kv.m</li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-btn" data-tab="#exterior-room">
+                                <div class="btn-title"><span>Holl</span></div>
+                                <ul class="styled-list-two">
+                                    <li>Sahəsi: 32,37 kv.m</li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-btn" data-tab="#car-garage">
+                                <div class="btn-title"><span>Dəhliz</span></div>
+                                <ul class="styled-list-two">
+                                    <li>Sahəsi: 14,36 kv.m</li>
+                                </ul>
+                            </div>
+
+                            <!-- <div class="tab-btn" data-tab="#swimming-pool">
+                                <div class="btn-title"><span>Swimming</span> Pool</div>
+                            </div> -->
+
                         </div>
 
-                    </div><!--End Product Carousel-->
-                </div><!--Left Column-->
+                        <!--Thumbs-->
+                        <div class="thumbs">
+                            <figure class="thumb"><img src="images/resource/featured-thumb-1.jpg" alt=""></figure>
+                            <figure class="thumb"><img src="images/resource/featured-thumb-2.jpg" alt=""></figure>
+                        </div>
+                    </div>
+                </div>
+
                 <!--Right Column-->
-                <div class="right-column col-md-6 col-sm-12 col-xs-12">
-                    <!--Title Style One-->
-                    <div class="title-style-one extended left-aligned">
-                        <div class="title"><h2>@ViewBag.Project1.Title</h2></div>
-                        <div class="sub-title">@ViewBag.Project1.SubTitle</div>
-                    </div>
-
-                    <div class="content">
-                        <div class="text">@ViewBag.Project1.MainText</div>
-
-                        <div class="row clearfix">
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <ul class="list-style-one">
-                                    <li>@ViewBag.Project1.sec1</li>
-                                    <li>@ViewBag.Project1.sec2</li>
-                                    <li>@ViewBag.Project1.sec3</li>
-                                </ul>
+                <div class="right-column col-lg-9 col-md-8 col-sm-12 col-xs-12">
+                    <div class="tabs-content">
+                        <!--Tab / Active Tab-->
+                        <div class="tab active-tab" id="kitchen">
+                            <h2 class="title">1st Floor</h2>
+                            <figure class="image-box"><img src="images/resource/featured-image-6.jpg" alt=""></figure>
+                            <!--Specs Listing-->
+                            <div class="specs-listing">
+                                <!-- <div class="row clearfix"> -->
+                                <!--Spect COlumn-->
+                                <!-- <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                    <h3><span class="icon flaticon-double-king-size-bed"></span> Bedrooms</h3>
+                                    <ul>
+                                        <li><strong>3</strong> Double Bedrooms</li>
+                                        <li><strong>3</strong> Single Bed Rooms</li>
+                                    </ul>
+                                </div> -->
+                                <!--Spect COlumn-->
+                                <!-- <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                    <h3><span class="icon flaticon-bathtub"></span> Bathrooms</h3>
+                                    <ul>
+                                        <li><strong>3</strong> Double Bedrooms</li>
+                                        <li><strong>3</strong> Single Bed Rooms</li>
+                                    </ul>
+                                </div> -->
+                                <!--Spect COlumn-->
+                                <!-- <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                    <h3><span class="icon fa fa-car"></span> Garage / Parking</h3>
+                                    <ul>
+                                        <li>Street parking</li>
+                                        <li><strong>Non</strong> Street Parking</li>
+                                    </ul>
+                                </div> -->
+                                <!-- </div> -->
                             </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <ul class="list-style-one">
-                                    <li>@ViewBag.Project1.sec4</li>
-                                    <li>@ViewBag.Project1.sec5</li>
-                                    <li>@ViewBag.Project1.sec6</li>
-                                </ul>
-                            </div>
+
+                            <!--End Specs Listing-->
+
                         </div>
-                        <div class="big-title"><h2>@ViewBag.Project1.Details</h2></div>
 
-                        <div class="links">
-                            <a href="#" class="theme-btn btn-style-two"><span class="fa fa-paper-plane"></span>&ensp; Book Now</a>
+                        <!--Tab -->
+                        <div class="tab" id="second-floor">
+                            <h2 class="title">2nd Floor</h2>
+                            <figure class="image-box"><img src="images/resource/featured-image-6.jpg" alt=""></figure>
+                            <!--Specs Listing-->
+                            <div class="specs-listing">
+                                <div class="row clearfix">
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3><span class="icon flaticon-double-king-size-bed"></span> Bedrooms</h3>
+                                        <ul>
+                                            <li><strong>3</strong> Double Bedrooms</li>
+                                            <li><strong>3</strong> Single Bed Rooms</li>
+                                        </ul>
+                                    </div>
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3><span class="icon flaticon-bathtub"></span> Bathrooms</h3>
+                                        <ul>
+                                            <li><strong>3</strong> Double Bedrooms</li>
+                                            <li><strong>3</strong> Single Bed Rooms</li>
+                                        </ul>
+                                    </div>
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3><span class="icon fa fa-car"></span> Garage / Parking</h3>
+                                        <ul>
+                                            <li>Street parking</li>
+                                            <li><strong>Non</strong> Street Parking</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!--End Specs Listing-->
                         </div>
-                    </div>
-                </div><!--Right Column-->
-            </div>
 
+                        <!--Tab -->
+                        <div class="tab" id="ground-floor">
+                            <h2 class="title">Ground Floor</h2>
+                            <figure class="image-box"><img src="images/resource/featured-image-6.jpg" alt=""></figure>
+                            <!--Specs Listing-->
+                            <div class="specs-listing">
+                                <div class="row clearfix">
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3><span class="icon flaticon-double-king-size-bed"></span> Bedrooms</h3>
+                                        <ul>
+                                            <li><strong>3</strong> Double Bedrooms</li>
+                                            <li><strong>3</strong> Single Bed Rooms</li>
+                                        </ul>
+                                    </div>
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3><span class="icon flaticon-bathtub"></span> Bathrooms</h3>
+                                        <ul>
+                                            <li><strong>3</strong> Double Bedrooms</li>
+                                            <li><strong>3</strong> Single Bed Rooms</li>
+                                        </ul>
+                                    </div>
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3><span class="icon fa fa-car"></span> Garage / Parking</h3>
+                                        <ul>
+                                            <li>Street parking</li>
+                                            <li><strong>Non</strong> Street Parking</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div><!--End Specs Listing-->
+                        </div>
+
+                        <!--Tab -->
+                        <div class="tab" id="exterior-room">
+                            <h2 class="title">Exterior Room</h2>
+                            <figure class="image-box"><img src="images/resource/featured-image-6.jpg" alt=""></figure>
+                        </div>
+
+                        <!--Tab -->
+                        <div class="tab" id="car-garage">
+                            <h2 class="title">Car Garage</h2>
+                            <figure class="image-box"><img src="images/resource/featured-image-6.jpg" alt=""></figure>
+                        </div>
+
+                        <!--Tab -->
+                        <div class="tab" id="swimming-pool">
+                            <h2 class="title">Swimming Pool</h2>
+                            <figure class="image-box"><img src="images/resource/featured-image-6.jpg" alt=""></figure>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </section>
 
-    <!--Properties Section-->
-    <section class="properties-section-two" style="width:75%; margin:auto;">
-        <div class="auto-container">
-            <!--Search Style One-->
-            <div class="search-style-one extended">
-                <div class="search-outer">
-                    <div class="form-box search-form">
-                        <form method="post" action="http://themexriver.com/shelter/property-grid.html">
-                            <div class="row clearfix">
-                                <!--Form Group-->
-                                <div class="form-group col-md-3 col-sm-6 col-xs-12">
-                                    <div class="field-title">Select Your</div>
-                                    <div class="field-inner">
-                                        <select class="custom-select-box">
-                                            <option>Location</option>
-                                            <option>Australia</option>
-                                            <option>United States</option>
-                                            <option>Russia</option>
-                                            <option>France</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <!--Form Group-->
-                                <div class="form-group col-md-3 col-sm-6 col-xs-12">
-                                    <div class="field-title">Select Your</div>
-                                    <div class="field-inner">
-                                        <select class="custom-select-box">
-                                            <option>Min Area</option>
-                                            <option>1000 ft2</option>
-                                            <option>1500 ft2</option>
-                                            <option>2000 ft2</option>
-                                            <option>5000 ft2</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <!--Form Group-->
-                                <div class="form-group col-md-3 col-sm-6 col-xs-12">
-                                    <div class="field-title">Price</div>
-                                    <div class="field-inner">
-                                        <select class="custom-select-box">
-                                            <option>$1000 - 10,000</option>
-                                            <option>$10,000 - $100,000</option>
-                                            <option>$100,000 - $1,000,000</option>
-                                            <option>$1,000,000 - $10,000,0000</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <!--Form Group-->
-                                <div class="form-group col-md-3 col-sm-6 col-xs-12">
-                                    <div class="field-title">&nbsp;</div>
-                                    <div class="field-inner text-right"><button class="theme-btn btn-style-one"><span class="icon fa fa-search"></span>Search</button></div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div><!--Search Style One-->
+    </div>
+</section>
 
-            <div class="search-title"><h3>Found 32 Properties for sell & rent</h3></div>
 
-            <!--Gallery Controls-->
-            <div class="gallery-controls clearfix">
-
-                <!--Layout-->
-                <div class="layout">
-                    <ul class="clearfix">
-                        <li><a class="active" href="property-list.html" title="List View"><span class="flaticon-interface"></span></a></li>
-                        <li><a href="property-grid.html" title="Grid View"><span class="flaticon-squares"></span></a></li>
-                    </ul>
-                </div>
-
-                <!--Filter-->
-                <div class="filters">
-                    <ul class="filter-tabs filter-btns clearfix">
-                        <li class="active filter" data-role="button" data-filter="all">All </li>
-                        <li class="filter" data-role="button" data-filter=".rent">Rent </li>
-                        <li class="filter" data-role="button" data-filter=".sell">Sell </li>
-                        <li class="filter" data-role="button" data-filter=".featured">Featured </li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="big-title"><h2>Sell & rent</h2></div>
-
-            <!--Column Header-->
-            <div class="column-header clearfix">
-                <div class="title-column">Property name</div>
-                <div class="type-column">Type</div>
-                <div class="info-column">Info</div>
-                <div class="price-column">Price</div>
-                <div class="link-column">&nbsp;</div>
-            </div>
-
-            <div class="filter-list">
-                @for (var i = 0; i < ViewBag.Project2.Count; i++)
-                {
-                    Project2 p2 = ViewBag.Project2[i];
-            <!--Property Block-->
-            <div class="property-block-list mix mix_all featured">
-                <div class="inner-box clearfix">
-                    <div class="title-column">
-                        <figure class="image"><a href="property-single.html"><img src="~/Public/images/gallery/@p2.Image" alt=""></a></figure>
-                        <h3><a href="property-single.html"><span class="theme_color">@p2.Name1</span> @p2.Name2</a></h3>
-                        <div class="location">@p2.Name3</div>
-                    </div>
-                    <div class="type-column">@p2.Type</div>
-
-                    <div class="info-column">
-                        <!--Specs List-->
-                        <ul class="specs-list clearfix">
-                            <li><div class="outer"><div class="icon"><span class="fa fa-expand"></span></div><div class="info">@p2.Ft</div></div></li>
-                            <li><div class="outer"><div class="icon"><span class="fa fa-bed"></span></div><div class="info">@p2.Bed</div></div></li>
-                            <li><div class="outer"><div class="icon"><span class="flaticon-shape"></span></div><div class="info">@p2.Bath</div></div></li>
-                            <li><div class="outer"><div class="icon"><span class="fa fa-car"></span></div><div class="info">@p2.Garage</div></div></li>
-                        </ul>
-                    </div>
-                    <div class="price-column">@p2.Price</div>
-                    <div class="link-column"><a href="property-single.html" class="read-more-link">Details</a></div>
-
-                </div>
-            </div>
-                }
-
-            </div>
-
-            <br>
-            <!-- Styled Pagination -->
-            <div class="styled-pagination text-left">
-                <ul>
-                    <li><a class="prev" href="#"><span class="fa fa-angle-double-left"></span></a></li>
-                    <li><a href="#" class="active">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a class="next" href="#"><span class="fa fa-angle-double-right"></span></a></li>
-                </ul>
-            </div>
-
+<!--Properties Section-->
+<section class="properties-section related-properties" style="width:75%; margin:auto;">
+    <div class="auto-container">
+        <!--Title Style One-->
+        <div class="title-style-one extended right-aligned">
+            <div class="title"><h2>Related Properties</h2></div>
+            <div class="sub-title">We take a broader, more holistic all </div>
         </div>
-    </section>
 
-    <!--Properties Section-->
-    <section class="properties-section related-properties" style="width:75%; margin:auto;">
-        <div class="auto-container">
-            <!--Title Style One-->
-            <div class="title-style-one extended right-aligned">
-                <div class="title"><h2>@ViewBag.Project3Head.Title</h2></div>
-                <div class="sub-title">@ViewBag.Project3Head.SubTitle </div>
-            </div>
-
-            <!--Carousel-->
-            <div class="properties-carousel three-items-carousel">
-                @for (var i = 0; i < ViewBag.Project3.Count; i++)
-                {
-                    Project3 p3 = ViewBag.Project3[i];
+        <!--Carousel-->
+        <div class="properties-carousel three-items-carousel">
             <!--Slide Item-->
             <div class="slide-item">
                 <!--Property Block-->
                 <div class="property-block-grid">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image"><a href="property-single.html"><img src="~/Public/images/resource/@p3.Image" alt=""></a></figure>
+                            <figure class="image"><a href="property-single.html"><img src="images/resource/featured-image-12.jpg" alt=""></a></figure>
                             <div class="ribbon">Sale</div>
                             <a href="property-single.html" class="read-more-link">Read More</a>
                         </div>
                         <div class="lower-content">
-                            <h3><a href="property-single.html">@p3.Title</a></h3>
-                            <div class="price">@p3.Price</div>
-                            <div class="desc-text">@p3.SubTitle</div>
+                            <h3><a href="property-single.html">Sharif Paradise, Daulatpur Khulna</a></h3>
+                            <div class="price">$52000</div>
+                            <div class="desc-text">But I must explain to you how all this idea view policy. </div>
                             <!--Specs List-->
                             <ul class="specs-list clearfix">
-                                <li><div class="outer"><div class="icon"><span class="fa fa-expand"></span></div><div class="info">@p3.Ft</div></div></li>
-                                <li><div class="outer"><div class="icon"><span class="fa fa-bed"></span></div><div class="info">@p3.Bed</div></div></li>
-                                <li><div class="outer"><div class="icon"><span class="flaticon-shape"></span></div><div class="info">@p3.Bath</div></div></li>
-                                <li><div class="outer"><div class="icon"><span class="fa fa-car"></span></div><div class="info">@p3.Garage</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-expand"></span></div><div class="info">1600 ft2</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-bed"></span></div><div class="info">3 Bed</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="flaticon-shape"></span></div><div class="info">2 Bath</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-car"></span></div><div class="info">Garage</div></div></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-                }
 
+            <!--Slide Item-->
+            <div class="slide-item">
+                <!--Property Block-->
+                <div class="property-block-grid">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><a href="property-single.html"><img src="images/resource/featured-image-13.jpg" alt=""></a></figure>
+                            <div class="ribbon">Rent</div>
+                            <a href="property-single.html" class="read-more-link">Read More</a>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href="property-single.html">Sharif Paradise, Daulatpur Khulna</a></h3>
+                            <div class="price">$52000</div>
+                            <div class="desc-text">But I must explain to you how all this idea view policy. </div>
+                            <!--Specs List-->
+                            <ul class="specs-list clearfix">
+                                <li><div class="outer"><div class="icon"><span class="fa fa-expand"></span></div><div class="info">1600 ft2</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-bed"></span></div><div class="info">3 Bed</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="flaticon-shape"></span></div><div class="info">2 Bath</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-car"></span></div><div class="info">Garage</div></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Slide Item-->
+            <div class="slide-item">
+                <!--Property Block-->
+                <div class="property-block-grid">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><a href="property-single.html"><img src="images/resource/featured-image-14.jpg" alt=""></a></figure>
+                            <div class="ribbon">Sold</div>
+                            <a href="property-single.html" class="read-more-link">Read More</a>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href="property-single.html">Sharif Paradise, Daulatpur Khulna</a></h3>
+                            <div class="price">$52000</div>
+                            <div class="desc-text">But I must explain to you how all this idea view policy. </div>
+                            <!--Specs List-->
+                            <ul class="specs-list clearfix">
+                                <li><div class="outer"><div class="icon"><span class="fa fa-expand"></span></div><div class="info">1600 ft2</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-bed"></span></div><div class="info">3 Bed</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="flaticon-shape"></span></div><div class="info">2 Bath</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-car"></span></div><div class="info">Garage</div></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Slide Item-->
+            <div class="slide-item">
+                <!--Property Block-->
+                <div class="property-block-grid">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><a href="property-single.html"><img src="images/resource/featured-image-12.jpg" alt=""></a></figure>
+                            <div class="ribbon">Sale</div>
+                            <a href="property-single.html" class="read-more-link">Read More</a>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href="property-single.html">Sharif Paradise, Daulatpur Khulna</a></h3>
+                            <div class="price">$52000</div>
+                            <div class="desc-text">But I must explain to you how all this idea view policy. </div>
+                            <!--Specs List-->
+                            <ul class="specs-list clearfix">
+                                <li><div class="outer"><div class="icon"><span class="fa fa-expand"></span></div><div class="info">1600 ft2</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-bed"></span></div><div class="info">3 Bed</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="flaticon-shape"></span></div><div class="info">2 Bath</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-car"></span></div><div class="info">Garage</div></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Slide Item-->
+            <div class="slide-item">
+                <!--Property Block-->
+                <div class="property-block-grid">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><a href="property-single.html"><img src="images/resource/featured-image-13.jpg" alt=""></a></figure>
+                            <div class="ribbon">Rent</div>
+                            <a href="property-single.html" class="read-more-link">Read More</a>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href="property-single.html">Sharif Paradise, Daulatpur Khulna</a></h3>
+                            <div class="price">$52000</div>
+                            <div class="desc-text">But I must explain to you how all this idea view policy. </div>
+                            <!--Specs List-->
+                            <ul class="specs-list clearfix">
+                                <li><div class="outer"><div class="icon"><span class="fa fa-expand"></span></div><div class="info">1600 ft2</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-bed"></span></div><div class="info">3 Bed</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="flaticon-shape"></span></div><div class="info">2 Bath</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-car"></span></div><div class="info">Garage</div></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Slide Item-->
+            <div class="slide-item">
+                <!--Property Block-->
+                <div class="property-block-grid">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><a href="property-single.html"><img src="images/resource/featured-image-14.jpg" alt=""></a></figure>
+                            <div class="ribbon">Sold</div>
+                            <a href="property-single.html" class="read-more-link">Read More</a>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href="property-single.html">Sharif Paradise, Daulatpur Khulna</a></h3>
+                            <div class="price">$52000</div>
+                            <div class="desc-text">But I must explain to you how all this idea view policy. </div>
+                            <!--Specs List-->
+                            <ul class="specs-list clearfix">
+                                <li><div class="outer"><div class="icon"><span class="fa fa-expand"></span></div><div class="info">1600 ft2</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-bed"></span></div><div class="info">3 Bed</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="flaticon-shape"></span></div><div class="info">2 Bath</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-car"></span></div><div class="info">Garage</div></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Slide Item-->
+            <div class="slide-item">
+                <!--Property Block-->
+                <div class="property-block-grid">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><a href="property-single.html"><img src="images/resource/featured-image-12.jpg" alt=""></a></figure>
+                            <div class="ribbon">Sale</div>
+                            <a href="property-single.html" class="read-more-link">Read More</a>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href="property-single.html">Sharif Paradise, Daulatpur Khulna</a></h3>
+                            <div class="price">$52000</div>
+                            <div class="desc-text">But I must explain to you how all this idea view policy. </div>
+                            <!--Specs List-->
+                            <ul class="specs-list clearfix">
+                                <li><div class="outer"><div class="icon"><span class="fa fa-expand"></span></div><div class="info">1600 ft2</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-bed"></span></div><div class="info">3 Bed</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="flaticon-shape"></span></div><div class="info">2 Bath</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-car"></span></div><div class="info">Garage</div></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Slide Item-->
+            <div class="slide-item">
+                <!--Property Block-->
+                <div class="property-block-grid">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><a href="property-single.html"><img src="images/resource/featured-image-13.jpg" alt=""></a></figure>
+                            <div class="ribbon">Rent</div>
+                            <a href="property-single.html" class="read-more-link">Read More</a>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href="property-single.html">Sharif Paradise, Daulatpur Khulna</a></h3>
+                            <div class="price">$52000</div>
+                            <div class="desc-text">But I must explain to you how all this idea view policy. </div>
+                            <!--Specs List-->
+                            <ul class="specs-list clearfix">
+                                <li><div class="outer"><div class="icon"><span class="fa fa-expand"></span></div><div class="info">1600 ft2</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-bed"></span></div><div class="info">3 Bed</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="flaticon-shape"></span></div><div class="info">2 Bath</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-car"></span></div><div class="info">Garage</div></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Slide Item-->
+            <div class="slide-item">
+                <!--Property Block-->
+                <div class="property-block-grid">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="image"><a href="property-single.html"><img src="images/resource/featured-image-14.jpg" alt=""></a></figure>
+                            <div class="ribbon">Sold</div>
+                            <a href="property-single.html" class="read-more-link">Read More</a>
+                        </div>
+                        <div class="lower-content">
+                            <h3><a href="property-single.html">Sharif Paradise, Daulatpur Khulna</a></h3>
+                            <div class="price">$52000</div>
+                            <div class="desc-text">But I must explain to you how all this idea view policy. </div>
+                            <!--Specs List-->
+                            <ul class="specs-list clearfix">
+                                <li><div class="outer"><div class="icon"><span class="fa fa-expand"></span></div><div class="info">1600 ft2</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-bed"></span></div><div class="info">3 Bed</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="flaticon-shape"></span></div><div class="info">2 Bath</div></div></li>
+                                <li><div class="outer"><div class="icon"><span class="fa fa-car"></span></div><div class="info">Garage</div></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
-    </section>
+
+    </div>
+</section>
 
 
 
-    <!--Subscribe Bar / Style Two-->
-    <section class="subscribe-bar style-two" style="width:75%; margin:auto;">
-    </section>
+<!--Subscribe Bar / Style Two-->
+<section class="subscribe-bar style-two" style="width:75%; margin:auto;">
+    <div class="info-box">Open: Sat-Sun 10.00am-8.00pm</div>
 
+    <div class="auto-container">
+        <div class="clearfix">
+            <div class="subscribe-title">Subscribe our Newsletter!</div>
+            <div class="subscribe-link"><a href="contact.html" class="theme-btn subscribe-btn"><span class="fa fa-paper-plane"></span> Subscribe Now</a></div>
+        </div>
+    </div>
+</section>
 
 
 

@@ -150,10 +150,28 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AboutUsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FootorsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LogController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PanelController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProjectsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StickersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserLogController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Admin\Models\ViewModel.cs" />
+    <Compile Include="Controllers\GridController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\SingleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AboutService.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AboutU.cs">
+      <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\db.Context.cs">
       <AutoGen>True</AutoGen>
@@ -170,45 +188,115 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Home1.cs">
+    <Compile Include="Models\Footor.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Home1Image.cs">
+    <Compile Include="Models\Project.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Home2.cs">
+    <Compile Include="Models\Project_Photo.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Home3.cs">
+    <Compile Include="Models\Room.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Home3Head.cs">
+    <Compile Include="Models\Room_Type.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Home4.cs">
+    <Compile Include="Models\Sell.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Home5.cs">
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Project1.cs">
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Project1Image.cs">
+    <Compile Include="Models\Sticker.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Project2.cs">
+    <Compile Include="Models\Stick_Photo.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Project3.cs">
+    <Compile Include="Models\Stick_Type.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Project3Head.cs">
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User_Type.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\_Public\css\atlas.css" />
+    <Content Include="Areas\Admin\_Public\css\bars.css" />
+    <Content Include="Areas\Admin\_Public\css\bootstrap-markdown.min.css" />
+    <Content Include="Areas\Admin\_Public\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\_Public\css\ccFileUpload.css" />
+    <Content Include="Areas\Admin\_Public\css\chocolat.css" />
+    <Content Include="Areas\Admin\_Public\css\clndr.css" />
+    <Content Include="Areas\Admin\_Public\css\fabochart.css" />
+    <Content Include="Areas\Admin\_Public\css\FileUpload\uploadfile.css" />
+    <Content Include="Areas\Admin\_Public\css\FileUpload\uploadfile.custom.css" />
+    <Content Include="Areas\Admin\_Public\css\font-awesome.css" />
+    <Content Include="Areas\Admin\_Public\css\icon-font.min.css" />
+    <Content Include="Areas\Admin\_Public\css\jqvmap.css" />
+    <Content Include="Areas\Admin\_Public\css\popuo-box.css" />
+    <Content Include="Areas\Admin\_Public\css\style.css" />
+    <Content Include="Areas\Admin\_Public\css\vroom.css" />
+    <Content Include="Areas\Admin\_Public\fonts\digital-7-webfont.svg" />
+    <Content Include="Areas\Admin\_Public\fonts\digital-7_italic-webfont.svg" />
+    <Content Include="Areas\Admin\_Public\fonts\digital-7_mono-webfont.svg" />
+    <Content Include="Areas\Admin\_Public\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\Admin\_Public\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\Admin\_Public\fonts\weathericons-regular-webfont.svg" />
+    <Content Include="Areas\Admin\_Public\images\admin.jpg" />
+    <Content Include="Areas\Admin\_Public\images\AdminPhoto.jpg" />
+    <Content Include="Areas\Admin\_Public\js\amcharts.js" />
+    <Content Include="Areas\Admin\_Public\js\arbor.js" />
+    <Content Include="Areas\Admin\_Public\js\atlas.js" />
+    <Content Include="Areas\Admin\_Public\js\barChart.jquery.js" />
+    <Content Include="Areas\Admin\_Public\js\bootstrap-markdown.js" />
+    <Content Include="Areas\Admin\_Public\js\bootstrap.min.js" />
+    <Content Include="Areas\Admin\_Public\js\cbpFWTabs.js" />
+    <Content Include="Areas\Admin\_Public\js\ccFileUpload.js" />
+    <Content Include="Areas\Admin\_Public\js\Chart-pie.js" />
+    <Content Include="Areas\Admin\_Public\js\Chart.js" />
+    <Content Include="Areas\Admin\_Public\js\clndr.js" />
+    <Content Include="Areas\Admin\_Public\js\css3clock.js" />
+    <Content Include="Areas\Admin\_Public\js\CSSPlugin.min.js" />
+    <Content Include="Areas\Admin\_Public\js\datamaps-all.js" />
+    <Content Include="Areas\Admin\_Public\js\dygraph-combined.js" />
+    <Content Include="Areas\Admin\_Public\js\fabochart.js" />
+    <Content Include="Areas\Admin\_Public\js\FileUpload\jquery.uploadfile.js" />
+    <Content Include="Areas\Admin\_Public\js\FileUpload\jquery.uploadfile.min.js" />
+    <Content Include="Areas\Admin\_Public\js\jquery-1.10.2.min.js" />
+    <Content Include="Areas\Admin\_Public\js\jquery.chocolat.js" />
+    <Content Include="Areas\Admin\_Public\js\jquery.nicescroll.js" />
+    <Content Include="Areas\Admin\_Public\js\jquery.vmap.js" />
+    <Content Include="Areas\Admin\_Public\js\jquery.vmap.sampledata.js" />
+    <Content Include="Areas\Admin\_Public\js\jquery.vmap.world.js" />
+    <Content Include="Areas\Admin\_Public\js\light.js" />
+    <Content Include="Areas\Admin\_Public\js\map.js" />
+    <Content Include="Areas\Admin\_Public\js\modernizr.custom.04022.js" />
+    <Content Include="Areas\Admin\_Public\js\moment-2.2.1.js" />
+    <Content Include="Areas\Admin\_Public\js\protovis-d3.2.js" />
+    <Content Include="Areas\Admin\_Public\js\radar.js" />
+    <Content Include="Areas\Admin\_Public\js\responsiveslides.min.js" />
+    <Content Include="Areas\Admin\_Public\js\script.js" />
+    <Content Include="Areas\Admin\_Public\js\scripts.js" />
+    <Content Include="Areas\Admin\_Public\js\serial.js" />
+    <Content Include="Areas\Admin\_Public\js\site.js" />
+    <Content Include="Areas\Admin\_Public\js\skycons.js" />
+    <Content Include="Areas\Admin\_Public\js\TweenLite.min.js" />
+    <Content Include="Areas\Admin\_Public\js\underscore-min.js" />
+    <Content Include="Areas\Admin\_Public\js\vix.js" />
+    <Content Include="Areas\Admin\_Public\js\vroom.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -217,8 +305,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\db.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>db.Context.cs</LastGenOutput>
       <DependentUpon>db.edmx</DependentUpon>
+      <LastGenOutput>db.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\db.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -344,7 +432,7 @@
     <Content Include="Public\images\resource\author-thumb-2.jpg" />
     <Content Include="Public\images\resource\blog-image-1.1.jpg" />
     <Content Include="Public\images\resource\blog-image-1.JPG" />
-    <Content Include="Public\images\resource\blog-image-10.jpg" />
+    <Content Include="Public\images\gallery\blog-image-10.jpg" />
     <Content Include="Public\images\resource\blog-image-11.jpg" />
     <Content Include="Public\images\resource\blog-image-12.jpg" />
     <Content Include="Public\images\resource\blog-image-13.jpg" />
@@ -440,6 +528,38 @@
     <Content Include="Public\fonts\revicons90c690c6.eot" />
     <Content Include="Public\fonts\revicons90c690c6.ttf" />
     <Content Include="Public\fonts\revicons90c690c6.woff" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\_Public\fonts\digital-7-webfont.eot" />
+    <Content Include="Areas\Admin\_Public\fonts\digital-7-webfont.ttf" />
+    <Content Include="Areas\Admin\_Public\fonts\digital-7-webfont.woff" />
+    <Content Include="Areas\Admin\_Public\fonts\digital-7_italic-webfont.eot" />
+    <Content Include="Areas\Admin\_Public\fonts\digital-7_italic-webfont.ttf" />
+    <Content Include="Areas\Admin\_Public\fonts\digital-7_italic-webfont.woff" />
+    <Content Include="Areas\Admin\_Public\fonts\digital-7_mono-webfont.eot" />
+    <Content Include="Areas\Admin\_Public\fonts\digital-7_mono-webfont.ttf" />
+    <Content Include="Areas\Admin\_Public\fonts\digital-7_mono-webfont.woff" />
+    <Content Include="Areas\Admin\_Public\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Admin\_Public\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\Admin\_Public\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\Admin\_Public\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\_Public\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Admin\_Public\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Areas\Admin\_Public\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Admin\_Public\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\Admin\_Public\fonts\weathericons-regular-webfont.eot" />
+    <Content Include="Areas\Admin\_Public\fonts\weathericons-regular-webfont.ttf" />
+    <Content Include="Areas\Admin\_Public\fonts\weathericons-regular-webfont.woff" />
+    <Content Include="Areas\Admin\Views\Panel\ViewPanel.cshtml" />
+    <Content Include="Areas\Admin\Views\Log\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Footors\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Footors\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AboutUs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Projects\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Projects\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Projects\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Projects\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AboutUs\Edit.cshtml" />
     <EntityDeploy Include="Models\db.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>db.Designer.cs</LastGenOutput>
@@ -447,6 +567,15 @@
     <Content Include="Models\db.edmx.diagram">
       <DependentUpon>db.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\Stickers\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Stickers\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Stickers\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Stickers\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\UserLog\UserLog.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -471,9 +600,14 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Project\Project.cshtml" />
+    <Content Include="Views\Grid\Grid.cshtml" />
+    <Content Include="Views\Single\Single.cshtml" />
+    <Content Include="Views\Shared\AdminLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\ViewModel\" />
+    <Folder Include="Views\_Layout\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

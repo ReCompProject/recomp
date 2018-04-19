@@ -1,0 +1,95 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Blog Home - Start Bootstrap Template</title>
+    <!-- Bootstrap core CSS -->
+    <link href="~/Areas/Admin/_Public/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="~/Public/css/blog-home.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link href="~/Areas/Admin/_Public/css/ccFileUpload.css" rel="stylesheet">
+    <link href="~/Areas/Admin/_Public/css/FileUpload/uploadfile.css" rel="stylesheet">
+    <link href="~/Areas/Admin/_Public/css/FileUpload/uploadfile.custom.css" rel="stylesheet">
+    <link href="~/Areas/Admin/_Public/css/style.css" rel="stylesheet">
+
+
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $(window).scroll(function () {
+                if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                    sendData();
+                }
+            });
+
+            function sendData() {
+                $.ajax(
+                    {
+                        type: "POST",
+                        url: "ScrollTest.aspx/GetData",
+                        data: "{}",
+                        contentType: "application/json",
+                        charset="utf - 8",
+                        dataType: "json",
+                        async: "true",
+                        cache: "false",
+
+                        success: function (msg) {
+                            $("#myDiv").append(msg.d);
+                        },
+
+                        Error: function (x, e) {
+                            alert("Some error");
+                        }
+                    });
+            }
+        });
+
+    </script>
+
+
+
+</head>
+<body>
+    <form id="form1">
+
+        <div id="myDiv" style="margin:80px;">
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <div class="container">
+                    <a class="navbar-brand" href="#">REcomp</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                    </div>
+                </div>
+            </nav>
+
+
+
+            <script src="~/Public/vendor/jquery/jquery.min.js"></script>
+            <script src="~/Public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+            <script src="~/Areas/Admin/_Public/js/ccFileUpload.js"></script>
+            <script src="~/Areas/Admin/_Public/js/FileUpload/jquery.uploadfile.js"></script>
+            <script src="~/Areas/Admin/_Public/js/FileUpload/jquery.uploadfile.min.js"></script>
+            <script src="~/Areas/Admin/_Public/js/script.js"></script>
+
+
+
+        </div>
+
+    </form>
+    @RenderBody()
+    <div class="end" style="height:50px; width:auto;"></div>
+</body>
+</html>

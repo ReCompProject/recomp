@@ -1,0 +1,50 @@
+﻿@model ReComp.Models.Footor
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2 style="margin-top:75px; margin-left:20px;">Əlaqə</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th></th>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.SubTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Mail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => Model.Address)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id= Model.Id }) |
+        </td>
+    </tr>
+
+</table>

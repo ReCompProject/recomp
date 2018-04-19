@@ -1,0 +1,55 @@
+﻿@using ReComp.Models
+@model ReComp.Areas.Admin.Controllers.ViewModelProject
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container margin-huseyin">
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    @foreach (var item in Model.PProject)
+    {
+
+    <div class="border-agshin">
+        <div>
+            <h1>@Html.DisplayNameFor(model => model.TheProject.Name)</h1>
+            <p>
+                @Html.DisplayFor(modelItem => item.Name)
+            </p>
+            <h1>@Html.DisplayNameFor(model => model.TheProject.Year)</h1>
+            <p>
+                @Html.DisplayFor(modelItem => item.Year)
+            </p>
+            <h1>@Html.DisplayNameFor(model => model.TheProject.Short_İnfo)</h1>
+            <p>
+                @Html.DisplayFor(modelIitem => item.Short_İnfo)
+            </p>
+            <h1>@Html.DisplayNameFor(model => model.TheProject.Long_İnfo)</h1>
+            <p>
+                @Html.DisplayFor(modelItem => item.Long_İnfo)
+            </p>
+            <h1>Photos</h1>
+            @foreach (var itemPhoto in Model.PProject_Photo)
+    {
+
+        if (itemPhoto.Project_İD == item.İD)
+        {
+            <img style="width:100px;" src="~/Public/images/resource/@itemPhoto.Link" />
+}
+
+}
+        </div>
+        <div >
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.İD }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.İD })
+            </td>
+        </div>
+    </div>
+
+     }
+
+    </div>
