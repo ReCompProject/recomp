@@ -18,22 +18,18 @@
                 <div class="product-carousel-outer">
                     <!--Product image Carousel-->
                     <ul class="prod-image-carousel">
-                        <li><figure class="image"><a class="lightbox-image option-btn" data-fancybox-group="example-gallery" href="images/resource/products/image-1.jpg" title="Image Title Here"><img src="images/resource/products/image-1.jpg" alt=""></a></figure></li>
-                        <li><figure class="image"><a class="lightbox-image option-btn" data-fancybox-group="example-gallery" href="images/resource/products/image-2.jpg" title="Image Title Here"><img src="images/resource/products/image-2.jpg" alt=""></a></figure></li>
-                        <li><figure class="image"><a class="lightbox-image option-btn" data-fancybox-group="example-gallery" href="images/resource/products/image-3.jpg" title="Image Title Here"><img src="images/resource/products/image-3.jpg" alt=""></a></figure></li>
-                        <li><figure class="image"><a class="lightbox-image option-btn" data-fancybox-group="example-gallery" href="images/resource/products/image-4.jpg" title="Image Title Here"><img src="images/resource/products/image-4.jpg" alt=""></a></figure></li>
-                        <li><figure class="image"><a class="lightbox-image option-btn" data-fancybox-group="example-gallery" href="images/resource/products/image-2.jpg" title="Image Title Here"><img src="images/resource/products/image-2.jpg" alt=""></a></figure></li>
-                        <li><figure class="image"><a class="lightbox-image option-btn" data-fancybox-group="example-gallery" href="images/resource/products/image-3.jpg" title="Image Title Here"><img src="images/resource/products/image-3.jpg" alt=""></a></figure></li>
+                        @foreach (Stick_Photo photo in ViewBag.sticphoto)
+                        {
+                            <li><figure class="image"><a class="lightbox-image option-btn" data-fancybox-group="example-gallery" href="@photo.Name" title="Image Title Here"><img src="@photo.Name" alt=""></a></figure></li>
+                        }
                     </ul>
 
                     <!--Product Thumbs Carousel-->
                     <div class="prod-thumbs-carousel">
-                        <div class="thumb-item"><figure class="thumb-box"><img src="images/resource/products/prod-thumb-1.png" alt=""></figure></div>
-                        <div class="thumb-item"><figure class="thumb-box"><img src="images/resource/products/prod-thumb-2.jpg" alt=""></figure></div>
-                        <div class="thumb-item"><figure class="thumb-box"><img src="images/resource/products/prod-thumb-3.jpg" alt=""></figure></div>
-                        <div class="thumb-item"><figure class="thumb-box"><img src="images/resource/products/prod-thumb-4.jpg" alt=""></figure></div>
-                        <div class="thumb-item"><figure class="thumb-box"><img src="images/resource/products/prod-thumb-2.jpg" alt=""></figure></div>
-                        <div class="thumb-item"><figure class="thumb-box"><img src="images/resource/products/prod-thumb-3.jpg" alt=""></figure></div>
+                        @foreach (Stick_Photo photo in ViewBag.sticphoto)
+                        {
+                            <div class="thumb-item"><figure class="thumb-box"><img src="@photo.Name" alt=""></figure></div>
+                        }
                     </div>
 
                 </div><!--End Product Carousel-->
@@ -42,34 +38,17 @@
             <div class="right-column col-md-6 col-sm-12 col-xs-12">
                 <!--Title Style One-->
                 <div class="title-style-one extended left-aligned">
-                    <div class="title"><h2>Property Overview</h2></div>
-                    <div class="sub-title">We take a broader, more holistic all </div>
+                    <div class="title"><h2>@ViewBag.sticker.Name</h2></div>
                 </div>
 
                 <div class="content">
-                    <div class="text">But I must explain you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system.</div>
+                    <div class="text">@ViewBag.sticker.Short_info</div>
 
                     <div class="row clearfix">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <ul class="list-style-one">
-                                <li>Right choice</li>
-                                <li>Help to find your dream</li>
-                                <li>24 hours support</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <ul class="list-style-one">
-                                <li>Unlimited consultation</li>
-                                <li>Choice from other cities</li>
-                                <li>World wide business</li>
-                            </ul>
-                        </div>
+                        <p>@ViewBag.sticker.Long_Info</p>
                     </div>
-                    <div class="big-title"><h2>Property Details</h2></div>
 
-                    <div class="links">
-                        <a href="#" class="theme-btn btn-style-two"><span class="fa fa-paper-plane"></span>&ensp; Book Now</a>
-                    </div>
+
                 </div>
             </div><!--Right Column-->
         </div>
@@ -89,46 +68,21 @@
                     <div class="inner">
                         <!--Tab Buttons-->
                         <div class="tab-buttons">
+                            @foreach (Room_Type rmtype in ViewBag.roomtype) {
 
-                            <div class="tab-btn active-btn" data-tab="#kitchen">
-                                <div class="btn-title"><span>Mətbəxt</span></div>
+                            <div class="tab-btn" data-tab="#@rmtype.Name ">
+                                <div class="btn-title"><span>@rmtype.Name</span></div>
                                 <ul class="styled-list-two">
-                                    <li>Sahəsi: 30 kv.m</li>
-                                    <li>Balkon: 9,06 kv.m</li>
-                                </ul>
-                            </div>
+                                    @foreach (Room rm in ViewBag.rooms) {
 
-                            <div class="tab-btn" data-tab="#second-floor">
-                                <div class="btn-title"><span>Yataq Otaqları</span></div>
-                                <ul class="styled-list-two">
-                                    <li>1 - ci otaq: 18 kv.m</li>
-                                    <li>2 - ci otaq: 15,22 kv.m</li>
-                                    <li>3 - cü otaq: 23 kv.m</li>
-                                    <li>4 - cü otaq: 17,14 kv.m</li>
-                                    <li>5 - ci otaq: 27,12 kv.m</li>
+                                        if (rm.Stick_İD == ViewBag.sticker.İD && rm.Type_İD == rmtype.İD) {
+                                            <li>Sahəsi: @rm.Area kv.m</li>
+                                        }
+                                    }
                                 </ul>
+                                
                             </div>
-
-                            <div class="tab-btn" data-tab="#ground-floor">
-                                <div class="btn-title"><span>Salon</span></div>
-                                <ul class="styled-list-two">
-                                    <li>Sahəsi: 47 kv.m</li>
-                                </ul>
-                            </div>
-
-                            <div class="tab-btn" data-tab="#exterior-room">
-                                <div class="btn-title"><span>Holl</span></div>
-                                <ul class="styled-list-two">
-                                    <li>Sahəsi: 32,37 kv.m</li>
-                                </ul>
-                            </div>
-
-                            <div class="tab-btn" data-tab="#car-garage">
-                                <div class="btn-title"><span>Dəhliz</span></div>
-                                <ul class="styled-list-two">
-                                    <li>Sahəsi: 14,36 kv.m</li>
-                                </ul>
-                            </div>
+                            }
 
                             <!-- <div class="tab-btn" data-tab="#swimming-pool">
                                 <div class="btn-title"><span>Swimming</span> Pool</div>
@@ -138,8 +92,12 @@
 
                         <!--Thumbs-->
                         <div class="thumbs">
-                            <figure class="thumb"><img src="images/resource/featured-thumb-1.jpg" alt=""></figure>
-                            <figure class="thumb"><img src="images/resource/featured-thumb-2.jpg" alt=""></figure>
+                            @if (ViewBag.sxem != null) {
+                                foreach (Stick_sxem sxem in ViewBag.sxem) {
+                                    <figure class="thumb"><img src="@sxem.Name " alt=""></figure>
+                                }
+                            }
+                            
                         </div>
                     </div>
                 </div>
@@ -149,38 +107,37 @@
                     <div class="tabs-content">
                         <!--Tab / Active Tab-->
                         <div class="tab active-tab" id="kitchen">
-                            <h2 class="title">1st Floor</h2>
-                            <figure class="image-box"><img src="images/resource/featured-image-6.jpg" alt=""></figure>
+                            <h2 class="title">Certiyojlar</h2>
+                            <figure class="image-box"><img src="@ViewBag.sxem(0).Name" alt=""></figure>
                             <!--Specs Listing-->
                             <div class="specs-listing">
-                                <!-- <div class="row clearfix"> -->
-                                <!--Spect COlumn-->
-                                <!-- <div class="spec-column col-md-4 col-sm-4 col-xs-12">
-                                    <h3><span class="icon flaticon-double-king-size-bed"></span> Bedrooms</h3>
-                                    <ul>
-                                        <li><strong>3</strong> Double Bedrooms</li>
-                                        <li><strong>3</strong> Single Bed Rooms</li>
-                                    </ul>
-                                </div> -->
-                                <!--Spect COlumn-->
-                                <!-- <div class="spec-column col-md-4 col-sm-4 col-xs-12">
-                                    <h3><span class="icon flaticon-bathtub"></span> Bathrooms</h3>
-                                    <ul>
-                                        <li><strong>3</strong> Double Bedrooms</li>
-                                        <li><strong>3</strong> Single Bed Rooms</li>
-                                    </ul>
-                                </div> -->
-                                <!--Spect COlumn-->
-                                <!-- <div class="spec-column col-md-4 col-sm-4 col-xs-12">
-                                    <h3><span class="icon fa fa-car"></span> Garage / Parking</h3>
-                                    <ul>
-                                        <li>Street parking</li>
-                                        <li><strong>Non</strong> Street Parking</li>
-                                    </ul>
-                                </div> -->
-                                <!-- </div> -->
+                                <div class="row clearfix">
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3><span class="icon flaticon-double-king-size-bed"></span> Bedrooms</h3>
+                                        <ul>
+                                            <li><strong>3</strong> Double Bedrooms</li>
+                                            <li><strong>3</strong> Single Bed Rooms</li>
+                                        </ul>
+                                    </div>
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3><span class="icon flaticon-bathtub"></span> Bathrooms</h3>
+                                        <ul>
+                                            <li><strong>3</strong> Double Bedrooms</li>
+                                            <li><strong>3</strong> Single Bed Rooms</li>
+                                        </ul>
+                                    </div>
+                                    <!--Spect COlumn-->
+                                    <div class="spec-column col-md-4 col-sm-4 col-xs-12">
+                                        <h3><span class="icon fa fa-car"></span> Garage / Parking</h3>
+                                        <ul>
+                                            <li>Street parking</li>
+                                            <li><strong>Non</strong> Street Parking</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-
                             <!--End Specs Listing-->
 
                         </div>
@@ -217,7 +174,8 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div><!--End Specs Listing-->
+                            </div>
+                            <!--End Specs Listing-->
                         </div>
 
                         <!--Tab -->

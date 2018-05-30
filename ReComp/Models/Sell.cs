@@ -18,6 +18,10 @@ namespace ReComp.Models
         public string Name { get; set; }
         public Nullable<int> Stick_ID { get; set; }
         public Nullable<int> Users_Id { get; set; }
+        public Nullable<bool> Old_Status { get; set; }
+        public Nullable<bool> New_Status { get; set; }
+        public string Price { get; set; }
+        public Nullable<System.DateTime> Sell_time { get; set; }
     
         public virtual Sticker Sticker { get; set; }
         public virtual User User { get; set; }

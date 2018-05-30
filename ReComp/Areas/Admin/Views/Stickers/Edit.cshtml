@@ -7,127 +7,342 @@
 }
 
 <h2>Edit</h2>
-
-
-@using (Html.BeginForm())
+@if (!User.IsInRole("Administrator") && Model.TheSticker.Status == false)
 {
+    <form method="post" action="/Admin/Stickers/StickerSell">
+        <input type="hidden" value="@Model.TheSticker.İD" name="model.TheSticker.İD" />
+        <input type="hidden" value="True" name="model.TheSticker.Status" />
+        @*<input type="hidden" value="@Model.TheSticker.Price" />
+            <input type="hidden" value="@Model.TheSticker.Short_info" />
+            <input type="hidden" value="@Model.TheSticker.Long_Info" />
+            <input type="hidden" value="@Model.TheSticker.Type_İD" />
+            <input type="hidden" value="@Model.TheSticker.Project_İD" />
+            <input type="hidden" value="@Model.TheSticker.Area" />
+            <input type="hidden" value="@Model.TheSticker.GarageStatus" />*@
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <div class="checkbox">
+                    Qeyd: <input type="text" name="name" />
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="Satmaq" />
+    </form>
+}
+<br />
+<form method="post" enctype="multipart/form-data">
+
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4>Sticker</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.TheSticker.İD)
+    <div class="form-horizontal">
+        <h4>Sticker</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.TheSticker.İD)
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.TheSticker.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.TheSticker.Name, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.TheSticker.Name, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.TheSticker.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TheSticker.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TheSticker.Name, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.TheSticker.Price, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.TheSticker.Price, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.TheSticker.Price, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.TheSticker.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TheSticker.Price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TheSticker.Price, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.TheSticker.Short_info, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.TheSticker.Short_info, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.TheSticker.Short_info, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.TheSticker.Short_info, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TheSticker.Short_info, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TheSticker.Short_info, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.TheStick_Type.İD, "Type_İD", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <select name="type">
-                @foreach (var St in Model.SStick_Type)
+        <div class="form-group">
+            @Html.LabelFor(model => model.TheSticker.Long_Info, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TheSticker.Long_Info, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TheSticker.Long_Info, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TheStick_Type.İD, "Type_İD", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select name="type">
+                    @foreach (var St in Model.SStick_Type)
                 {
                     if (Model.TheSticker.Type_İD == St.İD)
                     {
-                        <option  selected value="@St.İD">
+                        <option selected value="@St.İD">
                             @St.Name
                         </option>
-                    }
-                    else
-                    {
-                        <option value="@St.İD">
-                            @St.Name
-                        </option>
-                    }
                 }
-            </select>
+                else
+                {
+                    <option value="@St.İD">
+                        @St.Name
+                    </option>
+            }
+        }
+                </select>
 
-            @Html.ValidationMessageFor(model => model.TheSticker.Type_İD, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.TheSticker.Type_İD, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.TheProject.İD, "Project_İD", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <select name="prtype">
-                @foreach (var Pp in Model.PProject)
+        <div class="form-group">
+            @Html.LabelFor(model => model.TheProject.İD, "Project_İD", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select name="prtype">
+                    @foreach (var Pp in Model.PProject)
                 {
                     if (Model.TheSticker.Project_İD == Pp.İD)
                     {
-                        <option  selected value="@Pp.İD">
+                        <option selected value="@Pp.İD">
                             @Pp.Name
                         </option>
-                    }
-                    else
-                    {
-                        <option  value="@Pp.İD">
-                            @Pp.Name
-                        </option>
-                    }
                 }
-            </select>
+                else
+                {
+                    <option value="@Pp.İD">
+                        @Pp.Name
+                    </option>
+            }
+        }
+                </select>
 
-            @Html.ValidationMessageFor(model => model.TheSticker.Project_İD, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.TheSticker.Area, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.TheSticker.Area, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.TheSticker.Area, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.TheSticker.GarageStatus, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.TheSticker.GarageStatus)
-                @Html.ValidationMessageFor(model => model.TheSticker.GarageStatus, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.TheSticker.Project_İD, "", new { @class = "text-danger" })
             </div>
         </div>
-    </div>
 
-    <div class="form-group" style="display:none">
-        @Html.LabelFor(model => model.TheSticker.Status, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.TheSticker.Status)
-                @Html.ValidationMessageFor(model => model.TheSticker.Status, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.TheSticker.Area, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TheSticker.Area, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TheSticker.Area, "", new { @class = "text-danger" })
             </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
+        <div class="form-group">
+            @Html.LabelFor(model => model.TheSticker.GarageStatus, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.TheSticker.GarageStatus)
+                    @Html.ValidationMessageFor(model => model.TheSticker.GarageStatus, "", new { @class = "text-danger" })
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+        <br />
+        @if (User.IsInRole("Administrator"))
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.TheSticker.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.TheSticker.Status)
+                    @Html.ValidationMessageFor(model => model.TheSticker.Status, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
 }
+
+
+
+
+
+        @if (!User.IsInRole("User"))
+    {
+        <div class="form-group photo">
+            @Html.TextBoxFor(model => model.fileModels.files, "", new { @type = "file", @multiple = "multiple" })
+        </div>
+    foreach (var Pf in Model.TheSticker.Stick_Photo)
+    {
+        <div class="form-group">
+            @if (!User.IsInRole("User"))
+        {
+            <a href="/Admin/Stickers/DeletePhoto?photoId=@Pf.İD&&stickerId=@Model.TheSticker.İD" class="btn btn-sm">Delete</a>
+    }
+            <div class="col-md-4">
+                @Html.EditorFor(model => Pf.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => Pf.Name, "", new { @class = "text-danger" })
+                <img src="@Pf.Name" />
+            </div>
+        </div>
+}
+}
+    @*<div id="dropArea">
+            Drop your files here
+        </div>
+        <h4>Uploaded files : </h4>
+        <ul class="list-group" id="uploadList"></ul>
+
+        <style>
+            #dropArea {
+                background: #b5b5b5;
+                border: black dashed 1px;
+                height: 50px;
+                text-align: center;
+                color: #fff;
+                padding-top: 12px;
+            }
+
+            .active-drop {
+                background: #77bafa !important;
+                border: solid 2px blue !important;
+                opacity: .5;
+                color: black !important;
+            }
+        </style>
+    }
+    @foreach (var Pf in Model.TheSticker.Stick_Photo)
+    {
+        <div class="form-group">
+            @if (!User.IsInRole("User"))
+            {
+                <a href="/Admin/Stickers/DeletePhoto?photoId=@Pf.İD&&stickerId=@Model.TheSticker.İD" class="btn btn-sm">Delete</a>
+            }
+            <div class="col-md-4">
+                @Html.EditorFor(model => Pf.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => Pf.Name, "", new { @class = "text-danger" })
+                <img src="@Pf.Name" />
+            </div>
+        </div>
+    }*@
+    @*Bu sxem bolmesidir*@
+        <h1>Sxemler</h1>
+        @if (!User.IsInRole("User"))
+    {
+        <div class="form-group photo">
+            @Html.TextBoxFor(model => model.fileModelsxem.files, "", new { @type = "file", @multiple = "multiple" })
+        </div>
+}
+        @foreach (var Ps in Model.TheSticker.Stick_sxem)
+    {
+        <div class="form-group">
+            @if (!User.IsInRole("User"))
+        {
+            <a href="/Admin/Stickers/DeleteSxem?sxemId=@Ps.Id&&stickerId=@Model.TheSticker.İD" class="btn btn-sm">Delete</a>
+    }
+            <div class="col-md-4">
+                @Html.EditorFor(model => Ps.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => Ps.Name, "", new { @class = "text-danger" })
+                <img src="@Ps.Name" />
+            </div>
+        </div>
+}
+        @*<div id="dropArea2">
+                Drop your files here
+            </div>
+            <h4>Uploaded files : </h4>
+            <ul class="list-group" id="uploadListS"></ul>
+
+            <style>
+                #dropArea2 {
+                    background: #b5b5b5;
+                    border: black dashed 1px;
+                    height: 50px;
+                    text-align: center;
+                    color: #fff;
+                    padding-top: 12px;
+                }
+
+                .active-drop {
+                    background: #77bafa !important;
+                    border: solid 2px blue !important;
+                    opacity: .5;
+                    color: black !important;
+                }
+            </style>
+        }
+        @foreach (var Ps in Model.TheSticker.Stick_sxem)
+        {
+            <div class="form-group">
+                @if (!User.IsInRole("User"))
+                {
+                    <a href="/Admin/Stickers/DeleteSxem?SxemId=@Ps.Id&&stickerId=@Model.TheSticker.İD" class="btn btn-sm">Delete</a>
+                }
+                <div class="col-md-4">
+                    @Html.EditorFor(model => Ps.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => Ps.Name, "", new { @class = "text-danger" })
+                    <img src="@Ps.Name" />
+                </div>
+            </div>
+        }*@
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
 
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+@*@section Scripts{
+        <script src="~/Scripts/jquery.filedrop.js"></script>
+        <script type="text/javascript">
+                    $(function () {
+                $('#dropArea').filedrop({
+                    url: '@Url.Action("AddPhoto")',
+                    allowedfiletypes: ['image/jpeg', 'image/png', 'image/gif'],
+                    allowedfileextensions: ['.jpg', '.jpeg', '.png', '.gif'],
+                    paramname: 'file',
+                    maxfiles: 7,
+                    maxfilesize: 25, // in MB
+                    dragOver: function () {
+                        $('#dropArea').addClass('active-drop');
+                    },
+                    dragLeave: function () {
+                        $('#dropArea').removeClass('active-drop');
+                    },
+                    drop: function () {
+                        $('#dropArea').removeClass('active-drop');
+                    },
+                    afterAll: function (e) {
+                        $('#dropArea').html('file(s) uploaded successfully');
+                    },
+                    uploadFinished: function (i, file, response, time) {
+                        $('#uploadList').append('<li class="list-group-item">' + file.name + '</li>' + '<br>' +
+                            '<img style="width:100px; height:100px;" src="/Public/images/sticker/' +file.name+'" />')
+                    }
+                })
+
+                $('#dropArea2').filedrop({
+                    url: '@Url.Action("AddSxem")',
+                    allowedfiletypes: ['image/jpeg', 'image/png', 'image/gif'],
+                    allowedfileextensions: ['.jpg', '.jpeg', '.png', '.gif'],
+                    paramname: 'file',
+                    maxfiles: 7,
+                    maxfilesize: 25, // in MB
+                    dragOver: function () {
+                        $('#dropArea2').addClass('active-drop');
+                    },
+                    dragLeave: function () {
+                        $('#dropArea2').removeClass('active-drop');
+                    },
+                    drop: function () {
+                        $('#dropArea2').removeClass('active-drop');
+                    },
+                    afterAll: function (e) {
+                        $('#dropArea2').html('file(s) uploaded successfully');
+                    },
+                    uploadFinished: function (i, file, response, time) {
+                        $('#uploadListS').append('<li class="list-group-item">' + file.name + '</li>' + '<br>' +
+                            '<img style="width:100px; height:100px;" src="/Public/images/sxem/' +file.name+'" />')
+                    }
+                })
+            })
+        </script>
+    }*@

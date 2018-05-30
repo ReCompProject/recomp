@@ -1,0 +1,36 @@
+﻿@model ReComp.Areas.Admin.Controllers.ViewModelProject
+@using ReComp.Models
+
+@{
+    ViewBag.Title = "Service";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Service</h2>
+
+<form method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>Project Services</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(modelt => modelt.TheProject.İD)        
+        <div class="form-group">
+            @Html.LabelFor(model => model.TheProject_Service.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+            @*@Html.EditorFor(model => model.TheProject_Service.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TheProject_Service.Name, "", new { @class = "text-danger" })*@
+                <input name="serviceName" /> 
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create Service" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -17,7 +17,7 @@ namespace ReComp.Areas.Admin
             context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { controller="Log", action = "Login", id = UrlParameter.Optional }
             );
         }
     }

@@ -1,0 +1,15 @@
+﻿@model ReComp.Models.Room_Type
+
+@{
+    ViewBag.Title = "CreateRoomType";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>CreateRoomType</h2>
+<form action="/Admin/Room/CreateEditRoomType" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="İD" value="@Model.İD" />
+    <input type="text" name="Name" value="@Model.Name" />
+    <button type="submit">Submit</button>
+</form>
+<a href="/Admin/Stickers/">Index</a>

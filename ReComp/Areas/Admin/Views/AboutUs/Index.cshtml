@@ -2,8 +2,10 @@
 @model ReComp.Areas.Admin.Controllers.ViewModelAbout
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/AdminLayout.cshtml";
+                /**/
+
+                ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
 
@@ -26,23 +28,36 @@
     <p>
         @Html.DisplayFor(model => model.TheAboutU.SubTittle)
     </p>
-    <p class="container ">
-        @Html.ActionLink("Yeni Xidmət Əlavə Etmək", "CreateAboutServic")
-    </p>
-    <h1 class="h3 glyphicon-blackboard">
-        Xidmətlərimiz
-    </h1>
-    @foreach (var item in Model.AAboutService)
-    {
 
-        <p>
-            @Html.DisplayFor(modelItem => item.Name)
+    @Html.LabelFor(model => model.TheAboutService.Name, "Xidmətlərimiz:", htmlAttributes: new { @class = "control-label col-md-2" })
+    <br />
+    <br />
+    <div class="col-md-10">
+        @foreach (var item in Model.AAboutService)
+        {
+            <p>@item.Name</p>
+        }
+        @*<p class="container ">
+                @Html.ActionLink("Yeni Xidmət Əlavə Etmək", "Create")
+            </p>
+            <h1 class="h3 glyphicon-blackboard">
+                    Xidmətlərimiz
+                </h1>
+                @foreach (var item in Model.AAboutService)
+                {
+
+                    <p>
+                        @Html.DisplayFor(modelItem => item.Name) @Html.ActionLink("Delete", "Delete", new { id = item.İD })
+                    </p>
+                }*@
+        <p class="container">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.TheAboutU.İD })
         </p>
-    }
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.TheAboutU.İD })
-    </td>
+
+        <br />
+
+        <a class="container" href="~/Admin/Panel/ViewPanel">Geri qayit</a>
 
 
-
-</div>
+    </div>
+    </div>

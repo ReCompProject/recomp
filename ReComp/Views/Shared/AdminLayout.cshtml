@@ -15,6 +15,11 @@
     <link href="~/Areas/Admin/_Public/css/ccFileUpload.css" rel="stylesheet">
     <link href="~/Areas/Admin/_Public/css/FileUpload/uploadfile.css" rel="stylesheet">
     <link href="~/Areas/Admin/_Public/css/FileUpload/uploadfile.custom.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="~/Areas/Admin/_Public/css/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="~/Areas/Admin/_Public/css/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="~/Areas/Admin/_Public/css/css/component.css" />
     <link href="~/Areas/Admin/_Public/css/style.css" rel="stylesheet">
 
 
@@ -64,7 +69,7 @@
             <!-- Navigation -->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <div class="container">
-                    <a class="navbar-brand" href="#">REcomp</a>
+                    <a class="navbar-brand" href="/Admin/Panel/ViewPanel">REcomp</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -82,6 +87,7 @@
             <script src="~/Areas/Admin/_Public/js/ccFileUpload.js"></script>
             <script src="~/Areas/Admin/_Public/js/FileUpload/jquery.uploadfile.js"></script>
             <script src="~/Areas/Admin/_Public/js/FileUpload/jquery.uploadfile.min.js"></script>
+            <script src="~/Areas/Admin/_Public/js/js/custom-file-input.js"></script>
             <script src="~/Areas/Admin/_Public/js/script.js"></script>
 
 
@@ -91,5 +97,9 @@
     </form>
     @RenderBody()
     <div class="end" style="height:50px; width:auto;"></div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("Scripts", required: false)
 </body>
+
 </html>

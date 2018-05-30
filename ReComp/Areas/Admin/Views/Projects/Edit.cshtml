@@ -8,66 +8,140 @@
 <h2>Edit</h2>
 
 
-@using (Html.BeginForm())
-{
+<form method="post" enctype="multipart/form-data">
+
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4>Project</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.TheProject.İD)
+    <div class="form-horizontal">
+        <h4>Project</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.TheProject.İD)
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.TheProject.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.TheProject.Name, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.TheProject.Name, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.TheProject.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TheProject.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TheProject.Name, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.TheProject.Year, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.TheProject.Year, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.TheProject.Year, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.TheProject.Year, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TheProject.Year, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TheProject.Year, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.TheProject.Short_İnfo, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.TheProject.Short_İnfo, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.TheProject.Short_İnfo, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.TheProject.Short_İnfo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TheProject.Short_İnfo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TheProject.Short_İnfo, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.TheProject.Long_İnfo, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.TheProject.Long_İnfo, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.TheProject.Long_İnfo, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.TheProject.Long_İnfo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TheProject.Long_İnfo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TheProject.Long_İnfo, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
-    @foreach (var Pf in Model.PProject_Photo)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TheProject.Siteurl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TheProject.Siteurl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TheProject.Siteurl, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group photo">
+            @Html.LabelFor(model => model.TheProject_Photo.Link, "Fotolar", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBoxFor(model => model.fileModels.files, "", new { @type = "file", @multiple = "multiple" })
+        </div>
+        @if (Model.PProject_Photo != null)
     {
-    <div class="form-group">
-        @Html.LabelFor(model => Pf.Link, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        foreach (var Pf in Model.PProject_Photo)
+        {
+            <div class="form-group">
+                @Html.LabelFor(model => Pf.Link, htmlAttributes: new { @class = "control-label col-md-2" })
+                <a href="/Admin/Projects/DeletePhoto?photoId=@Pf.İD&&projectId=@Model.TheProject.İD" class="btn btn-sm">Delete</a>
+                <div class="col-md-4">
 
-            @Html.EditorFor(model => Pf.Link, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => Pf.Link, "", new { @class = "text-danger" })
-        </div>
-    </div>
+                    @Html.EditorFor(model => Pf.Link, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => Pf.Link, "", new { @class = "text-danger" })
+                    <img src="@Pf.Link" />
+                </div>
+            </div>
     }
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
+}
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
         </div>
     </div>
-</div>
-}
-
+</form>
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+
+@*<div id="dropArea">
+        Drop your files here
+    </div>
+    <h4>Uploaded files : </h4>
+    <ul class="list-group" id="uploadList"></ul>
+
+    <style>
+        #dropArea {
+            background: #b5b5b5;
+            border: black dashed 1px;
+            height: 50px;
+            text-align: center;
+            color: #fff;
+            padding-top: 12px;
+        }
+
+        .active-drop {
+            background: #77bafa !important;
+            border: solid 2px blue !important;
+            opacity: .5;
+            color: black !important;
+        }
+    </style>
+
+    @section Scripts{
+        <script src="~/Scripts/jquery.filedrop.js"></script>
+        <script type="text/javascript">
+                    $(function () {
+                $('#dropArea').filedrop({
+                    url: '@Url.Action("AddPhoto")',
+                    allowedfiletypes: ['image/jpeg', 'image/png', 'image/gif'],
+                    allowedfileextensions: ['.jpg', '.jpeg', '.png', '.gif'],
+                    paramname: 'file',
+                    maxfiles: 7,
+                    maxfilesize: 25, // in MB
+                    dragOver: function () {
+                        $('#dropArea').addClass('active-drop');
+                    },
+                    dragLeave: function () {
+                        $('#dropArea').removeClass('active-drop');
+                    },
+                    drop: function () {
+                        $('#dropArea').removeClass('active-drop');
+                    },
+                    afterAll: function (e) {
+                        $('#dropArea').html('file(s) uploaded successfully');
+                    },
+                    uploadFinished: function (i, file, response, time) {
+                        $('#uploadList').append('<li class="list-group-item">' + file.name + '</li>' + '<br>' +
+                            '<img style="width:100px; height:100px;" src="/Public/images/' +file.name+'" />')
+                    }
+                })
+            })
+        </script>
+    }*@

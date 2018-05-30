@@ -1,11 +1,10 @@
-﻿@model ReComp.Models.AboutU
-
+﻿@using ReComp.Models
+@model ReComp.Areas.Admin.Controllers.ViewModelAbout
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h2>Edit</h2>
 
 
 @using (Html.BeginForm())
@@ -13,44 +12,65 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>AboutU</h4>
+        <h4>Haqqımızda bölməsini dəyişin:</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.İD)
+        @Html.HiddenFor(model => model.TheAboutU.İD)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TheAboutU.Name, "Başlıq:", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.TheAboutU.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TheAboutU.Name, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Tittle, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TheAboutU.Tittle, "Şüar:", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Tittle, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Tittle, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.TheAboutU.Tittle, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TheAboutU.Tittle, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SubTittle, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TheAboutU.SubTittle, "Qısa məlumat:", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SubTittle, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SubTittle, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.TheAboutU.SubTittle, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TheAboutU.SubTittle, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Dəyişiklikləri yadda saxla" class="btn btn-default" />
             </div>
         </div>
+        <div class="form-group">
+            <h1 class="h3 glyphicon-blackboard container">
+                Xidmətlərimiz
+            </h1>
+            <p class="container ">
+                @Html.ActionLink("Yeni Xidmət Əlavə Etmək", "Create")
+            </p>
+
+            @foreach (var item in Model.AAboutService)
+            {
+
+                <p class="container ">
+                    @Html.DisplayFor(modelItem => item.Name) @Html.ActionLink("Delete", "Delete", new { id = item.İD })
+                </p>
+            }
+            @*<p class="container ">
+                    @Html.ActionLink("Edit", "Edit", new { id = Model.TheAboutU.İD })
+                </p>*@
+
+        </div>
+
+
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+   <a class="container" href="~/Admin/Panel/ViewPanel">Geri Qayıt</a>
 </div>
 

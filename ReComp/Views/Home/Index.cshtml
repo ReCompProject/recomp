@@ -20,50 +20,67 @@
                     <div class="search-style-one">
                         <div class="search-outer">
                             <div class="form-box search-form">
-                                <form method="post" action="http://themexriver.com/shelter/property-grid.html">
+                                <form method="post" action="http://recomp.az/Grid/Search">
                                     <div class="row clearfix">
                                         <!--Form Group-->
-                                        <div class="form-group col-md-3 col-sm-6 col-xs-12">
-                                            <div class="field-title">Select Your</div>
+                                        <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                             <div class="field-inner">
-                                                <select class="custom-select-box">
-                                                    <option>Location</option>
-                                                    <option>Australia</option>
-                                                    <option>United States</option>
-                                                    <option>Russia</option>
-                                                    <option>France</option>
+                                                <select class="" name="Stick_Type">
+                                                    @foreach (Stick_Type stType in ViewBag.StickType)
+                {
+                                    <option value="@stType.İD">@stType.Name</option>
+}
+
                                                 </select>
                                             </div>
                                         </div>
                                         <!--Form Group-->
-                                        <div class="form-group col-md-3 col-sm-6 col-xs-12">
-                                            <div class="field-title">Select Your</div>
+                                        <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                             <div class="field-inner">
-                                                <select class="custom-select-box">
-                                                    <option>Min Area</option>
-                                                    <option>1000 ft2</option>
-                                                    <option>1500 ft2</option>
-                                                    <option>2000 ft2</option>
-                                                    <option>5000 ft2</option>
+
+                                                <select class="" name="Object_Type">
+                                                    @foreach (Object_Type obType in ViewBag.objectType)
+    {
+                                                <option value="@obType.Id">@obType.Name</option>
+}
+
                                                 </select>
                                             </div>
                                         </div>
                                         <!--Form Group-->
-                                        <div class="form-group col-md-3 col-sm-6 col-xs-12">
-                                            <div class="field-title">Select Your</div>
+                                        <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                             <div class="field-inner">
-                                                <select class="custom-select-box">
-                                                    <option>Budget</option>
-                                                    <option>$10000 - $100,000</option>
-                                                    <option>$100,000 - $1,000,000</option>
-                                                    <option>$1,000,000 - $10,000,0000</option>
+                                                <select class="" name="Cities" id="cities">
+
+
+                                                    <option>Şəhərlər</option>
+                                                        @foreach (City ct in ViewBag.Cities)
+                                                        {
+                                                <option value="@ct.Id">@ct.Name</option>
+}
+
+
+
+                                                    </select>
+                                            </div>
+                                        </div>
+
+                                        <!--Form Group-->
+                                        <div class="form-group col-md-2 col-sm-6 col-xs-12">
+                                            <div class="field-inner">
+                                                <select class="" id="Regions1" name="Regions">
+
+
+                                                    
+
+
                                                 </select>
                                             </div>
                                         </div>
                                         <!--Form Group-->
-                                        <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                                        <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                             <div class="field-title">&nbsp;</div>
-                                            <div class="field-inner text-right"><button class="theme-btn btn-style-one"><span class="icon fa fa-search"></span>Search</button></div>
+                                            <div class="field-inner text-right"><button class="theme-btn btn-style-one"><span class="icon fa fa-search"></span>Axtar</button></div>
                                         </div>
                                     </div>
                                 </form>
@@ -80,56 +97,67 @@
                         <div class="bordered-layer"></div>
                         <h2>Modern Asset In Town</h2>
                         <div class="text-content">Sed ut perspiciatis unde omnis iste <br>natus error sit </div>
-                        <a href="#" class="theme-btn btn-style-one">Explore more</a>
+                        <a href="#" class="theme-btn btn-style-one">Ətraflı</a>
                     </div>
                     <!--Search Style One-->
                     <div class="search-style-one">
                         <div class="search-outer">
                             <div class="form-box search-form">
-                                <form method="post" action="http://themexriver.com/shelter/property-grid.html">
+                                <form method="post" action="http://recomp.az/Grid/Search">
                                     <div class="row clearfix">
                                         <!--Form Group-->
-                                        <div class="form-group col-md-3 col-sm-6 col-xs-12">
-                                            <div class="field-title">Select Your</div>
+                                        <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                             <div class="field-inner">
-                                                <select class="custom-select-box">
-                                                    <option>Location</option>
-                                                    <option>Australia</option>
-                                                    <option>United States</option>
-                                                    <option>Russia</option>
-                                                    <option>France</option>
+                                                <select class="" name="Stick_Type">
+                                                    @foreach (Stick_Type stType in ViewBag.StickType)
+                                    {
+                                        <option value="@stType.İD">@stType.Name</option>
+                    }
+
                                                 </select>
                                             </div>
                                         </div>
                                         <!--Form Group-->
-                                        <div class="form-group col-md-3 col-sm-6 col-xs-12">
-                                            <div class="field-title">Select Your</div>
+                                        <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                             <div class="field-inner">
-                                                <select class="custom-select-box">
-                                                    <option>Min Area</option>
-                                                    <option>1000 ft2</option>
-                                                    <option>1500 ft2</option>
-                                                    <option>2000 ft2</option>
-                                                    <option>5000 ft2</option>
+
+                                                <select class="" name="Object_Type">
+                                                    @foreach (Object_Type obType in ViewBag.objectType)
+                                    {
+                                        <option value="@obType.Id">@obType.Name</option>
+                    }
+
                                                 </select>
                                             </div>
                                         </div>
                                         <!--Form Group-->
-                                        <div class="form-group col-md-3 col-sm-6 col-xs-12">
-                                            <div class="field-title">Select Your</div>
+                                        <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                             <div class="field-inner">
-                                                <select class="custom-select-box">
-                                                    <option>Budget</option>
-                                                    <option>$10000 - $100,000</option>
-                                                    <option>$100,000 - $1,000,000</option>
-                                                    <option>$1,000,000 - $10,000,0000</option>
+                                                <select class="" name="Cities" id="cities1">
+
+
+                                                    <option>Şəhərlər</option>
+                                                    @foreach (City ct in ViewBag.Cities)
+                                    {
+                                        <option value="@ct.Id">@ct.Name</option>
+                    }
+
+
+
                                                 </select>
                                             </div>
                                         </div>
+
                                         <!--Form Group-->
-                                        <div class="form-group col-md-3 col-sm-6 col-xs-12">
+                                        <div class="form-group col-md-2 col-sm-6 col-xs-12">
+                                            <div class="field-inner">
+                                                <select class="" id="Regions" name="Regions"></select>
+                                            </div>
+                                        </div>
+                                        <!--Form Group-->
+                                        <div class="form-group col-md-2 col-sm-6 col-xs-12">
                                             <div class="field-title">&nbsp;</div>
-                                            <div class="field-inner text-right"><button class="theme-btn btn-style-one"><span class="icon fa fa-search"></span>Search</button></div>
+                                            <div class="field-inner text-right"><button class="theme-btn btn-style-one"><span class="icon fa fa-search"></span>Axtar</button></div>
                                         </div>
                                     </div>
                                 </form>
@@ -163,7 +191,6 @@
                         <figure class="image"><img src="~/Public/images/resource/featured-image-16.jpg" alt=""></figure>
                     </div>
                 </div>
-                <div class="big-title"><h2>Best property</h2></div>
             </div><!--Left Column-->
             <!--Right Column-->
             <div class="right-column col-md-6 col-sm-12 col-xs-12">
@@ -175,14 +202,16 @@
                 <div class="content">
                     <div class="text">@ViewBag.About.SubTittle</div>
                     <div class="row clearfix">
-                        @for (var i = 0; i < ViewBag.AboutService.Count; i++)
-                        {
+                        @if(ViewBag.AboutService != null) { 
+                            for (var i = 0; i < ViewBag.AboutService.Count; i++)
+                            {
                             AboutService ab = ViewBag.AboutService[i];
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <ul class="list-style-one">
                                     <li>@ab.Name</li>
                                 </ul>
                             </div>
+                            }
                         }
 
                     </div>
@@ -190,15 +219,14 @@
             </div>
         </div><!--Right Column-->
     </div>
-    </div>
 </section>
 <!--Default Section-->
 <section class="default-section" style="width:75%; margin:auto;">
     <div class="auto-container">
         <!--Title Style One-->
         <div class="title-style-one right-aligned">
-            <div class="title"><h2>Blog & Testimonial</h2></div>
-            <div class="sub-title">We take a broader, more holistic all </div>
+            <div class="title"><h2>Proyektlərimiz</h2></div>
+            <div class="sub-title">REcomp şirkətinin artıq istifadəyə verilmiş və ya inşaatı davam edən proyektləri ilə tanış ola bilərsiniz...</div>
         </div>
         <div class="row clearfix">
             @for (var i = 0; i < ViewBag.Projects.Count; i++)
@@ -220,11 +248,11 @@
                     <div class="news-style-one">
                         <div class="inner-box">
 
-                            <div class="image-box"><figure class="image"><a href="blog-single.html"><img src="~/Public/images/resource/@ph.Link" alt=""></a></figure></div>
+                            <div class="image-box"><figure class="image"><a href="blog-single.html"><img src="@ph.Link" alt=""></a></figure></div>
                             <div class="post-content">
                                 <h4 class="post-info">@pr.Name, @pr.Year</h4>
                                 <div class="text-content">@pr.Short_İnfo</div>
-                                <div class="more-btn"><a href="blog-single.html">Read More</a></div>
+                                <div class="more-btn"><a href="@Url.Action("Single", "Single", new {id = pr.İD})">Ətraflı məlumat</a></div>
                                 <a href="blog-single.html" class="share-btn"><span class="flaticon-multimedia-1"></span></a>
                             </div>
                         </div>
@@ -232,6 +260,10 @@
                 </div>
             </div>
              }
+            @for(int i=1; i<= ViewBag.TotalItems; i++)
+{
+    <a href="/Admin/Home/Index?page=@i">@i</a>
+}
         </div>
 
     </div>
@@ -299,7 +331,7 @@
             <!--Filter-->
             <div class="filters">
                 <ul class="filter-tabs filter-btns clearfix">
-                    <li class="active filter" data-role="button" data-filter="all">All </li>
+                    <li class="active filter" data-role="button" data-filter="all">Hamısı </li>
                     @for (var i = 0; i < ViewBag.StickType.Count; i++)
                     {
                         <li class="filter" data-role="button" data-filter=".@ViewBag.StickType[i].Name">@ViewBag.StickType[i].Name </li>
@@ -307,7 +339,7 @@
                 </ul>
             </div>
         </div>
-        <div class="big-title"><h2>Sell & rent</h2></div>
+        <div class="big-title"><h2>Satış və kirayə elanları</h2></div>
         <div class="filter-list row clearfix">
             @for (var i = 0; i < ViewBag.Stickers.Count; i++)
             {
@@ -326,25 +358,26 @@
                 <div class="property-block-grid col-lg-4 col-md-6 col-xs-12 mix mix_all @st.Stick_Type.Name">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image"><a href="property-single.html"><img src="~/Public/images/resource/@Sph.Name" alt=""></a></figure>
+                            <figure class="image"><a href="property-single.html"><img src="@Sph.Name" alt=""></a></figure>
                             <div class="ribbon">@st.Stick_Type.Name</div>
-                            <a href="property-single.html" class="read-more-link">Read More</a>
+                            <a href="property-single.html" class="read-more-link">Ətraflı Məlumat</a>
                         </div>
                         <div class="lower-content">
                             <h3><a href="property-single.html">@st.Name</a></h3>
                             <div class="price">@st.Price</div>
                             <div class="desc-text">@st.Short_info</div>
+                            <div class="desc-text">@st.Long_Info</div>
                             <!--Specs List-->
                             <ul class="specs-list clearfix">
                                 <li><div class="outer"><div class="icon"><span class="fa fa-expand"></span></div><div class="info">@st.Area</div></div></li>
                                 <li><div class="outer"><div class="icon"><span class="fa fa-bed"></span></div><div class="info">3 Bed</div></div></li>
                                 <li><div class="outer"><div class="icon"><span class="flaticon-shape"></span></div><div class="info">2 Bath</div></div></li>
                                 @if ((bool)st.GarageStatus)
-                                {
-                                    <li><div class="outer"><div class="icon"><span class="fa fa-car"></span></div><div class="info">Var</div></div></li>}
-                                else
-                                {
-                                    <li><div class="outer"><div class="icon"><span class="fa fa-car"></span></div><div class="info">Yoxdur</div></div></li>}
+        {
+                        <li><div class="outer"><div class="icon"><span class="fa fa-car"></span></div><div class="info">Var</div></div></li>}
+else
+{
+                        <li><div class="outer"><div class="icon"><span class="fa fa-car"></span></div><div class="info">Yoxdur</div></div></li>}
                             </ul>
                         </div>
                     </div>

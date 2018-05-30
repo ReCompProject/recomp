@@ -6,7 +6,7 @@
 <!-- Mirrored from themexriver.com/shelter/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Mar 2018 10:14:38 GMT -->
 <head>
     <meta charset="utf-8">
-    <title>Shelter - Real Estate and Property HTML Template | Homepage Two</title>
+    <title>REcomp</title>
     <!-- Stylesheets -->
     <link href="~/Public/css/bootstrap.css" rel="stylesheet">
     <link href="~/Public/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
@@ -14,8 +14,7 @@
     <link href="~/Public/css/revolution-slider.css" rel="stylesheet">
     <link href="~/Public/css/style.css" rel="stylesheet">
     <!--Favicon-->
-    <link rel="shortcut icon" href="~/Public/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="~/Public/images/favicon.ico" type="image/x-icon">
+    
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -50,8 +49,8 @@
                             <div class="info-box">
                                 <div class="icon-box"><span class="fa fa-phone"></span></div>
                                 <ul>
-                                    <li>0125-555-129</li>
-                                    <li><span class="theme_color">Please call us</span></li>
+                                    <li>@ViewBag.Footer.Number</li>
+                                    <li><span class="theme_color">Bizə zəng edin</span></li>
                                 </ul>
                             </div>
 
@@ -68,8 +67,7 @@
                             <div class="info-box">
                                 <div class="icon-box"><span class="fa fa-map-marker"></span></div>
                                 <ul>
-                                    <li>530 khan a sabur road</li>
-                                    <li>Khulna,9000</li>
+                                    <li>@ViewBag.Footer.Address</li>
                                 </ul>
                             </div>
 
@@ -96,20 +94,19 @@
 
                             <div class="navbar-collapse collapse clearfix">
                                 <ul class="navigation clearfix">
-                                    <li class="current home dropdown">
+                                    <li class="current home">
                                         <a href="@Url.Action("Index" , "Home")">Ana səhifə</a>
                                     </li>
-                                    <li><a href="@Url.Action("Index" , "Home")">Haqqımızda</a></li>
-                                    <li class="dropdown">
-                                        <a href="@Url.Action("Grid" , "Grid")">Grid</a>
+                                    <li><a href="http://recomp.az/home/index#about-section">Haqqımızda</a></li>
+                                    <li>
+                                        <a href="@Url.Action("Projects" , "Home" )">Proyektlərimiz</a>
                                     </li>
-                                    <li class="dropdown">
-                                        <a href="@Url.Action("Single" , "Single")">Single</a>
+                                    <li>
+                                        <a href="@Url.Action("Grid" , "Grid")">Elanlar</a>
                                     </li>
-                                    <li class="dropdown">
-                                        <a href="@Url.Action("Project" , "Project")">Project</a>
-                                    </li>
-                                    <li><a href="#">Əlaqə</a></li>
+                                    <li>
+                                        <a href="#cantact">Əlaqə</a>
+                                    </li
                                 </ul>
                             </div>
                         </nav><!-- Main Menu End-->
@@ -140,7 +137,7 @@
         <footer class="main-footer" style="background-image:url(/Public/images/background/footer-bg.png);">
 
             <!--Footer Title-->
-            <div class="footer-title">
+            <div class="footer-title" id="cantact">
                 <figure class="logo"><a href="index.html"><img src="images/logo-2.png" alt=""></a></figure>
                 <h2>@ViewBag.Footer.Title</h2>
                 <div class="desc-text">@ViewBag.Footer.SubTitle</div>
@@ -228,6 +225,7 @@
     <script src="~/Public/js/owl.js"></script>
     <script src="~/Public/js/wow.js"></script>
     <script src="~/Public/js/script.js"></script>
+    <script src="~/Scripts/main.js"></script>
 </body>
 
 <!-- Mirrored from themexriver.com/shelter/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Mar 2018 10:16:13 GMT -->

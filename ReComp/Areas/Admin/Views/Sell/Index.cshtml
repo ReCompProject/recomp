@@ -1,0 +1,34 @@
+﻿@model IEnumerable<ReComp.Models.Sell>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+<form action="/Admin/Sell/Search">
+    Elanin adi: <input type="text" name="name" /> <input type="submit" value="Axtar" />
+</form>
+<table class="table table-bordered">
+    <tr>
+        <th>User</th>
+        <th>Stick</th>
+        <th>Pul</th>
+        <th>Qeyd(bazada Name)</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.User.UserName</td>
+            <td>@item.Sticker.Name @item.Sticker.Project.Name</td>
+            <td>@item.Price</td>
+            <td>@item.Name</td>
+            <td><a class="btn" href="/Admin/Sell/DeleteSell/@item.ID">Delete</a></td>
+        </tr>
+    }
+</table>
+
+@for(int i=1; i<= ViewBag.TotalItems; i++)
+{
+    <a href="/Admin/Sell/Index?page=@i">@i</a>
+}

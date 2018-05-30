@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace ReComp.Areas.Admin.Controllers
 {
+    [Authorize(Roles= "Administrator,Editor,User")]
     public class PanelController : Controller
     {
         // GET: Admin/Panel

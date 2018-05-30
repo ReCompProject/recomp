@@ -1,0 +1,28 @@
+﻿@model ReComp.Models.Room
+
+@{
+    ViewBag.Title = "CreateRoomType";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>CreateRoomType</h2>
+<form action="/Admin/Room/CreateEditRoom" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="İD" value="@Model.İD" />
+    Area: <input type="text" name="Area" value="@Model.Area" /><br />
+    Type: <select name="Type_İD">
+        @foreach (var item2 in ViewBag.Room_Types)
+        {
+            <option value="@item2.İD">@item2.Name</option>
+        }
+    </select>
+    <br />
+    Sticks: <select name="Stick_İD">
+        @foreach (var item2 in ViewBag.Sticks)
+        {
+            <option value="@item2.İD">@item2.Name</option>
+        }
+    </select>
+    <button type="submit">Submit</button>
+</form>
+<a href="/Admin/Room/RoomIndex">Index</a>

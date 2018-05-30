@@ -8237,3 +8237,34 @@ footer  p a:hover ,.footer p a:hover{
 .input-group-addon{
     width:auto !important;
 }
+.uploading{
+    height:auto;
+    position:relative;
+    overflow:hidden;
+}
+.uploading img{
+    width:100%;
+}
+.uploading .layout{
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.4);
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:none;
+}
+.uploading .layout .delete_photo{
+    font-size:20px;
+    color:slategray;
+    position:absolute;
+    width:26px;
+    height:30px;
+    text-align:center;
+    background-color:#fffaaa;
+    right:0px;
+    cursor:pointer;
+}
+.uploading:hover .layout{
+    display:block;
+}

@@ -29,16 +29,21 @@ namespace ReComp.Models
     
         public virtual DbSet<AboutService> AboutServices { get; set; }
         public virtual DbSet<AboutU> AboutUs { get; set; }
+        public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<Footor> Footors { get; set; }
+        public virtual DbSet<Object_Type> Object_Type { get; set; }
         public virtual DbSet<Project_Photo> Project_Photo { get; set; }
+        public virtual DbSet<Project_sevices> Project_sevices { get; set; }
         public virtual DbSet<Project> Projects { get; set; }
+        public virtual DbSet<Region> Regions { get; set; }
         public virtual DbSet<Room_Type> Room_Type { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
+        public virtual DbSet<Sell> Sells { get; set; }
         public virtual DbSet<Stick_Photo> Stick_Photo { get; set; }
+        public virtual DbSet<Stick_sxem> Stick_sxem { get; set; }
         public virtual DbSet<Stick_Type> Stick_Type { get; set; }
         public virtual DbSet<Sticker> Stickers { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<Sell> Sells { get; set; }
         public virtual DbSet<User_Type> User_Type { get; set; }
         public virtual DbSet<User> Users { get; set; }
     

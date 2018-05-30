@@ -10,6 +10,7 @@ using ReComp.Models;
 
 namespace ReComp.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Administrator,Editor")]
     public class FootorsController : Controller
     {
         private REcompEntities db = new REcompEntities();
@@ -46,7 +47,7 @@ namespace ReComp.Areas.Admin.Controllers
             {
                 db.Entry(footor).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Edit" + "/1");
             }
             return View(footor);
         }

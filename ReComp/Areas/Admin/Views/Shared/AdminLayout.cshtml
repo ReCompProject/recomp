@@ -58,53 +58,53 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </div>
                                     <script type="text/javascript">
 
-																	function DropDown(el) {
-																		this.dd = el;
-																		this.placeholder = this.dd.children('span');
-																		this.opts = this.dd.find('ul.dropdown > li');
-																		this.val = '';
-																		this.index = -1;
-																		this.initEvents();
-																	}
-																	DropDown.prototype = {
-																		initEvents : function() {
-																			var obj = this;
+                                        function DropDown(el) {
+                                            this.dd = el;
+                                            this.placeholder = this.dd.children('span');
+                                            this.opts = this.dd.find('ul.dropdown > li');
+                                            this.val = '';
+                                            this.index = -1;
+                                            this.initEvents();
+                                        }
+                                        DropDown.prototype = {
+                                            initEvents: function () {
+                                                var obj = this;
 
-																			obj.dd.on('click', function(event){
-																				$(this).toggleClass('active');
-																				return false;
-																			});
+                                                obj.dd.on('click', function (event) {
+                                                    $(this).toggleClass('active');
+                                                    return false;
+                                                });
 
-																			obj.opts.on('click',function(){
-																				var opt = $(this);
-																				obj.val = opt.text();
-																				obj.index = opt.index();
-																				obj.placeholder.text(obj.val);
-																			});
-																		},
-																		getValue : function() {
-																			return this.val;
-																		},
-																		getIndex : function() {
-																			return this.index;
-																		}
-																	}
+                                                obj.opts.on('click', function () {
+                                                    var opt = $(this);
+                                                    obj.val = opt.text();
+                                                    obj.index = opt.index();
+                                                    obj.placeholder.text(obj.val);
+                                                });
+                                            },
+                                            getValue: function () {
+                                                return this.val;
+                                            },
+                                            getIndex: function () {
+                                                return this.index;
+                                            }
+                                        }
 
-																	$(function() {
+                                        $(function () {
 
-																		var dd = new DropDown( $('#dd') );
+                                            var dd = new DropDown($('#dd'));
 
-																		$(document).click(function() {
-																			// all dropdowns
-																			$('.wrapper-dropdown-3').removeClass('active');
-																		});
+                                            $(document).click(function () {
+                                                // all dropdowns
+                                                $('.wrapper-dropdown-3').removeClass('active');
+                                            });
 
-																	});
+                                        });
 
                                     </script>
                                 </li>
 
-                                <div class="clearfix"></div>
+                                @*<div class="clearfix"></div>*@
                             </ul>
                         </div>
                         <div class="clearfix"></div>
@@ -124,8 +124,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!--/sidebar-menu-->
         <div class="sidebar-menu">
             <header class="logo">
-                <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="index.html">
-                    <span id="logo"> <h1>Admin</h1></span>
+                <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> 
+                <a href="index.html">
+                    <span id="logo"> <h1 > Admin </h1></span>
                     <!--<img id="logo" src="" alt="Logo"/>-->
                 </a>
             </header>
@@ -136,45 +137,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <p>System Administrator in Company</p>
                 <ul>
                     <li><a class="tooltips" href="index.html"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
-                    <li><a class="tooltips log-off" href="../Log/Login"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
+                    <li><a class="tooltips log-off" href="../Log/LogOut"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
                 </ul>
             </div>
             <!--//down-->
             <div class="menu">
                 <ul id="menu">
-                    <li><a href="../AboutUs/Index"> <span>Haqqımızda</span></a></li>
-                    <li><a href="../Footors/Index"> <span>Footor</span></a></li>
-                    <li id="menu-academico">
-                        <a href="../Projects/Index"><span>Proyektlər</span></a>                    
-                    </li>
                     <li><a href="../Stickers/Index"><span>Elanlar</span></a></li>
-                    <li>
-                        <a href="../Users/Index"><span>İstifadəçilər</span></a>
-                    </li>
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        <li><a href="../AboutUs/Edit/1"> <span>Haqqımızda</span></a></li>
+                        <li><a href="../Footors/Edit/1"> <span>Footer</span></a></li>
+                        <li id="menu-academico">
+                            <a href="../Projects/Index"><span>Proyektlər</span></a>
+                        </li>
+                        <li><a href="../Sell/Index"><span>Satışlar</span></a></li>
+                        <li>
+                            <a href="../Users/Index"><span>İstifadəçilər</span></a>
+                        </li>
+                    }
                 </ul>
             </div>
         </div>
         <div class="clearfix"></div>
     </div>
     <script>
-							var toggle = true;
+        var toggle = true;
 
-							$(".sidebar-icon").click(function() {
-							  if (toggle)
-							  {
-								$(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
-								$("#menu span").css({"position":"absolute"});
-							  }
-							  else
-							  {
-								$(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
-								setTimeout(function() {
-								  $("#menu span").css({"position":"relative"});
-								}, 400);
-							  }
+        $(".sidebar-icon").click(function () {
+            if (toggle) {
+                $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+                $("#menu span").css({ "position": "absolute" });
+            }
+            else {
+                $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+                setTimeout(function () {
+                    $("#menu span").css({ "position": "relative" });
+                }, 400);
+            }
 
-											toggle = !toggle;
-										});
+            toggle = !toggle;
+        });
     </script>
     <!--js -->
     <link rel="stylesheet" href="~/Areas/Admin/_Public/css/vroom.css">
@@ -182,9 +185,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="text/javascript" src="~/Areas/Admin/_Public/js/TweenLite.min.js"></script>
     <script type="text/javascript" src="~/Areas/Admin/_Public/js/CSSPlugin.min.js"></script>
     <script src="~/Areas/Admin/_Public/js/jquery.nicescroll.js"></script>
+    <script src="~/Areas/Admin/_Public/js/bootstrap.min.js"></script>
     <script src="~/Areas/Admin/_Public/js/scripts.js"></script>
+    <script src="~/Areas/Admin/_Public/js/script.js"></script>
+
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="~/Areas/Admin/_Public/js/bootstrap.min.js"></script>
+
 </body>
 </html>

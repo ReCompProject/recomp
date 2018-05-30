@@ -1,0 +1,19 @@
+﻿@model IEnumerable<ReComp.Models.Room_Type>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Index</h2> <a href="/Admin/Room/CreateEditRoomType">Create new</a>
+
+@foreach (var item in Model)
+{
+    <div style="clear:both;">
+        <h3 style="float:left;">@item.Name</h3>
+        @*<a href="/Admin/Room/Edit/@item.İD" style="float:left; margin-right:5px;">Edit</a>*@
+        <a href="/Admin/Room/DeleteRoomType/@item.İD" style="float:left;">Delete</a>
+    </div>
+}
+<br />
+<br />
+<a href="/Admin/Stickers/Index">Back to Stick Menu</a>

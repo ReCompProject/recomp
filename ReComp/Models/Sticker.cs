@@ -9,17 +9,22 @@
 
 namespace ReComp.Models
 {
+    using ReComp.Areas.Admin.Models;
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Sticker
     {
+        public FileModel fileModels { get; set; }
+        public FileModel fileModelsxem { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Sticker()
         {
             this.Rooms = new HashSet<Room>();
-            this.Stick_Photo = new HashSet<Stick_Photo>();
             this.Sells = new HashSet<Sell>();
+            this.Stick_Photo = new HashSet<Stick_Photo>();
+            this.Stick_sxem = new HashSet<Stick_sxem>();
         }
     
         public int İD { get; set; }
@@ -31,14 +36,23 @@ namespace ReComp.Models
         public string Area { get; set; }
         public Nullable<bool> GarageStatus { get; set; }
         public Nullable<bool> Status { get; set; }
+        public string Long_Info { get; set; }
+        public Nullable<int> City_İd { get; set; }
+        public Nullable<int> Region_İd { get; set; }
+        public Nullable<int> Object_İd { get; set; }
     
+        public virtual City City { get; set; }
+        public virtual Object_Type Object_Type { get; set; }
         public virtual Project Project { get; set; }
+        public virtual Region Region { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Room> Rooms { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Stick_Photo> Stick_Photo { get; set; }
-        public virtual Stick_Type Stick_Type { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sell> Sells { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Stick_Photo> Stick_Photo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Stick_sxem> Stick_sxem { get; set; }
+        public virtual Stick_Type Stick_Type { get; set; }
     }
 }

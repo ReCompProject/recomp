@@ -4,31 +4,42 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c944847db3254a1aaafc164c3c47b450" Name="Diagram1">
-        <EntityTypeShape EntityType="REcompModel.AboutService" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="REcompModel.AboutU" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="REcompModel.Footor" Width="1.5" PointX="8.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="REcompModel.Project_Photo" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="REcompModel.Project" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="REcompModel.Room_Type" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="REcompModel.Room" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="REcompModel.Stick_Photo" Width="1.5" PointX="8.25" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="REcompModel.Stick_Type" Width="1.5" PointX="3.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="REcompModel.Sticker" Width="1.5" PointX="6" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="REcompModel.sysdiagram" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+      <Diagram DiagramId="23fb1131aebb45d1b0caa3ffe8bdaedd" Name="Diagram1">
+        <EntityTypeShape EntityType="REcompModel.AboutService" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="REcompModel.AboutU" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="REcompModel.City" Width="1.5" PointX="3.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="REcompModel.Footor" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="REcompModel.Object_Type" Width="1.5" PointX="3.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="REcompModel.Project_Photo" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="REcompModel.Project_sevices" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="REcompModel.Project" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="REcompModel.Region" Width="1.5" PointX="3.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="REcompModel.Room_Type" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="REcompModel.Room" Width="1.5" PointX="8.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="REcompModel.Sell" Width="1.5" PointX="11.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="REcompModel.Stick_Photo" Width="1.5" PointX="8.25" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="REcompModel.Stick_sxem" Width="1.5" PointX="8.25" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="REcompModel.Stick_Type" Width="1.5" PointX="3.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="REcompModel.Sticker" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="REcompModel.sysdiagram" Width="1.5" PointX="8.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="REcompModel.User_Type" Width="1.5" PointX="6.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="REcompModel.User" Width="1.5" PointX="9" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="REcompModel.AboutService_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="REcompModel.FK__Regions__City_Id__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="REcompModel.FK__Stickers__City_İ__6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="REcompModel.FK__Stickers__Object__76969D2E" ManuallyRouted="false" />
         <AssociationConnector Association="REcompModel.Project_Photo_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="REcompModel.FK__Project_s__Proje__5812160E" ManuallyRouted="false" />
         <AssociationConnector Association="REcompModel.Stickers_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="REcompModel.FK__Stickers__Region__75A278F5" ManuallyRouted="false" />
         <AssociationConnector Association="REcompModel.Rooms_fk0" ManuallyRouted="false" />
         <AssociationConnector Association="REcompModel.Rooms_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="REcompModel.FK__Sells__Stick_ID__32AB8735" ManuallyRouted="false" />
+        <AssociationConnector Association="REcompModel.Sells_fk0" ManuallyRouted="false" />
         <AssociationConnector Association="REcompModel.Stick_Photo_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="REcompModel.FK__Stick_sxe__Stick__5224328E" ManuallyRouted="false" />
         <AssociationConnector Association="REcompModel.Stickers_fk2" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="REcompModel.Sell" Width="1.5" PointX="14.875" PointY="4.5" />
-        <EntityTypeShape EntityType="REcompModel.User_Type" Width="1.5" PointX="10.375" PointY="5.375" />
-        <EntityTypeShape EntityType="REcompModel.User" Width="1.5" PointX="12.625" PointY="5" />
-        <AssociationConnector Association="REcompModel.FK__Sells__Stick_ID__32AB8735" />
-        <AssociationConnector Association="REcompModel.Sells_fk0" />
-        <AssociationConnector Association="REcompModel.Users_fk0" />
+        <AssociationConnector Association="REcompModel.Users_fk0" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

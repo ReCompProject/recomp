@@ -12,7 +12,6 @@
     </p>
     @foreach (var item in Model.PProject)
     {
-
     <div class="border-agshin">
         <div>
             <h1>@Html.DisplayNameFor(model => model.TheProject.Name)</h1>
@@ -31,22 +30,39 @@
             <p>
                 @Html.DisplayFor(modelItem => item.Long_İnfo)
             </p>
+
+            <h1>@Html.DisplayNameFor(model => model.TheProject.Siteurl)</h1>
+            <p>
+                @Html.DisplayFor(modelItem => item.Siteurl)
+            </p>
+
             <h1>Photos</h1>
             @foreach (var itemPhoto in Model.PProject_Photo)
     {
-
         if (itemPhoto.Project_İD == item.İD)
         {
-            <img style="width:100px;" src="~/Public/images/resource/@itemPhoto.Link" />
+            <img style="width:100px;" src="@itemPhoto.Link" />
 }
 
 }
+            <p></p>
+            <h1>Services</h1>
+            <p class="container ">
+                @Html.ActionLink("Yeni Xidmət Əlavə Etmək", "Service", new { id = item.İD }) )
+            </p>
+
+            @foreach (var itemService in Model.PProject_Service)
+    {
+        if (itemService.Project_Id == item.İD)
+        {
+            <p>
+                @Html.DisplayFor(modelItem => itemService.Name) @Html.ActionLink("Delete", "Delete", new { id = itemService.Id })
+            </p>
+}
+}
         </div>
-        <div >
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.İD }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.İD })
-            </td>
+        <div>
+                @Html.ActionLink("Edit", "Edit", new { id = item.İD }) 
         </div>
     </div>
 

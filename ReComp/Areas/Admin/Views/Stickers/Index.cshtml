@@ -7,11 +7,16 @@
 }
 
 <h2 style="padding-left:20px;">Index</h2>
-
+@*<form action="/Admin/stickers/Search">
+        Elanin adi: <input type="text" name="name" /> <input type="submit" value="Axtar" />
+    </form>*@
 <div class="container margin-huseyin">
-    <p style="padding-left:20px;">
-        @Html.ActionLink("Create New", "Create")
-    </p>
+    @if (!User.IsInRole("User"))
+    {
+        <p style="padding-left:20px;">
+            @Html.ActionLink("Create New", "Create")
+        </p>
+    }
     @foreach (var item in Model.SSticker)
     {
 
@@ -33,6 +38,10 @@
                 <p>
                     @Html.DisplayFor(modelIitem => item.Short_info)
                 </p>
+                <h1>@Html.DisplayNameFor(model => model.TheSticker.Long_Info)</h1>
+                <p>
+                    @Html.DisplayFor(modelIitem => item.Long_Info)
+                </p>
                 <h1>@Html.DisplayNameFor(model => model.TheSticker.Area)</h1>
                 <p>
                     @Html.DisplayFor(modelItem => item.Area)
@@ -45,22 +54,54 @@
                 <p>
                     @Html.DisplayFor(modelItem => item.Stick_Type.Name)
                 </p>
+
                 <h1>Photos</h1>
                 @foreach (var itemPhoto in Model.SSticker_Photo)
-    {
+                {
 
-        if (itemPhoto.Stick_İD == item.İD)
-        {
-            <img style="width:100px;" src="~/Public/images/resource/@itemPhoto.Name" />
-}
+                    if (itemPhoto.Stick_İD == item.İD)
+                    {
+                        <img style="width:100px;" src="@itemPhoto.Name" />
+                    }
 
-}
+                }
+
+                <h1>Sxem Photo</h1>
+                @foreach (var itemSxem in Model.SSticker_Sxem)
+                {
+
+                    if (itemSxem.Stick_Id == item.İD)
+                    {
+                        <img style="width:100px;" src="@itemSxem.Name" />
+                    }
+
+                }
+
+                <p></p>
+                <h1>Rooms</h1>
+                <p class="container ">
+                    <a href="~/Admin/Room/Index">Otaq Tipləri</a>
+                </p>
+                <p class="container ">
+                    @Html.ActionLink("Yeni Otaq Əlavə Etmək", "Room", new { id = item.İD })
+                </p>
+
+                @foreach (var itemRoom in Model.RRoom)
+                {
+                    if (itemRoom.Stick_İD == item.İD)
+                    {
+                        <p>
+                            @Html.DisplayFor(modelItem => itemRoom.Area) @Html.ActionLink("Delete", "Delete", new { id = itemRoom.İD })
+                        </p>
+                    }
+                }
             </div>
             <div>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.İD }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.İD })
-                </td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.İD })
+                @*@if (!User.IsInRole("User"))
+                    {
+                        @Html.ActionLink("Delete", "Delete", new { id = item.İD })
+                    }*@
             </div>
         </div>
 

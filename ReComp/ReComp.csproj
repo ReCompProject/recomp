@@ -156,10 +156,14 @@
     <Compile Include="Areas\Admin\Controllers\LogController.cs" />
     <Compile Include="Areas\Admin\Controllers\PanelController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProjectsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RoomController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SellController.cs" />
     <Compile Include="Areas\Admin\Controllers\StickersController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserLogController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Admin\Models\FileModel.cs" />
     <Compile Include="Areas\Admin\Models\ViewModel.cs" />
+    <Compile Include="Controllers\AjaxController.cs" />
     <Compile Include="Controllers\GridController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
@@ -171,6 +175,9 @@
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AboutU.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\City.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\db.Context.cs">
@@ -191,10 +198,19 @@
     <Compile Include="Models\Footor.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Object_Type.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Project.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Project_Photo.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Project_sevices.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Region.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Room.cs">
@@ -216,6 +232,9 @@
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Stick_Photo.cs">
+      <DependentUpon>db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Stick_sxem.cs">
       <DependentUpon>db.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Stick_Type.cs">
@@ -240,6 +259,9 @@
     <Content Include="Areas\Admin\_Public\css\ccFileUpload.css" />
     <Content Include="Areas\Admin\_Public\css\chocolat.css" />
     <Content Include="Areas\Admin\_Public\css\clndr.css" />
+    <Content Include="Areas\Admin\_Public\css\css\component.css" />
+    <Content Include="Areas\Admin\_Public\css\css\demo.css" />
+    <Content Include="Areas\Admin\_Public\css\css\normalize.css" />
     <Content Include="Areas\Admin\_Public\css\fabochart.css" />
     <Content Include="Areas\Admin\_Public\css\FileUpload\uploadfile.css" />
     <Content Include="Areas\Admin\_Public\css\FileUpload\uploadfile.custom.css" />
@@ -281,6 +303,9 @@
     <Content Include="Areas\Admin\_Public\js\jquery.vmap.js" />
     <Content Include="Areas\Admin\_Public\js\jquery.vmap.sampledata.js" />
     <Content Include="Areas\Admin\_Public\js\jquery.vmap.world.js" />
+    <Content Include="Areas\Admin\_Public\js\js\custom-file-input.js" />
+    <Content Include="Areas\Admin\_Public\js\js\jquery-v1.min.js" />
+    <Content Include="Areas\Admin\_Public\js\js\jquery.custom-file-input.js" />
     <Content Include="Areas\Admin\_Public\js\light.js" />
     <Content Include="Areas\Admin\_Public\js\map.js" />
     <Content Include="Areas\Admin\_Public\js\modernizr.custom.04022.js" />
@@ -560,13 +585,6 @@
     <Content Include="Areas\Admin\Views\Projects\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Projects\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AboutUs\Edit.cshtml" />
-    <EntityDeploy Include="Models\db.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>db.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\db.edmx.diagram">
-      <DependentUpon>db.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\Stickers\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Stickers\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Stickers\Edit.cshtml" />
@@ -576,18 +594,41 @@
     <Content Include="Areas\Admin\Views\Users\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
     <Content Include="Areas\Admin\Views\UserLog\UserLog.cshtml" />
+    <Content Include="Areas\Admin\_Public\js\js\.DS_Store" />
+    <Content Include="Areas\Admin\Views\AboutUs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Room\CreateEditRoomType.cshtml" />
+    <Content Include="Areas\Admin\Views\Room\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Room\RoomIndex.cshtml" />
+    <Content Include="Areas\Admin\Views\Room\CreateEditRoom.cshtml" />
+    <Content Include="Areas\Admin\Views\Sell\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Projects\Service.cshtml" />
+    <Content Include="Areas\Admin\Views\Stickers\Room.cshtml" />
+    <Content Include="Areas\Admin\Views\Stickers\RoomType.cshtml" />
+    <EntityDeploy Include="Models\db.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>db.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\db.edmx.diagram">
+      <DependentUpon>db.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.filedrop.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Views\Shared\favicon.ico" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -603,10 +644,15 @@
     <Content Include="Views\Grid\Grid.cshtml" />
     <Content Include="Views\Single\Single.cshtml" />
     <Content Include="Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Views\Home\Projects.cshtml" />
+    <Content Include="Views\Grid\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\ViewModel\" />
+    <Folder Include="Public\images\sticker\" />
+    <Folder Include="Public\images\sxem\" />
+    <Folder Include="Views\Ajax\" />
     <Folder Include="Views\_Layout\" />
   </ItemGroup>
   <ItemGroup>

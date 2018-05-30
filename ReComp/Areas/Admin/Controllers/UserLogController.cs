@@ -7,6 +7,7 @@ using ReComp.Models;
 
 namespace ReComp.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class UserLogController : Controller
     {
         private REcompEntities db  = new REcompEntities();

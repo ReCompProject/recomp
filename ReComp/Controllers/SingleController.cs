@@ -10,7 +10,7 @@ namespace ReComp.Controllers
     public class SingleController : Controller
     {
         REcompEntities db = new REcompEntities();
-        public ActionResult Single()
+        public ActionResult Single(int? id)
         {
             ViewBag.Sticker = db.Stickers.ToList();
             ViewBag.StickPhoto = db.Stick_Photo.ToList();
